@@ -1,0 +1,576 @@
+Needed to Play:
+The 24 cards (4 Sector Map Cards, 8 Civilization Cards, 4 Ship and 4 Tech Tree Cards and 4 Encounter Cards), 15 eurocubes in each of 
+4 player colors (red, yellow, green and blue), 3 Civilization Markers per player in matching player colors,  8 black and 8 white eurocubes for 
+planetary moons, and 10 six-sided dice. 
+Game Setup:
+Each player receives one double sided Ship Card and Tech Tree Card. Players may choose which ship type they will use in the game. 
+The Wanderer  is easier to upgrade but weaker in terms of   The Raider  is more expensive to upgrade but is a stronger
+defense and attack. The ship also gives you more Influence  defense and attack ship in combat.
+Resource capacity.    
+Each card displays a series of horizontal tracks for your resources ( Credits , Influence , Energy  and Ore ). 
+The Ship Card shows the cost to build additional ships in the upper left and is divided into 
+four sections which correspond on the Tech Tree Card to: Engines (ENG) [movement], 
+Command (COM)  [ability to affect die rolls during the game], Shields (DEF) and Weapons (ATT) 
+[used in combat].
+The Tech Tree Card shows your tech achievements and a cost in Resources to gain new upgrades. 
+Each player receives 15 wooden cubes in their player color  (eleven of these are used on 
+the resource tracks and for tech upgrades, the other four are used as a player’s ships in the game) 
+and three colored Civilization markers to show which planets are under that player’s control .
+PARSEC X
+A MICRO 4X SPACE EMPIRE GAME
+BY TODD SANDERS
+Ship CardTech Tree Card
+This game, for 2 to 4 players, is a micro-simulation Space Empire game. The 
+winning player is the one who is able to conquer, ally with, and maintain 
+control of 4 different planets within the parsec boundaries of System X.
+Ships
+Resource Tracking 
+Markers
+Civilization 
+Markers
+
+
+Ship Cards and Tech Tree Cards
+The cost in resources 
+to build additional ships
+Starting resources icon
+A Ship Card is divided into 
+four sections which correspond on 
+the Tech Tree Card to: 
+Engines (ENG) [movement] 
+Command (COM)  
+[ability to affect die rolls during 
+the game]
+Shields (DEF) and Weapons (ATT) 
+[used in combat]
+Number to add to a combat attack 
+roll
+Number to add to a combat 
+defense roll
+Place a wooden cube on each of 
+these initial tech achievements
+During the Upgrade  Phase of 
+each round a player may gain 
+new technical achievements by 
+spending the indicated cost in 
+resources
+The icons to the left of the resource 
+costs show either the cost to use 
+that particular achievement and/or 
+modify a die roll during the game. 
+All  player’s ships will share
+ these achievements.
+To move one ship up to 
+3 orthogonal sectors during the 
+Movement  Phase a player must 
+spend 2 Energy Resources
+Later achievements will allow 
+a player to spend fewer 
+Energy Resources to 
+travel across more sectors 
+The VETERAN CAPTAIN  lets a player spend 1 
+Influence Resource to add +1 to a die roll during the 
+Encounter  Phase
+The DRONE-AI  lets a player spend 1 Influence 
+Resource to reroll a die of theirs during the 
+Encounter  Phase. The player must accept the 2nd 
+value rolled
+The SHIPMIND  lets a player spend 1 Influence 
+Resource to reroll a die of theirs twice during the 
+Encounter  Phase. The player may accept any value 
+rolled
+Place a wooden cube next to each of the indicated starting resources icons ( •)  
+Track gained and lost resources with these cubes as the game progresses
+SHIP CARD
+TECH TREE CARD
+
+Sector Map Cards
+Sector Map Card placement 
+for a 3 or 4 player game
+Sector Map Card placement 
+for a 2 player game
+A Sector Map Card is given to each 
+player  and they should be oriented 
+depending on the number of players as 
+shown in the diagrams below.
+The cards are double sided and it is 
+suggested that players choose side A 
+when first playing the game. 
+Each player then places 2 wooden cubes 
+on their Homeworld as their starting 
+fleet of ships and keeps two more cubes 
+in reserve.
+During the Upkeep  Phase players may 
+gain 2 of the 4 listed resources (they 
+choose which) from their Homeworld. 
+As planets are explored and controlled 
+by players they will gain additional 
+resources.
+Players move their ships during the 
+Movement  Phase. They may only move 
+a ship orthogonally, never diagonally, 
+across the sector spaces on the map. 
+Moving ships costs Energy Resources as 
+indicated on a player’s Tech Tree Card.
+During the Movement  Phase a player 
+may move one or more ships through the 
+Spacewarp: one Sector card clockwise or 
+counterclockwise.
+A Player’s Homeworld: 
+Resources able to be 
+chosen during the 
+Upkeep Phase are 
+indicated in the corners 
+of this sector
+Spacewarp Icon: allows a 
+player to send ships to other 
+Sector Map Cards
+Unknown Planet Icon:
+Unknown planets waiting 
+to be explored during the 
+Encounter  Phase
+sector space
+Sector Map Card - Side A Sector Map Card - Side B
+During the Movement  
+Phase a player may move 
+one or more ships through 
+the Spacewarp: one Sector 
+card clockwise or counter 
+clockwise.
+
+Civilization Cards
+There are 8 Civilization Cards. Each shows one of the 8 civilizations that make up the Galactic Council. Each player receives two of these cards 
+randomly and may choose one of the Civilizations, discarding the other . A Civilization gives a player certain bonuses in the game.
+Each Civilization allows the player to convert one 
+type of resource into another [ example: Credits 
+into Energy ]. This is a one way conversion
+The Civilization’s name and an image of their 
+Homeworld
+If this Civilization 
+gains Ore during 
+an Upkeep  Phase, 
+the player may gain 
+one additional Ore 
+Resource
+During the 
+Upgrade  Phase, 
+Shields cost 
+one less Energy 
+Resource for the 
+player
+During the 
+Encounter  Phase, 
+the player may 
+reroll their die if 
+they are defending 
+in combat
+During the 
+Upgrade  Phase, 
+Engines cost one 
+less Ore Resource 
+for the player
+During the 
+Encounter  Phase, 
+the player may 
+reroll one die if 
+they are attacking 
+in combat
+
+Sample Game Start
+This is an example game diagram for the start of a 4 player game. Place the 10 dice, and 8 white and black cubes, within reach of all players.
+cX
+cX
+cX
+1234
+1234
+12
+Eight of these dice will be used 
+to represent explored planets 
+in the game. The other two 
+dice will be used during the 
+Encounter  Phase
+Black and white cubes 
+represent moons orbiting 
+encountered planets and will 
+be randomly drawn during the 
+Encounter  Phase
+Players choose a Start Player however they wish and begin the game...
+
+the four phases
+upkeep
+renew your resources
+upgrade
+spawn new ships
+gain new tech
+movement 
+displace your forces
+encounter
+explore planets
+combat other civilizations
+Rounds and Phases of the Game
+There are four phases in each round of the game. Players execute Phases 1 and 2 simultaneously and 3 and 
+4 in clockwise order beginning with the Start Player (The Start Player will call out each of the Phases in turn 
+and make sure all players have completed each Phase). The first player to control four Planets at the end of 
+a round’s Phase 4 is the winner.
+At the end of each round, the next player clockwise becomes the new Start Player and will call out the 
+Phases.
+the four phases
+upkeep
+renew your resources
+upgrade
+spawn new ships
+gain new tech
+movement 
+displace your forces
+encounter
+explore planets
+combat other civilizations
+Phase 1: UPKEEP - Players execute this Phase simultaneously.
+During this Phase players gain resources from their Homeworld and any Planets and Colony moons they 
+control. They track these accordingly on their Ship and Tech Tree Cards. For their Homeworld, a player 
+may choose any 2 types of the 4 listed resources (2 Credits , 1 Influence , 3 Energy  and 2 Ore ) [ examples: a 
+player may choose 2 Ore and 2 Credit Resources, 1 Influence and 2 Credit Resources, or 3 Energy and 2 Ore 
+Resources ]
+For any planets a player has encountered, and now controls, they may gain two of the specific resource 
+of that planet [ example a Farm World produces 2 Credit Resources ] or 1 Influence Resource. They may 
+not gain both.
+For any planets that have a Colony Moon, the player may gain 1 additional Influence Resource.
+the four phases
+upkeep
+renew your resources
+upgrade
+spawn new ships
+gain new tech
+movement 
+displace your forces
+encounter
+explore planets
+combat other civilizations
+Phase 2: UPGRADE - Players execute this Phase simultaneously.
+During this Phase players may gain new technical achievements by 
+spending the indicated cost in resources shown to the right of the 
+tech achievement. Move the wooden marker to the newly purchased 
+achievement. A player may buy more than one achievement during 
+this Phase. If buying multiple achievements in the same column 
+[ example: upgrading from the Engines: Fusion Drive to Tachyon 
+Drive to Ehrenhaft Drive ] at the same time, the cost for each 
+upgrade must be paid in resources. A player may never skip over an 
+achievement in any Tech Tree column without paying for it. 
+Each Civilization allows the player to convert one type of resource 
+into another [ example: Credits into Energy ] to pay for these Upgrade 
+costs as needed.
+Players may also buy additional ships in this Phase. The cost of 
+a new ship is shown in the upper left of the Ship Card. Pay the 
+indicated resources and place the new ship either on the player’s 
+Homeworld or on a Shipyard Moon, if the player controls one. 
+A player may never have more than four ships at any time.
+
+
+The red player has placed one 
+of his ships on an Unknown Planet. 
+He rolls one die and determines it 
+is a  3 Jovian World. 
+He pays 3 Ore Resources to settle 
+the world and places one of his 
+Civilization Markers under the die 
+to claim control.
+the four phases
+upkeep
+renew your resources
+upgrade
+spawn new ships
+gain new tech
+movement 
+displace your forces
+encounter
+explore planets
+combat other civilizations
+Phase 3: MOVEMENT - Players execute this phase in clockwise order 
+beginning with the current Start Player.
+Players may now move their ships based on their current level of 
+Engine technology. In the example image, the player has a Tachyon 
+Drive . This allows them to move one ship up to 3 orthogonal sectors 
+by paying one Energy Resource . Players may move as many ships as 
+far as they like as long as they can pay with the Energy Resources. 
+A player may move fewer than the full number of sectors if they 
+choose. Players may only move orthogonally, never diagonally . If a 
+player places a ship on a Spacewarp icon they may place that ship 
+on another Spacewarp icon of their choice one sector clockwise or 
+counterclockwise without spending any extra Energy Resources.
+To move to another Spacewarp, the player must wait until the next 
+Movement  Phase.
+For the purposes of Phase 4, if a player’s ship moves onto a space 
+occupied by another player’s ships or controlled planet, the moving 
+player will be the Attacker  during Phase 4 - Encounter: Combat.
+the four phases
+upkeep
+renew your resources
+upgrade
+spawn new ships
+gain new tech
+movement 
+displace your forces
+encounter
+explore planets
+combat other civilizations
+Phase 4: ENCOUNTER - Players execute this phase in clockwise 
+order beginning with the current Start Player.
+A. Encountering an Unknown Planet
+Note: Refer to the Encounter Cards explanation on the next page for 
+further explanations of each Encounter type. 
+If a player has placed a ship on a sector with an Unknown Planet 
+Icon, they may roll one die to determine the planetary type. The die 
+is then placed with the number rolled face up on top of the Unknown 
+Planet icon. If the number rolled is a 1, 2 or 3, the player may pay 
+the settlement cost in resources and place one of their Civilization 
+Markers under the die to show they control the planet. Once 
+claimed, the player receives the resources of that planet during the 
+Upkeep  Phase.
+If a 4 is rolled, the player has encountered a Xenophobic Empire 
+and must attack the planet in Combat. If successful, the player may 
+roll one die for the planetary type and place a Civilization Marker 
+under the die (rotated to the correct planetary type) to show they 
+control the planet. A random cube is drawn (white or black) and 
+placed next to the planetary die as a moon. A white cube is a Colony 
+and gives the player one Influence Resource during the Upkeep  
+Phase. A black cube is a Shipyard and will allow the player to build 
+ships here, in addition to their Homeworld during the
+ Upgrade  Phase. 
+If the player is unsuccessful in their attack, or there is a tie in the 
+roll, the player’s ship is lost and the die is placed on the sector with 
+a 4 side facing up. Any player may encounter the Xenophobic 
+Empire in a later round and attempt to control it in Combat.
+If a 5 is rolled, the player has encountered an Elder Civilization. 
+They may attempt to use Influence to forge a Diplomatic Alliance 
+with this Civilization. If successful, the player may roll one die for the 
+planetary type and place a Civilization Marker under the die (rotated 
+to the correct planetary type) to show they control the planet. No 
+moons will be placed with this Encounter type.
+If a player is unsuccessful or there is a tie in the roll while forging 
+a Diplomatic Alliance, the planet die is placed with the 5 side of 
+the die facing up and the player loses 1 Influence Resource if they 
+have any. The player’s ship remains on the sector. Any player may 
+encounter the Elder Civilization in a later round and attempt to 
+control it through Diplomatic Alliance.
+3
+
+Encounter Cards
+The four Encounter cards are used during the Encounter Phase to determine what type of planet is encountered.
+When an unknown planet is encountered the player rolls one die and consults the Planetary Atlas to determine the Planetary Type. A roll of a 
+1 determines the planet is a Mining World, 2 - a Farming World, 3 - a Jovian World. if a 4, 5 or 6 is rolled, the player consults one of the 
+other Encounter Cards to determine what to do.
+The cost to settle 
+the planet rolled 
+with the die and 
+the resources 
+gained during 
+Upkeep . 
+Note: a player may 
+gain Ore, Credit or 
+Energy Resources, 
+OR  Influence, never 
+both.
+If a 4 is rolled, the 
+player encounters a 
+Xenophobic Empire 
+and must attack the 
+planet in Combat. 
+The planet adds a +5 
+to its die roll for its 
+Defense Strength.
+If the player is 
+successful they 
+may roll one die to 
+determine the type 
+of planet they now 
+control (placing a 
+Civilization Marker 
+under the die) and 
+randomly draw a 
+moon. They do not 
+have to pay any 
+resources to settle 
+this planet. They 
+will gain resources 
+during Upkeep .
+If the player is 
+unsuccessful in their 
+attack, or there is 
+a tie in the roll, the 
+player’s ship is lost 
+and the die is placed 
+on the sector with a 
+4 side facing up. In 
+later rounds, players 
+may attempt to 
+Combat again.
+If a 5 is rolled, the 
+player encounters 
+an Elder Civilization 
+and may attempt to 
+forge a Diplomatic 
+Alliance by 
+paying Influence 
+Resources equal 
+to 1D3 + 2.
+If the player is 
+successful they 
+may roll one die to 
+determine the type 
+of planet they now 
+control (placing 
+a Civilization 
+Marker under the 
+die). They do not 
+have to pay any 
+resources to settle 
+this planet. They 
+will gain resources 
+during Upkeep .
+If a player is 
+unsuccessful or 
+there is a tie in the 
+roll while forging 
+a Diplomatic 
+Alliance, the planet 
+die is placed with 
+the 5 side of the 
+die facing up and 
+the player loses 1 
+Influence Resource, 
+if they have any. 
+The player’s ship 
+remains on the 
+sector. Any player 
+may encounter the 
+Elder Civilization in 
+a later round.
+If a 6 is rolled, the player encounters a planet they may Terraform. 
+The player may spend resources as listed and choose the planetary 
+type they wish to control, placing a Civilization Marker under the 
+die, rotating it to the representative number for that planetary type. 
+The player then randomly draws and places a moon. They will gain 
+resources during Upkeep  for this planet. If the player does not choose 
+to Terraform, the planet remains uncontrolled and the die is placed on 
+the Sector with the 6 side facing up. The player’s ship remains on the 
+sector. Any player may Terraform this planet in a later round.
+
+the four phases
+upkeep
+renew your resources
+upgrade
+spawn new ships
+gain new tech
+movement 
+displace your forces
+encounter
+explore planets
+combat other civilizations
+Phase 4: ENCOUNTER - continued 
+If a 6 is rolled the player encounters a planet they may Terraform. The player may spend resources as listed 
+and choose the planetary type they wish to control, placing a Civilization Marker under the die, rotating it to 
+the representative number for that planetary type. 
+The player will gain resources during Upkeep  for this planet. 
+A random cube is drawn (white or black) and placed next to the planet die as a moon. A white cube is a 
+Colony and gives the player one Influence Resource during the Upkeep  Phase. A black cube is a Shipyard and 
+will allow the player to build ships here, in addition to their Homeworld during the Upgrade  Phase. 
+If the player does not choose to Terraform, the planet remains uncontrolled and the die is placed on the 
+Sector with the 6 side facing up. The player’s ship remains on the sector. Any player may attempt to 
+Terraform this planet in a later round.
+Unclaimed Homeworlds in the 2 and 3 player game version may not  be encountered.
+B. Combat
+1. Combat With Other Players’ Ships
+If a player, during the Movement  Phase, has placed a ship or ships in a sector already occupied by another 
+player they will be the Attacker and the resident player the Defender. Each player rolls one die as their Attack 
+or Defense Strength and adds their respective Weapon (Attack) or Shield (Defense) number to that, as well as 
+any other bonuses the Civilizations may have. 
+Further, any additional ship of a player, which is also on the same sector, adds a +1 to the total Attack or 
+Defense Strength of that player. The highest number wins and the player who has lost must remove one of 
+their ships.
+When attacking or defending, Combat for each ship is one on one. 
+[example: Red is the Attacker and has 1 ship, Blue is the Defender and has 2 Ships. If Red wins the first 
+combat then Blue removes one ship and Red will then attack the second Blue Ship].
+In the case of a tie, both the Attacker and Defender’s ships are removed. 
+2. Combat With Other Players’ Controlled Planets
+A player may attack a planet controlled by another player. In this case the controlled planet has a +4 to its die 
+roll for its Defense Strength. Players may place ships on the same sector as a planet they control, conferring 
+an additional +1 to the planet’s Defense Strength for each ship there. As with 1. Combat with other player’s 
+ships : the player who has lost must remove one of their ships.
+A player may never attack another player’s Homeworld.
+If the attacking player is successful, they replace the previous Civilization marker with one of their own and 
+they now control the planet.
+3. Combat with the Xenophobic Empire
+If a 4 is rolled, the player encounters a Xenophobic Empire and must attack the planet in Combat. The planet 
+adds a +5 to its die roll for its Defense Strength.
+If the player is successful they may roll one die to determine the type of planet they now control (placing 
+a Civilization Marker under the die) and randomly draw a moon. They do not have to pay any resources to 
+settle this planet. They will gain resources during Upkeep .
+If the player is unsuccessful in their attack, or there is a tie in the roll, the player’s ship is lost and the die is 
+placed on the sector with a 4 side facing up. In later rounds, players may attempt to Combat again.
+Winning the Game
+The first player to control four Planets at the end of a round’s Phase 4 is the winner.
+Artwork and rules for Parsec X are copyright ©2013 - Todd Sanders/Air and Nothingness Press. You may print and play this game for free, but 
+not re-distribute it in any form without consent.
+
+The first player to control four Planets at the end of a round’s Phase 4 is the winner.
+Game Setup
+ •  Each player receives one double-sided Ship Card and Tech Tree Card. Players may choose which ship 
+  type they will use in the game. 
+ •  Each player receives 15 wooden cubes in their player color and three colored Civilization markers to 
+  show which planets are under that player’s control.
+ • Place a wooden cube next to each of the indicated starting resources icons ( •).
+ • Place a wooden cube on each of the initial tech achievements at the top of each Tech Tree column.
+ • Give a Sector Map Card to each player. They should be oriented depending on the number of players. 
+ • Each player places 2 wooden cubes on their Homeworld as their starting fleet of ships and keeps two more cubes in reserve.
+ • Each player receives 2 Civilization Cards and may choose one of the Civilizations, discarding the other.
+ • Place the 10 dice, and 8 white and black cubes within reach of all players.
+Rounds and Phases
+Phase 1: UPKEEP - Players execute this Phase simultaneously
+ During this Phase players gain resources from their Homeworld and any Planets and Colony moons they control. They track these accordingly   
+ on their Ship and Tech Tree Cards. 
+Phase 2: UPGRADE - Players execute this Phase simultaneously
+ During this Phase players may gain new technical achievements by spending the indicated cost in resources shown to the right of the tech   
+ achievement. Move the wooden marker on to the newly purchased achievement. 
+ Players may also buy additional ships in this Phase. The cost of a new ship is shown in the upper left of the Ship Card. 
+Phase 3: MOVEMENT - Players execute this phase in clockwise order beginning with the current Start Player.
+ Players may now move their ships based on their current level of Engine technology. Players may move as many ships as far as they like as  
+ long as they can pay with the Energy Resources. A player may move fewer than the full number of sectors if they choose. Players may only  
+ move orthogonally, never diagonally. If a player places a ship on a Spacewarp icon they may place that ship on another Spacewarp icon of  
+ their choice one sector clockwise or counterclockwise without spending any extra Energy Resources. To move to another Spacewarp, the   
+ player must wait until the next Movement  Phase.
+Phase 4: ENCOUNTER - Players execute this phase in clockwise order beginning with the current Start Player.
+ A. Encountering an Unknown Planet
+  Refer to the Encounter Cards for each of the Encounter types. Unclaimed Homeworlds in the 2 and 3 player game version 
+  may not  be encountered.
+ B. Combat
+  1.  Combat With Other Players’ Ships
+   If a player, during the Movement Phase, has placed a ship or ships in a sector already occupied by another player they will be the   
+   Attacker and the resident player the Defender. Each player rolls one die as their Attack or Defense Strength and adds their respective   
+   Weapon (Attack) or Shield (Defense) number to that, as well as any other bonuses the players’ Civilizations may have. 
+   Further, any additional ship of a player which is also on the same sector adds a +1 to the total Attack or Defense Strength of that player.   
+   The highest number wins and the player who has lost must remove one of their ships. When attacking or defending, Combat for each   
+   ship is one on one. In the case of a tie, both the Attacker and Defender’s ships are removed. 
+  2.  Combat With Other Players’ Controlled Planets
+   A player may attack a planet controlled by another player. In this case the controlled planet has a +4 to its die roll for its Defense  
+   Strength. Players may place ships on the same sector as a planet they control, conferring an additional +1 to their Defense Strength for   
+   each ship there. A player may never attack another player’s Homeworld.
+  3. Combat with the Xenophobic Empire
+   If a 4 is rolled, the player encounters a Xenophobic Empire and must attack the planet in Combat. The planet adds a +5 to its die roll for  
+   its Defense Strength. If the player is successful they may roll one die to determine the type of planet they now control (placing a   
+   Civilization Marker under the die) and randomly draw a moon. They do not have to pay any resources to settle this planet. They will gain   
+   resources during Upkeep.
+   If the player is unsuccessful in their attack, or there is a tie in the roll, the player’s ship is lost and the die is placed on the sector with 
+   a 4 side facing up. In later rounds, players may attempt to Combat again.
+the four phases
+upkeep
+renew your resources
+upgrade
+spawn new ships
+gain new tech
+movement 
+displace your forces
+encounter
+explore planets
+combat other civilizations
+QUIKGUIDE
+

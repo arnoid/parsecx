@@ -1,0 +1,2029 @@
+ABOUT THIS FILE
+* This file is a tool you can use: 
+ - before the game when deciding what faction you want to play
+ - during the game to remind you what are the other factions strengths and weaknesses
+ - as a short strategy guide for new players 
+ - as a short reminder if you haven't played in a long time
+* This file is a collection of informations from various sources:  
+Space Cats Peace Turtles podcast, Board Game Geek forums, reddit.
+I only gathered some of the basics, just enough to get you started on a safe path with 
+a new faction. If you wish to know more in-depth strategy guides you should listen to 
+Space Cats Peace Turtles podcast and read the Board Game Geek strategy forums.
+Use the bookmarks for quick file navigation.
+
+STRENGTHS
+•	flexible	production	via	infantry
+•	holding	planets	very	well
+•	snowballing	into	the	late	game
+•	rebounding	quickly	with	unit	production
+DIFFICUL TY : HIGH
+FEARS
+•	early	aggression
+•	Bombardment: Letnev,	Muaat,	Sardakk,	L1z1x		
+•	good	infantry:	Yin,	Sardakk,	Sol
+•	Naalu	(flagship)
+•	Nekro	-->	don’t	research	Letani 2
+•	fast	factions	(early):	Creuss,	Saar,	Sol
+•	X-89 Bacterial Weapon
+GAME PLAN
+•	you	have	a	very	slow	start	and	you	are	very	
+vulnerable	early,	so	be	cautious	and	prepare	for	
+stage	two	and	secret	objectives
+•	try	to	start	as	speaker	to	secure	the	early	survival
+•	get	Sarween T ools	and	second	carrier	round	1	or	2	
+•	when	moving,	produce	ground	forces	to	increase	
+production	
+•	do	not	rush	to	Mecatol	Rex	but	holding	it	is	
+relatively	easy	if	you	take	it	
+•	don’t	ever	give	your	faction	promissory	note
+•	you	have	a	command	token	problem	->	Leadership
+•	“root”	into	other	people	pie	slices
+•	flagship	is	good	for	recovering	after	a	critical	loss:	
+-	put	5	infantry	and	build	again	in	production	step
+•	optimal tech path: Green + Y ellow/Red	(+	g.	skip)	
+- Sarween T ools, Letani Warrior 2, Cruiser 2, PDS 2
+•	alternative tech path: Blue + Y ellow	
+- Sarween T ools, Carrier 2, Dreadnought 2, PDS 2
+•	alternative tech path: Y ellow + Blue (+	y.	skip)	
+-	rush Integrated Economy, Carrier 2, Dread 2
+STARTING TECHNOLOGY
+•	Magen Defense Grid (red	-	level	1)
+[Exhaust]
+If	you	have	Planetary Shield,	opponent	cannot	roll	
+dice	during	this	round	of	ground	combat.
+↓
+PROMISSORY NOTE
+•	Stymie
+Action:		
+Place	this	card	face-up	in	your	play	area.	While	this	
+card	is	in	your	play	area,	the	Arborec	player	cannot	
+produce	units	in	or	adjacent	to	non-home	systems	
+that	contain	1	or	more	of	your	units.
+If	you	activate	a	system	that	contains	1	or	more	
+of	the	Arborec	player’s	units,	return	this	card	to	
+the	Arborec	player.
+↓
+STARTING FLEET
+•	1	Space	Dock		 •	1	PDS
+•	1	Carrier	 •	2	Fighters
+•	4	Infantry		 •	1	Cruiser
+COMMODITIES: 3
+HOME SYSTEM: 3/2
+↓
+↓↓
+=
+ARBOREC=
+SPECIAL UNITS
+•	Letani Warrior I
+Cost	1(2)		|		Combat	8
+Production	1
+↑↑
+FACTION ABILITIES
+•	Mitosis:
+Y our	space	docks	cannot	produce	infantry.	
+At	the	start	of	the	status	phase	place	1	infantry	
+from	reinforcements	on	any	planet	you	control.
+↑
+FACTION TECHNOLOGIES 
+•	Letani Warrior II (GG)
+Cost	1(2)		|		Combat	7	
+Production	2
+After	this	unit	is	destroyed,	roll	1	die.	If	the	result	
+is	6	or	greater,	place	the	unit	on	this	card.	At	the	
+start	of	your	next	turn,	place	units	from	the	card	
+on	a	planet	you	control	in	your	home	system.
+•	Bioplasmosis (GG)
+At	the	end	of	the	status	phase,	you	may	remove	
+any	number	of	infantry	from	planets	you	control	
+and	place	them	on	1	or	more	planets	you	control	
+in	the	same	or	adjacent	systems.
+=
+FLAGSHIP
+•	Duha Menaimon
+Cost	8		|		Combat	7x2		|		Move	1		|		Capacity	5
+Sustain Damage
+After	you	activate	this	system	you	may	produce	
+up	to	5	units	in	this	system.
+?
+↓ weak ↑ strong ? situational= average
+STRA TEGY GUIDE
+
+BARONY OF LETNEV
+SPECIAL UNITS: None
+STRENGTHS
+•	very	few	weaknesses,	adaptability
+•	best	home	system	in	the	game	
+•	Non-Euclidian Shielding
+FEARS
+•	being	perceived	as	a	threat
+•	Mentak	(flagship),	Nekro,	L1z1x	(situational)
+•	pick target	abilities:	Yin,	Creuss,	Sardakk
+GAME PLAN
+Y ou are a flexible early faction, you have options:
+A. Lots of planets.	Be	aggressive	early,	focus	
+on	infantry,	flagship	and	carriers	in	early	game.	
+Bombard and	get	double	pie	slice.	Then	dreds 2.
+B. Lots of tech.	Score	tech	objectives.	Get	2	tech	
+every	round	if	possible,	get	a	red	skip.	Y ou’ll	have	
+smaller	fleets,	so	play	friendly	and	defensive.
+C. Big fleets of big ships.	Score	battle	objectives.
+D. Economy path.	Save	TG’s	for	spend	objectives	
+and	re-rolls	(Munitions Reserves).	Be	friends	with	
+a	neighbor,	save	CC’s	for	fleet	supply,	build	large	
+fleets	of	cruisers	and	carriers.	Dreads	later	or	not.
+•	put	a	second	space	dock	in	your	home	system
+•	Munitions Reserves	is	most	efficient	with	a	large	
+fleet	of	smaller	ships,	so	save	TG’s	for	big	combats
+•	get	Trade	when	you	can	-	refresh	only	one	person
+•	try	to	make	the	other	players	realize	what	a	
+powerful	ally	you	can	be,	sell	your	friendship
+•	winning	space	combats	doesn’t	get	you	points,	
+not	having	enough	infantry	is	your	Achilles’	heel
+•	(A) safe tech path: Blue + Y ellow	
+- Carrier 2, Dread 2, L4 Disruptors, PDS 2
+•	(B), (C) strong tech path: Blue + Red (+	red	skip)	
+- Dread 2, Non-Euclidian Shielding, War Sun ?
+•	(D) crazy tech path: Y ellow + Blue	
+- Cruiser 2, Fighter 2, Carrier 2 or Dread 2
+PROMISSORY NOTE
+•	War Funding
+At	the	start	of	a	round	of	space	combat:	
+The	Letnev	Player	loses	2	trade	goods.	During	this	
+combat	round,	re-roll	any	number	of	your	dice.	
+Then,	return	this	card	to	the	Letnev	player.
+↓
+=
+STARTING FLEET
+•	1	Space	Dock		 •	1	Fighter
+•	1	Carrier	 •	1	Destroyer
+•	3	Infantry		 •	1	Dreadnought
+COMMODITIES: 2
+HOME SYSTEM: 4/0;	2/1
+↓
+=
+↑↑↑
+STARTING TECHNOLOGIES
+•	Antimass Deflector (blue	-	level	0)
+Move	into	and	through	asteroid	fields.		
+Apply	-1	to	Space Cannon	rolls	against	you.
+•	Plasma Scoring (red	-	level	0)
+When	1	or	more	units	uses	Bombard	or	
+Space Cannon,	1	unit	may	roll	+1	die.
+↑
+FLAGSHIP
+•	Arc Secundus
+Cost	8		|		Combat	5x2		|		Move	1		|		Capacity	3
+Sustain Damage; Bombard	5x3
+Other	player’s	units	in	this	system	lose	planetary	
+shield.	At	the	start	of	each	space	combat	round,	
+repair	this	ship.
+↑
+FACTION TECHNOLOGIES
+•	L4 Disruptors (Y)
+During	an	invasion,	units	cannot	use	Space Cannon	
+against	your	units.
+•	Non-Euclidian Shielding (RR)
+When	one	of	your	units	uses	Sustain Damage,	
+cancel	2	hits	instead	of	1.
+↑
+FACTION ABILITIES
+•	Munitions Reserves
+At	the	start	of	each	round	of	space	combat,	you	
+may	spend	2	trade	goods:	you	may	re-roll	any	
+number	of	your	dice	during	that	combat	round.
+•	Armada
+The	maximum	number	of	non-fighter	ships	your	
+fleet	can	have	in	each	system	is	equal	to	2	more	
+than	the	number	of	tokens	in	your	fleet	pool.
+=
+↓ weak ↑ strong= average
+DIFFICUL TY : LOW
+STRA TEGY GUIDE
+GOOD AGAINST
+•	PDS:	Xxcha,	Jol-Nar	(L4 Disruptors, NES)
+•	infantry:	Arborec,	Sol,	Winnu	(Bombard	path	-	A)
+•	Saar	(early),	Muaat	(early)	(economy	path	-	D)
+•	Naalu	(Armada),	L1z1x	(early)	(big	ships	path	-	C)
+
+CLAN OF SAAR
+STRENGTHS
+•	no	need	to	defend	home	system
+•	mobility
+•	flexibility
+•	can	hide	in	asteroid	fields
+FEARS
+•	infantry	clusters:	Sol,	Arborec	(late	game)
+•	PDS	networks:	Xxcha,	Jol-Nar	(late	game)
+•	Yin	(flagship,	infantry),	Muaat	(war	suns)
+•	late	game	(very	large	fleets	with	special	units)
+GAME PLAN
+•	keep	moving	and	getting	trade	goods	on	the	move	
+•	use	asteroid	fields	as	a	safe	spot	to	hide
+•	chase	VPs	fast	and	loose	-	Imperial	is	your	friend
+•	the	secondary	of	Warfare	doesn’t	work	for	you		
+so	get	Warfare	yourself	whenever	you	can
+•	you	consume	a	lot	of	command	tokens,		
+so	influence	and	Leadership	are	important
+•	build	units	each	time	you	activate,	outnumber	
+your	opponents	(you	need	big	fleet	supply)
+•	don’t	lose	your	space	dock	(have	at	least	2	in	play)
+•	going	for	Mecatol	Rex can	work	nicely	for	you
+•	early	game	race	-	take	the	lead	and	win	by	round	5
+•	optimal tech path: Y ellow + Blue (+	yellow	skip)	
+- Chaos Mapping, Floating Factory 2  
+-	then	Dreadnought 2 	and	Fighter 2 	or	Carrier 2
+STARTING TECHNOLOGY
+•	Antimass Deflector (blue	-	level	0)
+Move	into	and	through	asteroid	fields.		
+Apply	-1	to	Space Cannon	rolls	against	you.
+↓
+↓↓
+=
+=
+PROMISSORY NOTE
+•	Ragh’s Call
+After	you	commit	1	or	more	units	to	land	
+on	a	planet:	Remove	all	of	the	Saar	player’s	
+ground	forces	from	that	planet	and	place	them	
+on	a	planet	controlled	by	the	Saar	player.
+Then,	return	this	card	to	the	Saar	player.
+=
+STARTING FLEET
+•	1	Space	Dock		 •	2	Fighters
+•	2	Carriers	 •	1	Cruiser
+•	4	Infantry		
+COMMODITIES: 3
+HOME SYSTEM: 1/0;	2/1
+↑
+FLAGSHIP
+•	Son of Ragh
+Cost	8		|		Combat	5x2		|		Move	1		|		Capacity	3
+Sustain Damage
+Anti Fighter Barrage	6x4
+?
+FACTION ABILITIES
+•	Scavenge
+After	you	gain	control	of	a	planet,		
+gain	1	trade	good.
+•	Nomadic
+Y ou	can	score	objectives	even	if	you	do	not	control	
+the	planets	in	your	home	system.
+↑
+FACTION TECHNOLOGIES
+•	Floating Factory II (YY)
+Move	2		|		Capacity	5
+Production	7
+This	unit	is	placed	in	a	space	area	instead	of	on	a	
+planet.	This	unit	can	move	and	retreat	as	if	it	were	
+a	ship.	If	this	unit	is	blockaded,	it	is	destroyed.
+•	Chaos Mapping (B)
+Other	players	cannot	activate	asteroid	fields	that	
+contain	1	or	more	of	your	ships.
+At	the	start	of	your	turn	during	the	action	phase,	
+you	may	produce	1	unit	in	a	system	that	contains	
+at	least	1	of	your	units	that	has	Production.
+=
+SPECIAL UNITS
+•	Floating Factory I
+Move	1		|		Capacity	4
+Production	5
+This	unit	is	placed	in	a	space	area	instead	of	on	a	
+planet.	This	unit	can	move	and	retreat	as	if	it	were	
+a	ship.	If	this	unit	is	blockaded,	it	is	destroyed.
+=
+↓ weak ↑ strong ? situational= average
+DIFFICUL TY : HIGH
+STRA TEGY GUIDE
+GOOD AGAINST
+•	slow	start	races:	Arborec	(early),	Jol-Nar	(early),	
+Muaat	(early),	Xxcha	(early),	Winnu
+
+EMBERS OF MUAA T
+FACTION TECHNOLOGIES
+•	Prototype War Sun II (RRRY)
+Cost	10		|		Combat	3x3		|		Move	3		|		Capacity	6
+Sustain Damage; Bombard	3x3
+Other	player’s	units	lose	Planetary Shield.
+•	Magmus Reactor (RR)
+Y our	ships	can	move	into	supernovas.
+After	1	or	more	of	your	units	use	Production	
+in	a	system	that	either	contains	a	war	sun	or	is	
+adjacent	to	a	supernova,	gain	1	trade	good.
+↓
+↓
+STARTING FLEET
+•	1	Space	Dock		 •	2	Fighters
+•	1	War	Sun	
+•	4	Infantry		
+COMMODITIES: 4
+HOME SYSTEM: 4/1
+=
+=
+↑
+STARTING TECHNOLOGY
+•	Plasma Scoring (red	-	level	0)
+When	1	or	more	units	uses	Bombard	or	
+Space Cannon,	1	unit	may	roll	+1	die.
+=
+PROMISSORY NOTE
+•	Fires of the Gashlai
+Action: 	
+Remove	1	token	from	the	Muaat	player’s	fleet	
+pool	and	return	it	to	his	reinforcements.	Then,	gain	
+your	war	sun	unit	upgrade	card.
+Then,	return	this	card	to	the	Muaat	Player.
+↑↑
+FACTION ABILITIES
+•	Star Forge
+Action:	Spend	1	token	from	your	strategy	pool	to	
+place	either	2	fighters	or	1	destroyer	from	your	
+reinforcements	in	a	system	that	contains	1	or	
+more	of	your	war	suns.
+•	Gashlai Physiology
+Y our	ships	can	move	through	supernova’s.
+=
+SPECIAL UNITS
+•	Prototype War Sun I
+Cost	12		|		Combat	3x3		|		Move	1		|		Capacity	6
+Sustain Damage; Bombard	3x3
+Other	player’s	units	lose	Planetary	Shield.
+=
+DIFFICUL TY : HIGH
+GAME PLAN
+•	early	game	faction:	quickly	get	a	slightly	bigger	
+slice	and,	then	just	protect	it	with	your	war	suns	
+and	a	PDS	network	-	let	the	objectives	guide	you	
+•	war	sun	is	a	negotiation	tool,	don’t	make	enemies
+•	sell	War Sun	tech	across	the	table	for	anything	
+that	will	get	you	a	VP	(remember	fleet	supply	cost)
+•	don’t	lose	the	war	sun	early,	get	the	second	one	R2
+•	accept	that	you	will	have	a	command	token	
+problem	-	you	won’t	be	able	to	fix	it	because	of	
+other	more	important	ones,	so	don’t	use	your	Star 
+Forge	to	stall,	use	it	only	to	protect	your	war	sun
+•	use	Warfare	to	protect	your	war	sun	from	
+counter-attacks
+•	if	you	get	a	Sabotage	save	it	for	Direct Hits
+•	optimal tech path: Blue + Y ellow (+	blue	skip)	
+- Gravity Drive,	PDS 2, Graviton Laser System
+•	alternative tech path: Red + Y ellow (+	red	skip)	
+- War Sun 2 	is	an	alternative	to	Gravity Drive,	but	
+only	if	you	get	a	red	skip,	otherwise	it’s	not	worth	it
+STRENGTHS
+•	starts	with	war	sun
+•	very	valuable	promissory	note
+•	has	a	lot	to	trade	and	can	threaten	well
+FEARS
+•	war	sun	vulnerability	to	
+-	counter-attacks	
+-	Direct Hit	action	cards	
+-	assign to non-fighter ship	abilities	
+-	pick target	abilities
+•	mobile	opponents	(your	HS	is	vulnerable	early)
+•	lack	of	influence
+•	Y ssaril,	Yin,	L1z1x,	Xxcha,	Mentak,	Creuss,	
+Sardakk	(late)
+GOOD AGAINST
+•	infantry	(Bombardment):	Arborec,	Sol,	Winnu,	
+Sardakk	(early)
+FLAGSHIP
+•	The Inferno
+Cost	8		|		Combat	5x2		|		Move	1		|		Capacity	3
+Sustain Damage
+Action:	Spend	1	token	from	your	strategy	pool	to	
+place	1	cruiser	in	this	unit’s	system.
+?
+↓ weak ↑ strong ? situational= average
+STRA TEGY GUIDE
+
+EMIRA TES OF HACAN
+SPECIAL UNITS: None
+STRENGTHS
+•	highest	commodity	number
+•	can	trade	with	anyone
+•	able	to	trade	action	cards
+•	adaptable	to	the	objectives
+•	Quantum Datahub Node	can	steal	a	win	during	the	
+final	turns
+FEARS
+•	no	one	picks	Trade SC,	so	you	always	have	to
+•	metagame	(collusion	against	you)
+•	Mentak	(can	be	a	very	good	friend	or	a	big	pain)
+PROMISSORY NOTE
+•	Trade Convoys
+Action:	Place	this	card	face-up	in	your	play	area.	
+While	this	card	is	in	your	play	area,	you	may	
+negotiate	transactions	with	players	who	are	not	
+your	neighbor.	
+If	you	activate	a	system	that	contains	1	or	more	
+of	the	Hacan	player’s	units,	return	this	card	to	the	
+Hacan	player.
+=
+FLAGSHIP
+•	Wrath of Kenara
+Cost	8		|		Combat	7x2		|		Move	1		|		Capacity	3
+Sustain Damage
+After	you	roll	a	die	during	a	space	combat	in	this	
+system,	you	may	spend	1	trade	good	to	apply	
++1	to	the	attack.
+↓↓
+STARTING FLEET
+•	1	Space	Dock		 •	2	Fighters
+•	2	Carriers	 •	1	Cruiser
+•	4	Infantry		
+COMMODITIES: 6
+HOME SYSTEM: 2/1;	0/1;	1/1 ↓↓
+=
+↑↑
+↑
+STARTING TECHNOLOGIES
+•	Antimass Deflector (blue	-	level	0)
+Move	into	and	through	asteroid	fields.		
+Apply	-1	to	Space Cannon	rolls	against	you.
+•	Sarween Tools (yellow	-	level	0)
+When	1	or	more	units	use	Production,	reduce	total	
+combined	cost	by	1.
+↑
+FACTION ABILITIES
+•	Masters of Trade
+Y ou	do	not	have	to	spend	a	command	token	to	
+resolve	the	secondary	ability	of	the	Trade SC.
+•	Guild Ships
+Y ou	can	negotiate	transactions	with	players	
+who	are	not	your	neighbor.
+•	Arbiters
+When	you	are	negotiating	a	transaction,	action	
+cards	can	be	exchanged	as	part	of	that	transaction.
+↑
+FACTION TECHNOLOGIES
+•	Production Biomes (GG)
+Action: Exhaust	this	card	and	spend	1	token	from	
+your	strategy	pool	to	gain	4	trade	goods	and	
+choose	1	other	player,	he	gains	2	trade	goods.
+•	Quantum Datahub Node (YYY)
+At	the	end	of	the	strategy	phase,	you	may	spend	
+1	token	from	your	strategy	pool	and	give	another	
+player	3	TG.	Swap	1	strategy	card	with	that	player.
+↑
+↓ weak ↑ strong= average
+GAME PLAN
+•	pick	Trade	early	and	often
+•	use	your	early	game	advantage,	before	you	lose	
+it:	make	transactions	early,	sell	anything,	buy	all	
+Trade Agreements make	money	and	bank	it
+•	save	your	trade	goods	for	the	”spend”	objectives	
+-	don’t	spend	it	all	on	fleets,	use	planets	for	build
+•	maintain	a	well	defended	pie	slice,	score	objectives	
+•	be	friends	with	everybody,	you	are	a	passive	race
+•	tax	people	for	refreshing	trade	goods	(mid	game)
+•	look	for	opportunities	to	make	a	profit	and	try	not	
+to	be	seen	as	a	major	threat
+•	remember	you	can	sell	action	cards	at	any	
+moment,	know	your	cards	and	their	timing
+•	you	are	the	best	faction	at	winning	from	behind
+•	optimal tech path: Blue + Y ellow (+	yellow	skip)	
+- Neural Motivator, Dread 2, Quantum Datahub N.  
+- Space Dock 2, Fighter 2
+•	alternative tech path: Blue + Green (+	green	skip)	
+- Neural Motivator, Dread 2, Production Biomes,  
+- Infantry 2 and Fighter 2 or Carrier 2
+•	situational tech path: Green + Y ellow (+	g	&	y	skip)	
+- Quantum Datahub Node, Production Biomes  
+- Space Dock 2, Fighter 2, Infantry 2
+STRA TEGY GUIDE
+DIFFICUL TY : HIGH
+
+FEDERA TION OF SOL
+GAME PLAN
+•	you	are	the	best	“Mecatol”	faction,	so	go	for	it
+•	take	planets	aggressively	over	the	first	2	rounds	
+(get	and	hold	objective	required	planets)
+•	you	will	have	a	command	token	problem,	so	focus	
+on	high	influence	planets,	(infantry	is	cheap)
+•	reinforce	key	planets	with	Orbital Drop	
+•	small	mobile	fleets	and	lots	of	infantry	allow	you	
+to	spread	out	and	make	it	very	difficult	for	others	
+to	uproot	you
+•	you	will	have	a	production	capacity	problem,		
+so	try	to	build	a	second	production	center
+•	don’t	trade	your	Political Secret
+•	early	game	faction	-	take	the	lead,	rush	to	victory	
+(late	game	space	combats	will	be	a	problem)
+•	optimal tech path: Blue + Green	
+-	take	Gravity Drive	and	Spec Ops 2 	asap	
+-	then	Hyper Metabolism, Dread 2 or	go	deep	blue 
+- Carrier 2 and Fighter 2 are	situational
+PROMISSORY NOTE
+•	Military Support
+At	the	start	of	the	Sol	player’s	turn:
+Remove	1	token	from	the	Sol	player’s	strategy	
+pool,	if	able,	and	return	it	to	his	reinforcements.	
+Then	you	may	place	2	infantry	from	your	
+reinforcements	on	any	planet	you	control.	
+Then,	return	this	card	to	the	Sol	player.
+=
+FACTION TECHNOLOGIES
+•	Spec Ops Infantry II (GG) 
+Cost	1(2)		|		Combat	6
+After	this	unit	is	destroyed,	roll	1	die.	If	the	result	
+is	5	or	greater,	place	the	unit	on	this	card.	At	the	
+start	of	your	next	turn,	place	each	unit	that	is	on	
+this	card	on	a	planet	you	control	in	your	home	
+system.
+•	Advanced Carrier II (BB) 
+Cost	3		|		Combat	9		|		Move	2		|		Capacity	8
+Sustain Damage
+=
+SPECIAL UNITS
+•	Spec Ops Infantry I 
+Cost	1(2)		|		Combat	7
+•	Advanced Carrier I 
+Cost	3		|		Combat	9		|		Move	1		|		Capacity	6
+=
+FLAGSHIP
+•	Genesis
+Cost	8		|		Combat	5x2		|		Move	1		|		Capacity	12
+Sustain Damage
+At	the	end	of	the	status	phase,		
+place	1	infantry	from	your	reinforcements	in	this	
+system’s	space	area.
+↑
+STARTING FLEET
+•	1	Space	Dock		 •	3	Fighters
+•	2	Carriers	 •	1	Destroyer
+•	5	Infantry	
+COMMODITIES: 4
+HOME SYSTEM: 4/2 =
+↑
+↑
+↑↑
+STARTING TECHNOLOGIES
+•	Antimass Deflector	(blue	-	level	0)
+Move	into	and	through	asteroid	fields.		
+Apply	-1	to	Space Cannon	rolls	against	you.
+•	Neural Motivator	(green	-	level	0)
+Draw	2	actions	cards	(inst.	of	1)	in	status	phase.
+↑
+FACTION ABILITIES
+•	Orbital Drop
+Action:	Spend	1	token	from	your	strategy	pool	
+to	place	2	infantry	from	your	reinforcements	
+on	1	planet	you	control.
+•	Versatile
+When	you	gain	command	tokens	during	the	status	
+phase,	gain	1	additional	command	token.
+↑
+↓ weak ↑ strong= average
+STRA TEGY GUIDE
+DIFFICUL TY : LOW
+STRENGTHS
+•	mobility,	reinforcing,	holding	planets
+•	easy	to	take	and	hold	Mecatol
+FEARS
+•	losing	carriers	early
+•	lack	of	influence
+•	Bombardment:	Letnev,	Muaat,	Sardakk,	L1z1x
+•	other	infantry	factions:	Yin,	Arborec,	Nekro
+•	Creuss	-	could	get	to	Mecatol	first
+GOOD AGAINST
+•	Winnu,	Saar
+
+GHOSTS OF CREUSS
+SPECIAL UNITS: None
+STRENGTHS
+•	insane	mobility
+•	high	commodity	count
+•	home	system	is	1	extra	move	for	others
+FEARS
+•	being	perceived	as	a	threat	or	nuisance
+•	early	aggression
+•	4	commodities	factions	can	upset	your	trades
+•	Xxcha,	Mentak
+GOOD AGAINST
+•	Naalu,	Yin,	Muaat	(Dimensional Splicer)
+•	Muaat,	Winnu,	Arborec	(R1	blockade	Home	S.)	
+GAME PLAN
+•	early:	don’t	over	extend,	don’t	be	aggressive,		
+stay	in	your	pie	slice,	don’t	make	enemies	R1
+•	don’t	ever	take	the	lead,	setup	a	big	late	game,	
+prepare	for	stage	2	and	secret	objectives
+•	you	need	influence	-	a	lot	of	command	tokens,		
+so	you	can	always	be	ready	for	opportunities	
+•	pay	someone	to	play	your	promissory	note	early	
+so	you	won’t	have	to	get	Wormhole Generator
+•	get	a	Creuss	wormhole	in	a	good	system	(in	your	
+pie	slice),	then	build	a	forward	space	dock	there
+•	you	need	Action Cards,	you	are	a	surprise	faction
+•	optimal tech path: Green + Blue	
+- Neural Motivator, Infantry 2, Fighter 2, Carrier 2  
+- Sarween T ools, Dreadnought 2
+•	alternative tech path: Red + Blue	
+- Dimensional Splicer, PDS 2, Dread 2, Destroyer 2
+•	alternative tech path: Red + Y ellow (+	red	skip)	
+- Dimensional Splicer, PDS 2, War Sun, Destroyer 2
+FACTION TECHNOLOGIES
+•	Wormhole Generator (BB)
+At	the	start	of	the	status	phase,	place	or	move	a	
+Creuss	wormhole	token	into	either	a	system	that	
+contains	a	planet	you	control	or	a	non-home	system	
+that	does	not	contain	another	player’s	ships.
+•	Dimensional Splicer (R)
+At	the	start	of	a	space	combat	in	a	system	that	
+contains	a	wormhole	and	1	or	more	of	your	ships,	
+you	may	produce	1	hit	and	assign	it	to	1	of	your	
+opponent’s	ships.
+↓
+=
+PROMISSORY NOTE
+•	Creuss Iff
+At	the	start	of	your	turn	during	the	action	phase:	
+Place	or	move	a	Creuss	wormhole	token	into	
+either	a	system	that	contains	a	planet	you	control	
+or	a	non-home	system	that	does	not	contain	
+another	player’s	ships.	
+Then,	return	this	card	to	the	Creuss	player.
+=
+FACTION ABILITIES
+•	Quantum Entanglement
+Y ou	treat	all	systems	that	contain	either	an	alpha	
+or	a	beta	wormholes	adjacent	to	each	other.		
+Game	effects	cannot	prevent	you	from	using	this.
+•	Slipstream
+During	your	tactical	actions,	apply	+1	to	the	
+move	value	of	each	of	your	ships	that	starts	its	
+movement	in	your	home	system	or	in	a	system	
+that	contains	either	an	alpha	or	beta	wormhole.
+•	Creuss Gate
+When	you	create	the	game	board,	place	the		
+Creuss	Gate	where	your	home	system	would	
+normally	be	placed.	The	Creuss	Gate	is	not	a	home	
+system.	Place	your	home	system	in	your	play	area.
+=STARTING FLEET
+•	1	Space	Dock		 •	2	Fighters
+•	1	Carrier	 •	2	Destroyers
+•	4	Infantry	
+COMMODITIES: 4
+HOME SYSTEM: 4/2	+	Delta	Wormhole
+↓↓
+↑
+↑
+FLAGSHIP
+•	Hil Colish
+Cost	8		|		Combat	5x1		|		Move	1		|		Capacity	3
+Sustain Damage
+This	ship’s	system	contains	a	Delta	wormhole.	
+During	movement,	this	ship	may	move	before	or	
+after	your	other	ships.
+↑
+STARTING TECHNOLOGY
+•	Gravity Drive (blue	-	level	1)
+After	activating	a	system,	apply	+1	to	the	
+movement	of	1	ship	during	this	tactical	action.
+↑
+↓ weak ↑ strong= average
+DIFFICUL TY : HIGH
+STRA TEGY GUIDE
+
+L1Z1X MINDNET
+STRENGTHS
+•	having	2	capacity	dreadnoughts	that	hit	on	a	4	is	
+the	best	reason	to	pick	this	race
+•	the	best	start	in	the	game	(outside	of	Jol-Nar)
+•	best	race	at	taking	planets
+•	your	ability	to	take	a	space	dock,	then	produce	
+units	makes	you	very	scary
+FEARS
+•	being	perceived	as	a	threat	
+•	PDS 2 :	Mentak,	Xxcha,	Jol-Nar
+•	Letnev,	Sardakk
+GOOD AGAINST
+•	fighter	screens	(your	flagship):	Naalu,Saar,	Muaat
+•	ground	forces	(Harrow):	Sol,	Arborec,	Yin
+PROMISSORY NOTE
+•	Cybernetic Enhancements
+At	the	start	of	your	turn:	Remove	1	token	from	
+the	L1z1x	player’s	strategy	pool	and	return	it	to	
+his	reinforcements.	Then,	place	1	command	token	
+from	your	reinforcements	in	your	strategy	pool.
+Then,	return	this	card	to	the	L1z1x	player.
+↓
+FACTION ABILITIES
+•	Assimilate
+When	you	gain	control	of	a	planet,		
+replace	each	PDS	and	space	dock	that	is	on	
+that	planet	with	a	matching	unit	from	your	
+reinforcements.
+•	Harrow
+After	each	round	of	ground	combat,	your	ships	in	
+the	active	system	may	use	their	bombardment	
+ability	against	your	opponent’s	ground	forces	on	
+the	planet.
+=
+FACTION TECHNOLOGIES
+•	Super Dreadnought II (BBY)
+Cost	4		|		Combat	4		|		Move	2		|		Capacity	2
+Sustain Damage; Bombard	4	
+This	unit	cannot	be	destroyed	by	Direct Hit.
+•	Inheritance Systems (YY)
+Y ou	may	exhaust	this	card	and	spend	2	resources	
+when	you	research	a	technology;	ignore	all	of	that	
+technology’s		prerequisites.
+=
+SPECIAL UNITS
+•	Super Dreadnought I 
+Cost	4		|		Combat	5		|		Move	1		|		Capacity	2
+Sustain Damage; Bombard	5
+↑
+↑
+STARTING FLEET
+•	1	Space	Dock		 •	1	PDS
+•	1	Carrier	 •	3	Fighters
+•	5	Infantry		 •	1	Dreadnought
+COMMODITIES: 2
+HOME SYSTEM: 5/0
+↓
+↑↑
+↑↑
+FLAGSHIP
+•	0.0.1
+Cost	8		|		Combat	5x2		|		Move	1		|		Capacity	5
+Sustain Damage
+During	a	space	combat,	hits	produced	by	this	ship	
+and	by	your	dreadnoughts	in	this	system	must	be	
+assigned	to	non-fighter	ships	if	able.
+↑↑
+STARTING TECHNOLOGIES
+•	Neural Motivator (green	-	level	0)
+Draw	2	actions	cards	(inst.	of	1)	in	status	phase.
+•	Plasma Scoring (red	-	level	0)
+When	1	or	more	units	uses	Bombard	or	
+Space Cannon,	1	unit	may	roll	+1	die.
+↑
+↓ weak ↑ strong= average
+GAME PLAN
+•	mid	game	faction:	build	a	Super-Dreadnaught 2 	
+fleet	and	get	6	action	cards	ready	for	a	big	round	3
+•	keep	taking	planets	and	focus	on	objectives	and	
+influence	(you	need	command	tokens)
+•	don’t	focus	on	holding	the	planets	because	you	
+can	easily	take	them	back
+•	5	capacity	flagship	and	2	capacity	dreadnoughts	
+means	you	don’t	need	carriers
+•	very	good	at	scoring	secret	obj.	and	stage	2	obj.
+•	optimal tech path: Blue	+	(whatever	skip	you	get)	
+- get	Super-Dreadnaught 2 	quickly	(double	tech) 
+-	Inheritance Systems	is	an	option	only	if	you	get	a	
+yellow	skip	and	only	if	it’s	necessary
+•	alternative tech path: Y ellow	+	(Red	or	Green)	
+-	get	Inheritance Systems	quickly	(double	tech)	
+-	then	Super-Dreadnaught 2, then	whatever	you	
+need	more,	War Sun (if	you	have	resources	to	build)
+DIFFICUL TY : LOW
+STRA TEGY GUIDE
+
+MENTAK COALITION
+SPECIAL UNITS: None
+STRENGTHS
+•	Mirror Computing	(best	tech	in	game)
+•	synergy	between	tech	/	abilities	(best	in	game)
+•	good	faction	abilities	and	promissory	note
+•	fast	route	to	desired	tech
+FEARS
+•	being	perceived	as	a	nuisance	
+•	PDS 2 :	Xxcha,	Jol-Nar,	maybe	Arborec
+•	Nekro	(flagship	&	ability),	Naalu	(fighter	swarm)
+=
+FACTION ABILITIES
+•	Ambush
+At	the	start	of	a	space	combat,	you	may	roll	1	die	
+for	each	of	up	to	2	of	your	cruisers	or	destroyers	
+in	the	system.	For	each	result	equal	or	greater	
+than	that	ship’s	combat	value	produce	1	hit.	
+Y our	opponent	must	assign	it	to	one	of	his	ships.
+•	Pillage
+After	one	of	your	neighbors	gains	trade	goods	or	
+resolves	a	transaction:		
+If	he	has	3	or	more	trade	goods	you	may	take	1	of	
+his	trade	goods	or	commodities.
+=STARTING FLEET
+•	1	Space	Dock		 •	1	PDS
+•	1	Carrier	 •	3	Fighters
+•	4	Infantry		 •	2	Cruisers
+COMMODITIES: 2
+HOME SYSTEM: 4/1
+↓
+=
+=
+FACTION TECHNOLOGIES
+•	Salvage Operations (YY)
+After	you	win	or	lose	a	space	combat,		
+gain	1	trade	good;	
+If	you	won	the	combat,	you	may	also	produce	
+1	ship	in	that	system	of	any	ship	type	that	was	
+destroyed	during	the	combat.
+•	Mirror Computing (YYY)
+When	you	spend	trade	goods,	each	trade	good	is	
+worth	2	resources	or	influence	instead	of	1.
+↑↑STARTING TECHNOLOGY
+•	Sarween Tools (yellow	-	level	0)
+When	1	or	more	units	use	Production,	reduce	total	
+combined	cost	by	1.
+•	Plasma Scoring (red	-	level	0)
+When	1	or	more	units	uses	Bombard	or	
+Space Cannon,	1	unit	may	roll	+1	die.
+↑
+PROMISSORY NOTE
+•	Promise of Protection
+Action: Place	this	card	face-up	in	your	play	area.
+While	this	card	is	in	your	play	area,	the	Mentak	
+player	cannot	use	his	pillage	faction	ability	
+against	you.	If	you	activate	a	system	that	contains	
+1	or	more	of	the	Mentak	player’s	units,	return	this	
+card	to	the	Mentak	player.
+↑
+FLAGSHIP
+•	Fourth Moon
+Cost	8		|		Combat	7x2		|		Move	1		|		Capacity	3
+Sustain Damage
+Other	player’s	ships	in	this	system	cannot	use	
+Sustain Damage
+?
+↓ weak ↑ strong ? situational= average
+GAME PLAN
+•	rush	to	Cruiser 2 	(try	round	1	with	a	green	skip)	
+•	use	your	mobility	to	take	powerful	systems
+•	save	as	much	trade	goods	as	you	can	until	you	get	
+Mirror Computing,	then	use	them	to	rebuild	your	
+fleet	and	for	“spend”	public	objectives
+•	be	aggressive	early	when	you	have	the	advantage,	
+bank	TG’s	and	prepare	for	the	stage	II	objectives
+•	defend	your	home	system	with	your	flagship	and	
+a	PDS 2 	network
+•	take	Trade S.C.	often,	refresh	all	your	neighbors
+•	the	“meta-game”	is	your	Achilles’	heel
+•	don’t	Pillage	every	single	time,	also	take	their	
+commodities	instead	of	TG’s	if	possible
+•	use	Promise of Protection	to	gain	at	least	1	ally	
+in	a	5-6	player	game
+•	optimal tech path: Y ellow + Red	(+	green	skip)	
+- Cruiser 2, PDS 2, Mirror Computing
+DIFFICUL TY : AVERAGE
+GOOD AGAINST
+•	Letnev,	L1z1x	(your	flagship)
+•	Hacan,	Saar	in	early	game	(Pillage)
+STRA TEGY GUIDE
+
+NAALU COLLECTIVE
+GAME PLAN
+•	build	2	space	docks	in	a	double	planet	system	
+to	help	with	fighter	production	(next	to	your	home)
+•	develop	a	fighter	screen	network,	making	it	
+very	difficult	to	invade	your	space	(after	you	
+get	Neuroglive, with	a	few	fighters	placed	in	key	
+systems,	you	can	block	the	movement	of	your	
+competitors	and	you	can	start	extorting)
+•	the	only	ships	you	need	are	fighters	and	carriers	
+•	focus	on	influence	(fighters	are	cheap)	and	take	
+Leadership	every	time	it’s	available
+•	always	have	command	tokens	ready	for	Foresight
+•	don’t	ever	give	your	faction	promissory	note
+•	take	the	lead,	stay	in	the	lead	and	win	by	initiative
+•	optimal tech path: Green +	(Blue	or	Y ellow)	
+- rush	Crystal Fighter 2 (b	skip),	Neuroglive	(g	skip) 
+- then Carrier 2, Space Dock 2 or Infantry 2 
+depending	on	what	skip	you	get	(blue	or	yellow)
+STARTING FLEET
+•	1	Space	Dock		 •	3	Fighters
+•	1	Carrier	 •	1	Cruiser
+•	4	Infantry		
+COMMODITIES: 3
+HOME SYSTEM: 3/1;	0/2
+↓
+↓
+=
+=
+PROMISSORY NOTE
+•	Gift of Prescience
+At	the	end	of	the	Strategy	Phase:	Place	this	card	
+face-up	in	your	play	area	and	place	the	Naalu	“0”	
+token	on	your	strategy	card;	Y ou	are	the	first	in	
+initiative	order.	The	Naalu	player	cannot	use	his	
+Telepathic	faction	ability	during	this	game	round.
+Return	this	card	to	the	Naalu	player	at	the	end	of	
+the	status	phase.
+=
+FLAGSHIP
+•	Matriarch
+Cost	8		|		Combat	9x2		|		Move	1		|		Capacity	6
+Sustain Damage
+During	an	invasion	in	this	system,	you	may	commit	
+fighters	to	planets	as	if	they	were	ground	forces.	
+After	combat	return	those	units	to	the	space	area.
+↑
+FACTION ABILITIES
+•	Telepathic
+At	the	end	of	the	strategy	phase,	place	the	Naalu	
+“0”	token	on	your	strategy	card.	Y ou	are	first	in	
+initiative	order.
+•	Foresight
+After	another	player	moves	ships	into	a	system	
+that	contains	one	or	more	of	your	ships,	you	
+may	place	1	token	from	your	strategy	pool	in	an	
+adjacent	system	that	does	not	contain	another	
+player’s	ships:	move	your	ships	from	the	active	
+system	into	that	system.
+↑
+STARTING TECHNOLOGIES
+•	Neural Motivator (green	-	level	0)
+Draw	2	actions	cards	(instead	of	1)	in	status	phase.
+•	Sarween Tools (yellow	-	level	0)
+When	1	or	more	units	use	Production,	reduce	total	
+combined	cost	by	1.
+↑↑
+FACTION TECHNOLOGIES
+•	Hybrid Crystal Fighter II (GB)
+Cost	1(2)		|		Combat	7		|		Move	2
+This	unit	may	move	without	being	transported.	
+Each	fighter	in	excess	of	your	ships’	capacity	
+counts	as	1/2	of	a	ship	against	your	fleet	pool.
+•	Neuroglaive (GGG)
+After	another	player	activates	a	system	that	
+contains	1	or	more	of	your	ships,	that	player	
+removes	1	token	from	his	fleet	pool	and	returns	it	
+to	his	reinforcements.
+↑↑
+SPECIAL UNITS
+•	Hybrid Crystal Fighter I
+Cost	1(2)		|		Combat	8
+↑
+↓ weak ↑ strong= average
+STRA TEGY GUIDE
+DIFFICUL TY : AVERAGE
+STRENGTHS
+•	Crystal Fighters	and	Neuroglive are	powerful	
+•	scoring	first	can	win	you	the	game
+•	free	retreats	are	great
+FEARS
+•	early	aggression
+•	Graviton Laser System:	Xxcha,	L1z1x	(flagship)
+•	Destroyer 2: Yin,	Letnev,	Mentak,	Creuss
+•	Sol,	Saar	(flagship),	Nekro	(flagship)
+•	after	you	get	Neuroglaive	only	Letnev	can	hurt	you
+GOOD AGAINST
+•	infantry	(your	flagship),	Saar	(after	Neuroglaive)
+STRA TEGY GUIDE
+
+NEKRO VIRUS
+SPECIAL UNITS: None
+STRENGTHS
+•	gains	technology	through	combat
+•	very	command	token	rich
+•	powerful	in	the	late	game	due	to	command	token	
+wealth	and	the	ability	to	steal	racial	tech	and/or	
+unit	upgrades
+FEARS
+•	haters	and	lots	of	tech	objectives
+•	Letnev,	Winnu	(flagship),	Xxcha	(flagship)
+•	pick target	abilities:	Sardakk,	Yin,	Creuss
+STARTING TECHNOLOGY
+•	Dacxive Animators (green	-	level	1)
+After	ground	combat	victory,	place	1	infantry	
+from	reinforcements	on	that	planet.
+•	Valefactor Assimilator X / Y
+↓
+=
+PROMISSORY NOTE
+•	Antivirus
+At	the	start	of	a	combat:	Place	this	card	face-up	in	
+your	play	area.	While	this	card	is	in	your	play	area,	
+the	Nekro	player	cannot	use	his	Technological	
+Singularity	faction	ability	against	you.	
+If	you	activate	a	system	that	contains	1	or	more	
+of	the	Nekro	player’s	units,	return	this	card	to	the	
+Nekro	player.
+=
+STARTING FLEET
+•	1	Space	Dock		 •	2	Fighters
+•	1	Carrier	 •	1	Cruiser
+•	2	Infantry		 •	1	Dreadnought
+COMMODITIES: 3
+HOME SYSTEM: 4/0
+↓
+=
+=
+FACTION ABILITIES
+•	Galactic Threat
+Y ou	cannot	vote	on	agendas.	Once	per	agenda	
+phase	after	an	agenda	is	revealed,	you	may	
+predict	aloud	the	outcome	of	that	agenda.	If	your	
+prediction	is	correct,	gain	1	technology	that	is	
+owned	by	a	player	who	voted	how	you	predicted.
+•	Technology Singularity
+Once	per	combat,	after	1	you	destroy	an	enemy	
+unit,	you	may	gain	1	tech	owned	by	that	player.
+•	Propagation
+Y ou	cannot	research	technology.	When	you	would	
+research	a	tech,	gain	3	command	tokens	instead.
+↑
+FLAGSHIP
+•	The Alastor
+Cost	8		|		Combat	9x2		|		Move	1		|		Capacity	3
+Sustain Damage
+At	the	start	of	a	space	combat,	choose	any	
+number	of	your	ground	forces	in	this	system	to	
+participate	in	that	combat	as	if	they	were	ships.
+↑↑
+FACTION TECHNOLOGIES
+•	Valefactor Assimilator X / Y
+When	you	gain	another	player’s	technology	using	
+1	of	your	faction	abilities,	you	may	place	the	X/Y	
+assimilator	token	on	a	faction	technology	owned	
+by	that	player	instead.		
+While	that	token	is	on	a	technology,	this	card	
+gains	that	technology’s	text.	Y ou	cannot	place	an	
+assimilator	token	on	technology	that	already	has	
+an	assimilator	token.
+?
+↓ weak ↑ strong ? situational= average
+DIFFICUL TY : HIGH
+GAME PLAN
+•	don’t	hunt	people	just	for	the	tech	if	it	doesn’t	help	
+you	score	objectives
+•	influence	is	not	that	useful	to	you
+•	build	your	economy	with	Trade,	Leadership,	or	
+T echnology	early,	and	get	rich	enough	from	the	
+secondaries	over	time
+•	always	take	Trade	if	it	is	available	
+-	ask	people	to	send	destroyers	to	be	your	
+neighbor,	offer	deals	in	their	favor	
+-	later	you	can	kill	the	destroyer	and	get	tech
+•	take	Mecatol	Rex	and	other	key	systems,	
+the	other	players	will	have	to	attack	you
+•	bully,	but	avoid	all-out	war	on	multiple	fronts	
+•	sell	your	racial	promissory	note	to	assure	an	ally	
+•	your	flagship	with	a	stack	of	ground	forces	is	one	
+of	the	best	defensive	set-ups	in	the	game,	so	use	
+it	on	your	home	system	or	on	Mecatol	Rex
+•	choose	wisely	the	racial	techs	you	want	to	copy,	
+look	for	synergy
+•	you	want	Transit Diodes	and	any	infantry	upgrade
+STRA TEGY GUIDE
+GOOD AGAINST
+•	value	tech	races:	Jol-Nar,	L1z1x,	Mentak,	Sol,	Xxcha
+
+SARDAKK N’ORR
+STRENGTHS
+•	+1	to	all	combat	roles
+•	+1	to	ship	rolls	when	flagship	is	present
+•	Bombard	4x2	on	dreadnought
+FEARS
+•	lots	of	tech	objectives
+•	being	perceived	as	a	threat
+•	Nekro,	Sol	(capacity,	Orbital Drop)
+↓
+PROMISSORY NOTE
+•	Tekklar Legion
+At	the	start	of	an	invasion	combat:	
+Apply	+1	to	the	result	of	each	of	your	unit’s	combat	
+rolls	during	this	combat.	If	your	opponent	is	the	
+N’orr	player,	apply	-1	to	the	result	of	each	of	his	
+unit’s	combat	rolls	during	this	combat.
+Then,	return	this	card	to	the	N’orr	player.
+=
+FACTION TECHNOLOGIES
+•	Exotrireme Dreadnought II (BBY)
+Cost	4		|		Combat	5		|		Move	2		|		Capacity	1	
+Sustain Damage; Bombard	4x2
+This	unit	cannot	be	destroyed	by	Direct Hit.	
+After	a	round	of	space	combat	you	may	destroy	
+this	unit	to	destroy	up	to	2	ships	in	this	system.
+•	Valkyrie Particle Weave (RR)
+After	making	combat	rolls	during	a	round	of	
+ground	combat,	if	your	opponent	produced	
+1	or	more	hits,	you	produce	1	additional	hit.	
+=
+SPECIAL UNITS
+•	Exotrireme Dreadnought I
+Cost	4		|		Combat	5		|		Move	1		|		Capacity	1
+Sustain Damage; Bombard	4x2
+=
+=FLAGSHIP
+•	C’Morran N’orr
+Cost	8		|		Combat	6x2		|		Move	1		|		Capacity	3
+Sustain Damage
+Apply	+1	to	the	result	of	each	of	your	other	ship’s	
+combat	rolls	in	this	system.
+FACTION ABILITIES
+•	Unrelenting
++1	to	the	result	of	each	of	your	unit’s	combat	rolls.
+↑
+STARTING TECHNOLOGIES
+•	None
+↓↓
+STARTING FLEET
+•	1	Space	Dock		 •	1	PDS
+•	2	Carriers	 •	1	Cruiser
+•	5	Infantry		
+COMMODITIES: 3
+HOME SYSTEM: 3/1;	1/0
+=
+=
+↑↑
+↓ weak ↑ strong= average
+GAME PLAN
+•	focus	on	building	your	economy	(resources)	as	you	
+start	from	behind
+•	Unrelenting	is	best	realized	with	fighters	and	
+infantry,	so	mobility	is	very	useful	-	also	a	double	
+dock	system	is	a	good	idea	(maybe	home	system)
+•	sell	your	promissory	note	across	the	table	as	much	
+as	possible	(when	they	need	it:	before	combats)
+•	your	fleets	are	you’re	whole	advantage,	so	don’t	
+lose	fights	because	you	lose	your	advantage
+•	you	win	through	efficient	aggression	and	diplomacy
+•	convince	the	table	you	are	weak	and	plan	for	
+a	come	from	behind	win
+•	your	flagship	with	a	fighter	screen	is	very	strong,	
+but	is	not	essential	to	your	game
+•	there	is	no	synergy	between	your	faction	techs	
+and	abilities	-	you	have	to	choose	a	path,	so	tech	
+based	on	the	objectives	and	the	other	factions
+•	tech	skips	are	very	valuable	for	you
+•	double	tech	as	much	as	possible;	aim	unit	upgrades
+•	optimal tech path: Blue + Green	
+- Neural Motivator, Fighter 2, Infantry 2, Carrier 2
+•	alternative tech path: Blue + Y ellow	
+- Dreadnought 2, Carrier 2, Space Dock 2
+•	Valkyrie P .W .	is	an	option	only	with	2	red	skips
+DIFFICUL TY : AVERAGE
+GOOD AGAINST
+•	Muaat,	Letnev,	L1z1x,	Jol-Nar	(Exotrireme II	ability)
+•	Arborec,	Yin	(Bombard, Valkyrie, infantry	+1)
+STRA TEGY GUIDE
+
+UNIVERSITIES OF JOL-NAR
+GAME PLAN
+•	get	a	tech	per	turn,	build	defense,	score	objectives
+•	if	you	decide	to	take	Mecatol	Rex	do	it	early
+•	you	can’t	take	and	hold	planets	very	well	(early	
+game),	so	build	your	economy	through	trading
+•	sell	your	promissory	note	every	turn,	be	clear	
+about	what	tech	you	give	and	make	sure	that	you	
+will	get	it	back
+•	you	can	get	War Sun	in	round	2,	but	if	you	intend	
+to	do	it,	don’t	sell	your	promissory	until	you	get	it
+•	don’t	take	an	early	lead,	play	nice,	make	trades	and	
+hit	big	objectives	in	the	last	rounds
+•	infantry	(ground	combat)	is	your	Achilles’	heel
+•	your	-1	is	less	important	with	bigger	ships
+•	you can pick any tech path,	but	this	is	the	safest:	
+-	Hyper Met., E-Res Siphons, PDS2,  Dread. 2
+•	some of the alternative tech paths:	 
+- War Sun, E-Res Siphons, Fighter 2  
+- Cruiser2, E-Res Siphons, Integrated Ec, Infantry2
+FLAGSHIP
+•	J.N.S. Hylarim
+Cost	8		|		Combat	6x2		|		Move	1		|		Capacity	3
+Sustain Damage
+When	making	a	combat	roll	for	this	ship,	each	
+result	of	9	or	10,	before	applying	modifiers,	
+produces	2	additional	hits.
+=
+SPECIAL UNITS: None
+PROMISSORY NOTE
+•	Research Agreement
+After	the	Jol-Nar	player	researches	a	technology	
+that	is	not	a	faction	technology:		
+Gain	that	technology.	
+Then,	return	this	card	to	the	Jol-Nar	player.
+↑
+STARTING FLEET
+•	1	Space	Dock		 •	2	PDS
+•	2	Carriers	 •	1	Fighter
+•	2	Infantry		 •	1	Dreadnought
+COMMODITIES: 4
+HOME SYSTEM: 2/3;	1/2
+=
+↑
+↑
+↑ ↑
+FACTION TECHNOLOGIES
+•	Spacial Conduit Cylinder (BB)
+Y ou	may	exhaust	this	card	after	you	activate	
+a	system	that	contains	1	or	more	of	your	units;		
+that	system	is	adjacent	to	all	other	systems	
+that	contain	1	or	more	of	your	units	during	
+this	activation.
+•	E-Res Siphons (YY)
+After	another	player	activates	a	system	
+that	contains	1	or	more	of	your	ships,		
+gain	4	trade	goods.
+↑STARTING TECHNOLOGY
+•	Antimass Deflector (blue	-	level	0)
+Move	into	and	through	asteroid	fields.		
+Apply	-1	to	Space Cannon	rolls	against	you.
+•	Neural Motivator (green	-	level	0)
+Draw	2	actions	cards	(inst.	of	1)	in	status	phase.
+•	Sarween Tools (yellow	-	level	0)
+Production:		reduce	total	combined	cost	by	1
+•	Plasma Scoring (red	-	level	0)
+Bombard	or	Space Cannon:	+1	die
+↑↑↑
+FACTION ABILITIES
+•	Fragile
+Apply	-1	to	the	result	of	each	of	your	unit’s	
+combat	rolls.
+•	Brilliant
+When	you	spend	a	command	token	to	resolve	the	
+secondary	ability	of	the	Technology	strategy	card,	
+you	may	resolve	the	primary	ability	instead.
+•	Analytical
+When	you	research	a	technology	that	is	not	
+a	unit	upgrade	technology,	you	may	ignore	
+1	prerequisite.
+↑
+↓ weak ↑ strong= average
+STRENGTHS
+•	the	most	flexible	faction	in	the	game
+•	you	start	with	the	best	fleet	
+•	you	start	with	the	most	tech	
+•	you	can	get	whatever	tech	you	want	round	2
+•	tech	objectives	are	almost	free	points	for	you
+FEARS
+•	the	meta	game	
+•	early	aggression
+•	Saar,	Sardakk,	Nekro,	Mentak,	Yin
+STRA TEGY GUIDE
+DIFFICUL TY : LOW
+
+WINNU
+SPECIAL UNITS: None
+STRENGTHS
+•	taking	Mecatol	with	no	influence	(situational)	
+•	building	a	free	space	dock	+	PDS	on	Mecatol
+•	choose	your	starting	tech,	but	you	only	get	one	
+•	other	than	that,	this	race	is	super	weak
+•	it	is	only	playable	with	3	or	4	players	because	of	
+the	double	Strategy	Card	pick
+FEARS
+•	aggression	at	any	time
+•	factions	that	can	get	Mecatol	before	you:	
+Saar,	Sol,	Creuss
+•	mobile	opponents	(your	HS	is	vulnerable	early):	
+Creuss,	Y ssaril,	Mentak
+•	Bombardment: Letnev,	Muaat,	Sardakk,	L1z1x		
+•	good	infantry:	Sol,	Sardakk
+GAME PLAN
+•	your	pie	slice	must	have	two	systems	with	planets	
+on	the	path	to	Mecatol,	and	one	of	these	planets	
+should	be	a	yellow	skip
+•	not	a	Mecatol	faction,	rather	a	Mecatol	deterrent
+•	try	to	take	Mecatol	first	and	hold	it	as	much	as	you	
+can,	but	prepare	to	also	score	elsewhere
+•	round	1	you	must	get	Warfare	(or	Politics),	and	
+you	must	build	a	second	carrier	and	2	infantry
+•	you	have	no	abilities,	you	are	the	weakest	faction:	
+-	secure	your	home	system	with	a	lot	of	infantry	
+-	trade	for	any	advantage	you	can	find,	beg	for	it	
+-	when	somebody	tries	to	take	advantage	of	your	
+weakness	ask	for	help	from	the	others	
+-	try	to	get	promissory	notes	from	the	others	
+-	don’t	ever	take	the	lead
+•	optimal tech path: Y ellow + Blue (+	yellow	skip)	
+- Hegemonic Trade Policy	is	your	only	strength,		
+so	your	starting	tech	must	be	Sarwin T ools		
+-	then	Space Dock 2, Gravity Drive, Carrier 2
+•	situational tech path: Blue + Y ellow		
+-	if	you	are	speaker	and	if	Hacan	or	Xxcha	is	playing	
+you	might	get	the	blue	tech	first,	then	go	yellow	
+-	R1	pick	T echnology	-->	get	Gravity Drive	
+-	get	the	extra	resource	for	a	carrier	and	2	infantry
+↓
+PROMISSORY NOTE
+•	Acquiescence
+At	the	end	of	the	strategy	phase:
+Exchange	1	of	your	strategy	cards	with	a	strategy	
+card	that	was	chosen	by	the	Winnu	player.	
+Then,	return	this	card	to	the	Winnu	player.
+↓
+STARTING FLEET
+•	1	Space	Dock		 •	1	PDS
+•	1	Carrier	 •	2	Fighters
+•	2	Infantry		 •	1	Cruiser
+COMMODITIES: 3
+HOME SYSTEM: 3/4 ↓
+↓↓
+=
+↓FLAGSHIP
+•	Salai Sai Corian
+Cost	8		|		Combat	7x?		|		Move	1		|		Capacity	3
+Sustain Damage
+When	this	unit	makes	a	combat	roll,	it	rolls	a	
+number	of	dice	equal	to	the	number	of	your	
+opponent’s	non-fighter	ships	in	this	system.
+STARTING TECHNOLOGY
+•	Choose any 1 technology that has 
+no prerequisites.
+=
+FACTION TECHNOLOGIES
+•	Lazax Gate Folding (BB)
+If	you	do	not	control	Mecatol	Rex,	treat	its	system	
+as	if	it	contains	both	an	alpha	and	beta	wormhole.
+Action:	If	you	control	Mecatol	Rex,	exhaust	this	
+card	to	place	1	infantry	on	Mecatol	Rex.
+•	Hegemonic Trade Policy (YY)
+When	1	or	more	of	your	units	use	Production	
+exhaust	this	card	to	swap	the	resource	and	
+influence	values	of	1	planet	you	control	until	the	
+end	of	your	turn.
+=
+FACTION ABILITIES
+•	Blood Ties
+Y ou	do	not	have	to	spend	influence	to	remove	the	
+custodians	token	from	Mecatol	Rex.
+•	Reclamation
+After	you	resolve	a	tactical	action	during	which	
+you	gained	control	of	Mecatol	Rex,	you	may	place	
+1	PDS	and	1	space	dock	from	your	reinforcements	
+on	Mecatol	Rex.
+=
+↓ weak ↑ strong= average
+DIFFICUL TY : AVERAGE
+STRA TEGY GUIDE
+
+GAME PLAN
+•	your	abilities	are	defensive,	you	don’t	score	well
+•	your	flagship	is	your	only	offensive	ability		
+-	get	it	as	fast	as	possible,	but	don’t	lose	it	early
+•	quickly	grab	a	slightly	bigger	slice	and	lock	it	with	
+a	PDS	network	(don’t	get	PDS 2 	until	you	need	it,	
+but	you	have	to	be	ready	for	it)
+•	don’t	over	invest	into	defense,	remember	to	score
+•	focus	on	influence	(command	tokens	for	abilities)
+•	sell	your	abilities:	Quash	and	Instinct Training
+•	for	mobility	get	Cruiser 2 ,	or	put	Space Docks 2 	
+on	the	borders	and	expand	from	there		
+-	alternative:	Gravity Drive if	you	get	a	blue	skip	R1
+•	standard tech path: Y ellow + Green (+	yellow	skip)	
+-	Neural Motivator,	Cruiser 2, Nullification Field  
+- PDS 2, Instinct Training, Infantry 2 
+•	optimal tech path: Y ellow + Blue (+	blue	skip	R1)	
+- Gravity Drive, Plasma Scoring, PDS 2  
+- Nullification Field, Dreadnought 2, Fighter 2
+XXCHA KINGDOM
+SPECIAL UNITS: None
+STRENGTHS
+•	trade,	negotiation,	difficult	to	attack
+•	Diplomacy	is	similar	to	Warfare	for	you	(early)
+•	people	must	respect	you	and	they	are	better	off	
+being	your	friend	than	your	enemy
+•	you	have	valuable	services	that	people	will	pay	for	
+at	certain	points	in	the	game
+FEARS
+•	no	one	picks	Diplomacy SC	(early	game)
+•	Duranium Armor:	Letnev	(faction	techs,	flagship)
+•	ground	force	clusters:	Sol,	Arborec,	Yin
+•	L/W Deflector, mobility:	Creuss,	Y ssaril	(flagship)
+PROMISSORY NOTE
+•	Political Favor
+After	an	agenda	is	revealed:	Remove	1	token	from	
+the	Xxcha	player’s	strategy	pool	and	return	it	to	
+his	reinforcements.	Then,	discard	the	revealed	
+agenda	and	reveal	1	agenda	from	the	top	of	the	
+deck.	Players	vote	on	this	agenda	instead.	
+Then,	return	this	card	to	the	Xxcha	player.
+↓
+=
+FACTION ABILITIES
+•	Peace Accords
+After	you	resolve	the	primary	or	secondary	ability	
+of	the	Diplomacy	strategy	card,	you	may	gain	
+control	of	1	planet	other	than	Mecatol	Rex	that	
+does	not	contain	any	units	and	is	in	a	system	that	
+is	adjacent	to	a	planet	you	control.
+•	Quash
+When	an	agenda	is	revealed,	you	may	spend	
+1	token	from	your	strategy	pool	to	discard	that	
+agenda	and	reveal	1	agenda	from	the	top	of	the	
+deck.	Players	vote	on	this	agenda	instead.
+=
+STARTING TECHNOLOGY
+•	Graviton Laser System (yellow	-	level	1)
+[Exhaust]
+When	1	or	more	units	uses	Space Cannon,	hits	
+produced	must	be	assigned	to	non-fighter	ships	
+if	able.
+=
+STARTING FLEET
+•	1	Space	Dock		 •	1	PDS
+•	1	Carrier	 •	3	Fighters
+•	4	Infantry		 •	2	Cruisers
+COMMODITIES: 4
+HOME SYSTEM: 2/3;	1/1
+=
+=
+↑
+FACTION TECHNOLOGIES
+•	Instinct Training (G)
+Y ou	may	exhaust	this	card	and	spend	1	token	from	
+your	strategy	pool	when	another	player	plays	an	
+action	card;	cancel	that	action	card.
+•	Nullification Field (YY)
+After	another	player	activates	a	system	that	
+contains	1	or	more	of	your	ships,	you	may	exhaust	
+this	card	and	spend	1	token	from	your	strategy	
+pool;	immediately	end	that	player’s	turn.
+↑
+FLAGSHIP
+•	Loncara Ssodu
+Cost	8		|		Combat	7x2		|		Move	1		|		Capacity	3
+Sustain Damage; Space Cannon	5x3
+Y ou	may	use	this	unit’s	Space Cannon	against	
+ships	that	are	in	adjacent	systems.
+↑↑
+↓ weak ↑ strong= average
+GOOD AGAINST
+•	fighter	screens:	Naalu,	Sol	(early),	Muaat
+•	Saar,	Arborec	(early)
+STRA TEGY GUIDE
+DIFFICUL TY : LOW
+
+YIN BROTHERHOOD
+SPECIAL UNITS: None
+STRENGTHS
+•	solid	racial	abilities	and	a	great	starting	fleet
+•	you	are	very	good	at	winning	ground	combat	
+•	you	are	very	good	at	holding	planets
+•	you	are	usually	awkward	to	attack	and	most	
+people	will	prefer	not	to	mess	with	you
+•	0/2	or	1/2	planets	are	great	in	your	hands	
+due	to	your	racial	ability
+FEARS
+•	not	being	seen	as	dangerous
+•	PDS:	Xxcha,	Jol-Nar,	Mentak
+•	infantry	flood:	Arborec	(late),	Sol	(late)
+•	Bombard:	L1z1x,	Letnev,	Muaat	(late),	Sardakk
+FACTION TECHNOLOGIES
+•	Impulse Core (YY)
+At	the	start	of	a	space	combat,	you	may	destroy	
+1	of	your	cruisers	or	destroyers	in	the	active	
+system	to	produce	1	hit	against	your	opponent’s	
+ships;	that	hit	must	be	assigned	by	your	opponent	
+to	1	of	his	non-fighter	ships	if	able.
+•	Yin Spinner (GG)
+After	one	or	more	of	your	units	use	Production,	
+place	1	infantry	from	your	reinforcements	on	a	
+planet	you	control	in	that	system.
+↓
+PROMISSORY NOTE
+•	Greyfire Mutagen
+After	a	system	is	activated:
+The	Yin	player	cannot	use	faction	abilities	or	
+faction	technology	during	this	tactical	action.	
+Then,	return	this	card	to	the	Yin	player.
+↓
+=
+STARTING TECHNOLOGIES
+•	Sarween Tools (yellow	-	level	0)
+When	1	or	more	units	use	Production,	reduce	total	
+combined	cost	by	1.
+=
+FACTION ABILITIES
+•	Indoctrination
+At	the	start	of	a	ground	combat,	you	may	spend	
+2	influence	to	replace	1	of	your	opponent’s	
+participating	infantry	with	1	infantry	from	your	
+reinforcements.
+•	Devotion
+After	each	space	combat	round,	you	may	destroy	
+1	of	your	cruisers	or	destroyers	to	produce	1	hit	
+and	assign	it	to	1	of	your	opponent’s	ships.
+=
+=FLAGSHIP
+•	Van Hauge
+Cost	8		|		Combat	9x2		|		Move	1		|		Capacity	3
+Sustain Damage
+When	this	ship	is	destroyed,	destroy	all	ships	in	
+this	system.
+STARTING FLEET
+•	1	Space	Dock		 •	4	Fighters
+•	2	Carriers	 •	1	Destroyer
+•	4	Infantry		
+COMMODITIES: 2
+HOME SYSTEM: 4/4
+↓
+↑
+↑
+↓ weak ↑ strong= average
+GAME PLAN
+•	defensive	faction	with	a	strong	starting	fleet		
+-	use	your	advantage	before	the	others	get	strong		
+-	get	many	planets	as	fast	as	possible	+	Mecatol	
+-	it	is	easier	for	you	to	defend	than	to	take	planets
+•	focus	on	influence	(planets	with	0/2	are	perfect)
+•	for	defense:	spread	destroyers	through	your	pie	
+slice	and	put	the	flagship	in	your	home	system
+•	always	have	at	least	one	0/2		planet	available	for	
+Indoctrination	even	after	you	pass
+•	always	take	Leadership	and	Warfare	if	available
+•	you	have	the	ability	to	cause	significant	damage	
+for	a	very	low	cost,	so	that	makes	you	dangerous:	
+-	threaten	everyone	without	actually	having	to	
+follow	through
+•	optimal tech path: Y ellow + Green	(+	yellow	skip)	
+- Transit Diodes, put a Space Dock 2 	on	Mecatol	
+-	then	get	Infantry 2
+•	alternative tech path: Green + Y ellow	(+	red	skip)	
+-	Neural Motivator, Cruiser 2, Infantry 2 		
+-	Daxcive Animators	+ Cruiser 2 =	sniping	planets
+•	situational tech path: Red + Y ellow	
+-	PDS 2, Cruiser 2, Destroyer 2
+STRA TEGY GUIDE
+DIFFICUL TY : AVERAGE
+GOOD AGAINST
+•	planets	with	1-2	infantry:	all	in	the	early	game
+•	Saar,	Sol	(early),	Muaat	(early)
+
+YSSARIL TRIBES
+SPECIAL UNITS: None
+STRENGTHS
+•	a	hand	full	of	useful	action	cards	late	game	makes	
+this	a	scary	race	to	attack
+•	starting	with	5	influence	in	your	home	system	
+gives	you	some	flexibility
+•	a	great	start	combined	with	a	fast	flagship
+FEARS
+•	drawing	the	wrong	action	cards
+•	Xxcha	(Instinct Training)
+•	multiple	attacks	on	multiple	fronts	will	consume	
+your	deck	fast	
+=
+STARTING TECHNOLOGY
+•	Neural Motivator (green	-	level	0)
+Draw	2	actions	cards	(instead	of	1)		
+during	status	phase.
+=
+PROMISSORY NOTE
+•	Spy Net
+At	the	end	of	your	turn:	Look	at	the	Y ssaril	player’s	
+hand	of	action	cards.	Choose	1	of	those	action	
+cards	and	add	it	to	your	hand.
+Then,	return	this	card	to	the	Y ssaril	player.
+=
+FACTION TECHNOLOGIES
+•	Transparasteel Plating (G)
+During	your	turn	of	the	action	phase,	players	that	
+have	passed	cannot	play	action	cards.
+•	Mageon Implants (GGG)
+Action:  
+Exhaust	this	card	to	look	at	another	player’s	hand	
+of	action	cards.	Choose	1	of	those	cards	and	add	
+it	to	your	hand.
+=
+↑
+↑
+FLAGSHIP
+•	Y’sia Y’ssrila
+Cost	8		|		Combat	5x2		|		Move	2		|		Capacity	3
+Sustain Damage
+This	ship	can	move	through	systems	that	contain	
+other	player’s	ships.
+↑
+STARTING FLEET
+•	1	Space	Dock		 •	1	PDS
+•	2	Carriers	 •	2	Fighters
+•	5	Infantry		 •	1	Cruiser
+COMMODITIES: 3
+HOME SYSTEM: 2/3;	1/2
+↑↑ FACTION ABILITIES
+•	Stall Tactics
+Action:		
+Discard	1	action	card	from	your	hand.
+•	Scheming
+When	you	draw	1	or	more	action	cards,	draw	
+1	additional	action	card.	Then	choose	and	discard	
+1	action	card	from	your	hand.
+•	Crafty
+Y ou	can	have	any	number	of	action	cards	in	your	
+hand.	Game	effects	cannot	prevent	you	from	using	
+this	ability.
+↑↑
+↓ weak ↑ strong= average
+GAME PLAN
+•	get	the	secondary	of	Politics	as	often	as	possible
+•	craft	a	powerful	hand	of	action	cards	and	craft	a	
+game	plan	around	them	and	the	objectives,	look	
+for	synergies
+•	focus	on	influence	as	you	will	want	the	secondary	
+of	Imperial	as	well	-	this	faction	is	very	good	at	
+scoring	secret	objectives
+•	consider	stalling	Warfare	turn	1	and	stalling	
+Leadership	turns	2	-	3	if	you	have	the	opportunity	
+(this	can	greatly	hinder	the	other	players)
+•	you	don’t	have	to	take	Mecatol	Rex	to	win,		
+but	it	might	make	sense	at	certain	points
+•	your	flagship	has	movement	2,	so	use	it		
+-	it	can	also	be	used	to	sneak	into	a	neighboring	
+undefended	home	system	(see	ability)
+•	don’t	ever	give	your	promissory	note	
+(as	a	non-binding	deal,	you	can	sell	cards	via	Spy 
+Net,	but	only	try	this	if	you	really	trust	the	buyer)
+•	stay	under	the	radar	-	end	with	a	4	points	surprise
+•	optimal tech path: Green + Blue	(+	blue	skip)	
+- T . Plating, Hyper Metabolism, Mageon Implants	
+-	then	Gravity Drive, Infantry 2, Fighter 2
+STRA TEGY GUIDE
+DIFFICUL TY : LOW
+
+A LWAY S
+•	at the beginning of each action phase prepare:
+ - set planets in groups according to their 
+intended use: unit production, command tokens, 
+technology, objectives
+ - prepare the plastic you intend to produce
+ - prepare the action cards you want to play
+•	have a tech path in mind - prepare in advance 
+the tech cards you intend to research
+•	know the promissory notes you got from other 
+players and remember to play them at the right 
+time - also remember you can trade them 
+•	know your opponents status
+ - what abilities and technology they have
+ - how many command tokens (actions left) 
+ - trade goods, action cards, promissory notes
+ - what objectives are they trying to score next
+•	remember that retreat is an important option
+ - don’t forget the Announce Retreats step
+ - always retreat if you are going to lose
+ - avoid getting into big space combats without 
+having where to retreat
+•	use all your planets before you pass
+•	when you build in your home system, instead of 
+activating it, use the secondary of Warfare
+•	with every build get at least 2 infantry units
+•	count the sabotage cards left (there are 4)
+•	have a good Command T oken (C. T .) economy
+ - CT s are the most important resource in the game
+ - CT s fuel your actions and abilities
+ - CT s can be converted into anything via actions
+•	save Riders for agendas that are “For or Against” 
+(never play them on “Elect” agendas)
+•	save at least one vote for the second agenda
+GAME START
+•	Round 1:
+ - if you don’t start with 2 carriers and 4 infantry, 
+your first priority is to get those
+ - if you don't have 2 starting tech, try to catch up
+ - expand and try to fill your slice
+•	Round 2 (standard):
+ - consolidate your position
+ - prepare fleets, command tokens and action 
+cards for a big round 3 (have objectives in mind)
+•	Round 2 (alternative): Mecatol rush
+HOW TO WIN THE GAME
+•	be objective focused 
+ - score at least one public objective each round
+•	try to score control objectives first because these 
+are the most difficult to achieve
+•	try to score tech objectives last because these 
+cannot be taken away from you 
+•	save trade goods for spend objectives or 
+emergencies (use just the planets for build)
+•	prepare for stage II objectives in advance
+•	set up a big "swing round" (4 points in one round):
+ - timing Imperial right is essential for this
+ - secret objectives that can be scored during the 
+action phase are important (there are only 5)
+ - save powerful action cards for this moment
+•	anybody at 6 points is in striking distance
+•	"win from behind" is usually a safer strategy than 
+"win from ahead", but it depends on the faction
+ - an early big lead will paint a target on your back
+ - don't rush to score easy secret objectives
+•	remember initiative order when picking strategy 
+cards if you suspect it will be the last round
+•	never give up - even if you are 5 points behind, 
+you can still "swing" a victory (agenda phase, 
+transactions and a good hand of action cards  
+can often make the difference)
+•	don't waste resources (command tk, fleets, cards) 
+on an action if it doesn't get you a point or prepare 
+you for getting a point
+•	being aggressive for no reason will only turn the 
+meta-game against you  
+•	if you completely ruin someone's chances to win 
+you just made an enemy with no other goal than 
+to hunt you 
+•	always be open for trade and negotiations 
+(really help others achieve their goals, you just 
+have to be more efficient at achieving yours)
+•	play people against each other
+GENERAL STRATEGY
+OBJECTIVE TYPES
+•	Control Planets (3 stage I, 4 stage II, 4 secret)
+•	Control Space (1 stage I, 5 secret)
+•	Spend (4 stage I, 4 stage II) 
+ - influence, resources, TG's, command tokens 
++ discard 5 action cards (secret objective)
+•	Own Technologies (2 stage I, 2 stage II, 2 secret)
+•	Own Units (3 secret objectives)
+ - 3 Space Docks, 4 PDS, 5 Dreadnoughts
+•	Combat (5 secret - scored in action phase)
+ - destroy war sun or flagship
+ - destroy infantry using Bombardment
+ - destroy ship using Space Canon
+ - win a combat against the leader
+ - win a space combat with your flagship
+
+TECH PATHS
+•	Optimal tech path should: 
+ - have good synergy with your faction abilities
+ - solve ground force mobility problem
+ - have no "dead" tech (one that you never use)
+ - be ready for tech objectives:  
+ " own 2 tech in 2 colors " (stage I) 
+ " own 2 unit upgrades"  (stage I) 
+ "own 3 unit upgrades" (stage II)
+•	Other things to consider:
+ - faction tech can be decisive for some factions
+ - in a 10 point game you can research 5-7 techs
+ - tech skips allow for better synergies and open 
+more creative tech path options
+ - Magen Defense Grid is almost never useful,  
+it's usually better to skip it
+ - similarly Graviton Laser System isn’t much use if 
+you don’t anticipate utilizing a PDS network 
+* Because of the "own 2 tech in 2 colors"  objective 
+there are 6 possible tech path starting points:  
+•	2 Blue + 2 Green  = best synergy
+ - opens: Infantry 2, Carrier 2, Fighter 2
+•	2 Blue + 2 Y ellow  = very good synergy
+ - opens: Dreadnought 2, Carrier 2, Space Dock 2
+•	2 Red + 2 Y ellow  = good synergy (with a red skip)
+ - opens: PDS 2, Space Dock 2, Destroyer 2, 
+War Sun, Cruiser 2
+•	2 Green + 2 Y ellow  = some synergy
+ - opens: Infantry 2, Space Dock 2, Cruiser 2
+•	2 Red + 2 Blue  = bad synergy
+ - opens: Carrier 2, Destroyer 2
+•	2 Red + 2 Green  = worst synergy
+ - opens: Infantry 2, Destroyer 2, Cruiser 2
+GENERAL STRATEGY
+ACTION CARDS
+•	you have two options for a steady flow of cards: 
+either get Neural Motivator early or save more 
+command tokens for the secondary of Politics
+•	always know your action cards and remember  
+to play them at the right time (Timing Window)
+•	play the junk action cards when you are closing on 
+the seven cards hand size limit
+•	consider saving the good cards for the last rounds
+•	hold Public Disgrace until the last round so you 
+can block Imperial for a potential winner
+•	Sabotage is the most important action card
+ - it can block someone from winning the game
+ - it can protect you when you take the last point 
+•	hold Sabotage for powerful cards like:
+ - Public Disgrace (return picked strategy card)
+ - Political Stability (keep the previous strategy c.)
+ - Rise of the Messiah (+1 infantry on every planet)
+ - Imperial Rider (gain a Victory Point)
+ - Parley (return enemy units to space area)
+ - Unexpected Action (remove your command t.)
+ - Signal Jamming (place a player's command t.)
+ - In the Silence of Space (move through ships)
+ - Reactor Meltdown (destroy a space dock)
+ - Spy (takes an action card from you)
+* there are 7 cards that have 4 copies in the deck:  
+Sabotage, Direct Ht, Flank Speed , Skilled Retreat, 
+Morale Boost, Shields Holding, Maneuvering Jets
+ - the other 52 are unique
+* certain action cards have precise keywords that 
+tell you when or how the card should be played:
+ - cards with the keyword “When” are played before 
+cards with the keyword “ After” (agenda phase)
+ - multiple effects separated by the keyword “then”:  
+you must resolve all effects written on the card
+ - multiple effects separated by the keyword “and”:  
+you must resolve as many effects as possible 
+(but not necessarily all of them)
+VICTORY POINTS SOURCES
+•	Objectives (Public and Secret)
+•	Custodians (1 VP for the first to invade Mecatol)
+•	Mecatol Rex control (via Imperial S.C.)
+•	Support for the Throne promissory notes
+•	Some Agenda Cards: 
+ - Holy Planet of Ixth (1 vp attached to a planet)
+ - Shard of the Throne (1 vp attached to a player)
+ - The Crown of Emphidia (... a home system planet)
+ - Seed of an Empire (first or last place gets 1 vp)
+ - Mutiny (who voted "For" either gets or loses 1 vp)
+GROUND FORCES MOBILITY
+•	being able to quickly move your infantry where 
+you need it is essential (attack or defense)
+•	extending your range:
+ - makes it harder for opponents to defend their 
+planets against all of your of potential attacks
+ - gives you more flexibility
+ - makes you less predictable
+•	There are 3 solutions for ground force mobility:
+ - Gravity Drive with Dread2  and/or Carrier2  
+good for massive invasions or planet sniping
+ - Cruiser2 with Dacxive Animators and Infantry2  
+great for sniping planets but larger invasions are 
+more difficult to accomplish
+ - Space Dock 2 on the borders , expand from there
+* with a yellow skip Transit Diodes is a great 
+addition to any of these (especially for cruisers)
+
+CARRIER
+•	the most important ship because of it’s capacity
+•	the other ships are there only to protect your 
+carrier and it’s precious cargo: your infantry
+•	the success of an invasion depends on how many 
+infantry units you can carry
+•	always have at least 2 carriers on the board,  
+(no carriers = missed opportunities)
+•	when you switch focus from invading planets 
+to space combat, carriers are also important 
+because they carry the fighters: your armor
+* Carrier 2  is situational
+GENERAL STRATEGY
+INFANTRY
+•	the most important unit in the game because 
+infantry takes and defends planets
+•	it’s easier to defend than to take planets,  
+that’s why the attacker has to bring more infantry 
+•	to defend a planet you need at least one more unit 
+than the sum of bombardment dice and infantry 
+units the attacker can bring
+•	you don’t need to own the space area of a system 
+if you have enough infantry on the planets
+* Infantry 2  is the most important upgrade,  
+always consider getting it
+SPACE DOCK 
+•	put it on high resource planets
+•	consider putting two space docks in a double 
+planet system 
+•	always have at least one fighter for protection 
+against lone carriers
+•	always build at least 2 infantry units
+•	build as many units as production capacity allows 
+(example: instead of building just 2 dreadnoughts, 
+it’s better to get 1 cruiser, 2 infantry, 2 fighters and 
+1 dreadnought, for the same cost)
+* Space Dock 2  is only worth it if you go heavy on 
+fighters (or sometimes infantry)
+PDS 
+•	their main purpose is to defend planets by 
+blocking Bombardment 
+•	firing before ground combat is also important
+•	it’s usually better to put only one on a planet
+ - more planets protected from Bombardment
+ - a wider defensive network
+ - better odds against action cards and other  
+game effects that target PDS units
+* PDS 2  network with Graviton Laser System  
+is an amazing combo, but only helps defensively
+DREADNOUGHT
+•	the best ship in the game:
+ - it has capacity
+ - it has Bombard
+ - it hits very well
+ - it has reliable Sustain Damage (if upgraded)
+ - the most upgradeable unit in the game
+ - can be used offensively or defensively
+* Dreadnought 2  is amazing and you get Gravity 
+Drive and Sarween T ools as prerequisites ...
+FIGHTER
+•	their main purpose is to shield your fleets 
+(the cheapest way to absorb hits)
+* Fighter 2
+ - can be used offensively as a “swarm”  
+by overwhelming the opponent
+ - can be used defensively as a network of lone 
+fighters that block opponent’s movement
+CRUISER
+•	good in-between unit, but usually you get it 
+when you don’t have enough resources for a 
+dreadnought
+* Cruiser 2  
+ - fastest ship in the game 
+ - great for unexpected attacks 
+ - great for sniping undefended planets
+DESTROYER
+•	their main purpose is to shield your fleets 
+against “assign to non-fighter ship” abilities
+•	can also be used 
+ - to block opponent’s movement
+ - to quickly get neighbors for transactions
+ - for some objectives that require space control
+ - against fighters (limited without upgrade)
+•	the worst unit in the game - usually you get it to fill 
+the production capacity or because you don’t have 
+enough resources for a better ship
+•	main problem: the fleet supply it is much more 
+important than the benefit a destroyer can bring
+* Destroyer 2 is only useful against fighter swarms
+
+GENERAL STRATEGY
+WAR SUN
+•	their main purpose is to "uproot" well defended 
+planets by ignoring Planetary Shield and very 
+good Bombardment
+•	it’s better to think of them as big carriers
+ - big capacity and always need an escort
+•	vulnerable to
+ - counter-attacks
+ - Direct Hit action cards
+ - assign to non-fighter ship abilities
+ - pick target abilities
+•	it takes too long to get tech and gather resources 
+for a war sun, so it's only viable in a 14 point game 
+•	in a 10 point game only if you have two tech skips 
+(red-red or yellow-red) and you have the resources 
+to get them quickly on the board
+•	you are limited to only two war sun units,  
+you can't have more
+* there is a secret objective that targets war suns 
+(when you build a war sun you put a point on 
+the table, so be ready to defend it)
+FLAGSHIP TYPES
+•	only worth the VP 
+ - bad ship - build it only if you got that secret obj.
+ - Muaat, Winnu, Hacan
+•	good ships to have in your fleet
+ - Y ssaril, Jol-Nar
+•	win more - good, but you don’t necessarily need it
+ - makes you better at what you already excel
+ - Sol, Sardakk, Letnev (against non-PDS players)
+•	essential to strategy
+ - important part of how you play that faction
+ - L1z1x, Letnev (against PDS)
+•	hole plugger
+ - must get it because it fixes your weakness
+ - Xxcha, Nekro, Naalu, Creuss, Mentak
+•	rainy day - situational
+ - must get it only in some specific situations
+ - Arborec, Saar
+•	the gun on the table 
+ - Yin - it rather helps your meta than your battles
+* considerations regarding combat value:
+ - combat 5x2 - can be considered good plain ships 
+if you are low on fleet supply
+ - combat 7x2 - you need to consider their ability
+ - combat 9x2 - has to have a very good ability
+* there is a secret objective that targets flagships 
+(when you build your flagship you put a point on 
+the table, so be ready to defend it)
+STRA TEGY CARDS
+•	initiative is always important but in the last round 
+it is often the decisive factor in winning the game
+•	Warfare, Leadership, Technology 
+ - are usually picked first (especially in early game)
+ - if you get one try to stall it as much as possible
+•	Trade 
+ - before you take it, make sure you have neighbors 
+and that they are willing to trade
+ - never replenish for free
+•	Politics
+ - always consider taking it if you are picking last
+ - consider selling the speaker token
+ - make sure you have the first pick in the last 
+round of the game - for this you need to take 
+Politics the round before (players at 5-6 points)
+•	Construction 
+ - play it on your first turn so others can’t do 
+the secondary without locking their systems
+•	Imperial 
+ - always consider taking it if you have Mecatol
+ - timing it right is essential for a "win from behind"
+•	Diplomacy  
+Never pick it in Round 1 because you give out  
+to the others much more than you gain.  
+There are some exceptions to this:
+ - you have a faction that start with only 1 carrier, 
+you pick last, you have a 5 resource system next 
+to your home system
+ - Mentak - flip a green skip and get Cruiser2  R1
+ - Xxcha - flip a blue skip and get Gravity Drive R1
+EASIL Y FORGOTTEN FACTION ABILITIES
+•	Saar 
+ - your space docks move like ships but they are 
+not ships, so PDS don’t fire at them
+ - Chaos Mapping does not trigger Sarween T ools
+•	Letnev 
+ - remember you have 2 extra fleet supply
+•	Mentak 
+ - pay attention to all your neighbors transactions, 
+including promissory notes swaps - Pillage
+•	Creuss 
+ - be sure you know all the places you have access to
+•	Nekro 
+ - you get 3 command tokens any time you would 
+research a tech (not only from T ech S.C.)
+•	Xxcha 
+ - know where your PDS 2  can hit (...wormholes)
+•	Arborec and Sol Flagship 
+ - take a free infantry unit (during status phase)
+

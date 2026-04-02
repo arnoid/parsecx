@@ -1,0 +1,51 @@
+VP
+Corner the Market Control 4 planets that each have the same planet trait 1
+Develop Weaponry Own 2 unit upgrade technologies 1
+Diversify Research Own 2 technologies in each of 2 colors 1
+Erect a Monument Spend 8 resources 1
+Expand Borders Control 6 planets in non-home systems 1
+Found Research Outposts Control 3 planets that have technology specialties 1
+Intimidate the Council Have 1+ ships in two systems that are adjacent to Mecatol Rex 1
+Lead From the Front Spend a total of 3 tokens from your tactic and/or strategy pool 1
+Negotiate Trade Routes Spend 5 Trade Goods 1
+Sway the Council Spend 8 influence 1
+VP
+Centralize Galactic Trade Spend 10 trade goods 2
+Conquer the Weak Control 1 planet that is in another player's home system 2
+Form Galactic Brain Trust Control 5 planets that have technology specialties 2
+Found a Golden Age Spend 16 resources 2
+Galvanize the People Spend a total of 6 tokens from your tactic and/or strategy pools 2
+Manipulate Galactic Law Spend 16 influence 2
+Master of Sciences Own 2 technologies in each of 4 colors. 2
+Revolutionize Warfare: Own 3 unit upgrade technologies 2
+Subdue the Galaxy Control 11 planets in non-home systems 2
+Unify the Colonies Control 6 planets that each have the same planet trait2
+VP
+Adapt New Strategies Status PhaseOwn 2 faction technologies
+("Valefar Assimilator" technologies do not count toward this objective)1
+Become the Gatekeeper Status PhaseHave 1+ ships in a system that contains an alpha wormhole and 1+ ships 
+in a system that contains a beta wormhole. 1
+Control the Region Status PhaseHave 1+ ships in 6 systems 1
+Cut Supply Lines Status PhaseHave 1 or more ships in the same system as another player's space dock.1
+Destroy Their Greatest ShipAction PhaseDestroy another player's war sun or flagship 1
+Establish a Perimeter Status PhaseHave 4 PDS units on the game board 1
+Forge an Alliance Status PhaseControl 4 cultural planets. 1
+Form a Spy Network Status PhaseDiscard 5 action cards 1
+Fuel the War Machine Status PhaseHave 3 space docks on the game board 1
+Gather a Mighty Fleet Status PhaseHave 5 dreadnoughts on the board. 1
+Learn the Secrets of the CosmosStatus PhaseHave 1+ ships in 3 systems that are each adjacent to an anomaly.1
+Make an Example of their WorldAction PhaseUse Bombardment to destroy all of a player's ground forces on a planet.1
+Master of the Laws of PhysicsStatus PhaseOwn 4 technologies of the same color 1
+Mine Rare Minerals Status PhaseControl 4 hazardous planets 1
+Monopolize Production Status PhaseControl 4 industrial Planets 1
+Occupy the Seat of the EmpireStatus PhaseControl Mecatol Rex and have 3 or more ships in its system 1
+Spark A Rebellion Action PhaseWin a combat against a player who has the most victory points 1
+Threaten Enemies Status PhaseHave 1 or more ships in a system that is adjacent to another player's home 
+system. 1
+Turn Their Fleets to DustAction PhaseUse Space Cannon to destroy the last of a player's ships in a system. 1
+Unveil Flagship Action PhaseWin a space combat in a system that contains your flagship and your 
+flagship wasn't destroyed. 1
+Stage 1 Public Objectives
+Stage 2 Public Objectives
+Secret Objectives (maximum 3 scored + in hand)
+
