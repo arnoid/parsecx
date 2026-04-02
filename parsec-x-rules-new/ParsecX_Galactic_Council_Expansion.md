@@ -104,5 +104,5 @@ These target specific players or specific types of planets (e.g. Jovian Worlds).
 41. **(Resolution) Flagship Registration:** **For:** Building Flagship Extensions costs +1 Resource globally. **Against:** Building Flagship Extensions costs -1 Resource globally.
 42. **(Resolution) Classified Objectives Disclosure:** **For:** All players must visibly reveal 1 Secret Objective they are holding. **Against:** All players must randomly discard 1 Secret Objective and draw a new one to replace it.
 43. **(Election) Admiral of the Fleet (Elect Player):** The elected player's Flagship counts as 3 ships in combat instead of 2 for the rest of the game.
-44. **(Election) Target of the State (Elect Player):** The elected player cannot score any Public Objectives during the next Scoring phase.
-45. **(Election) Hero of the Empire (Elect Player):** The elected player immediately gains 1 VP as long as they currently have an active Flagship securely stationed on the board.
+44. **(Election) Public Enemy (Elect Player):** The elected player cannot score any Public Objectives during the next Scoring phase.
+45. **(Election) Public Hero (Elect Player):** The elected player immediately gains 1 VP as long as they currently have an active Flagship securely stationed on the board.
