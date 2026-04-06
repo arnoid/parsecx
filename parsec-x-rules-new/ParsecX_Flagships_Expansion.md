@@ -31,6 +31,12 @@ If you lose a combat that involved your Flagship, your Flagship is destroyed alo
 **Catastrophic Loss:** If your Flagship is destroyed, your entire Extension Board is flushed. You must discard and clear all built Extensions.
 During a future Phase 2, you may designate a new Flagship, but you must start over from scratch with zero Extensions, paying starting costs for the first slots.
 
+## 4. Emergency Repairs
+
+If a Flagship has sustained a **Damage Token** (via the Advanced Tactics module), you may repair the hull by sacrificing its upgrades.
+
+**Jettisoning Components:** During **Phase 1 (Upkeep)**, you may permanently discard one active Extension from your Flagship's Extension Board to immediately remove its Damage Token. The slot becomes empty, and the component is destroyed.
+
 ---
 
 ## APPENDIX: THE EXTENSION CATALOG
