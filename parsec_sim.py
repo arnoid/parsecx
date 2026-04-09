@@ -153,6 +153,12 @@ AGENDAS = {
     38: {"name": "Bountiful Harvest", "type": "ELECT_PLANET", "desc": "Controllers of this type gain 1 VP.", "effect": lambda sim, t: sim.apply_election_planet(38, t)},
     39: {"name": "Unstable Core", "type": "ELECT_PLANET", "desc": "Both Attacker and Defender lose 1 ship.", "effect": lambda sim, t: sim.apply_election_planet(39, t)},
     40: {"name": "Planetary Capital", "type": "ELECT_PLANET", "desc": "Type provides 3 Voting Power.", "effect": lambda sim, t: sim.apply_election_planet(40, t)},
+    # Expansion Integration Agendas (require Flagship + Galactic Objectives)
+    41: {"name": "Flagship Registration", "type": "RESOLUTION", "desc": "For: Extensions cost +1. Against: Extensions cost -1.", "effect": lambda sim, choice: sim.apply_resolution(41, choice)},
+    42: {"name": "Classified Objectives Disclosure", "type": "RESOLUTION", "desc": "For: Reveal 1 Secret Objective. Against: Discard and redraw 1 Secret.", "effect": lambda sim, choice: sim.apply_resolution(42, choice)},
+    43: {"name": "Admiral of the Fleet", "type": "ELECT_PLAYER", "desc": "Elected Flagship counts as 3 ships in combat.", "effect": lambda sim, p: sim.apply_election(43, p)},
+    44: {"name": "Public Disgrace", "type": "ELECT_PLAYER", "desc": "Elected cannot score Public Objectives next Scoring phase.", "effect": lambda sim, p: sim.apply_election(44, p)},
+    45: {"name": "Public Hero", "type": "ELECT_PLAYER", "desc": "Elected gains 1 VP if Flagship is active.", "effect": lambda sim, p: sim.apply_election(45, p)},
 }
 
 OBJECTIVES = {
@@ -284,6 +290,10 @@ class Player:
         self.forged_elder_alliance_this_round = False
         self.head_of_diplomacy = False
         self.aiiji_synthesis_count = 0
+        # v5.0 Tracking — compliance fixes
+        self.mandate_vp = 0                # Persistent VP from mandate effects (Vanguard, Public Hero, Bountiful Harvest)
+        self.blocked_from_scoring = False  # Set by Public Disgrace agenda
+        self.flagship_combat_ships = 2     # Default; set to 3 by Admiral of the Fleet
     
     def get_upkeep_yield(self):
         # AI decision for homeworld: prioritize most needed or balanced
@@ -304,21 +314,21 @@ class Player:
             for res, amt in faction_data["upkeep"].items():
                 self.resources[res] += amt
 
-        # Planet yields
+        # Planet yields — per Planetary Atlas (Fix #9)
         for planet in self.planets:
-            # AI decision: 2 of type or 1 Influence
-            # Heuristic: If influence < 2, take influence, else take resources
-            if self.resources[Resource.INFLUENCE] < 2:
-                self.resources[Resource.INFLUENCE] += 1
-            else:
-                # Map planet type to resource
-                yields = {"Mining": Resource.ORE, "Farming": Resource.CREDITS, "Jovian": Resource.ENERGY}
-                if planet.type in yields:
-                    self.resources[yields[planet.type]] += 2
+            # AI: take 2 primary resources OR 1 Influence.
+            # Strategy: prefer Influence for Council voting if below threshold (3), else take primary resource.
+            primary_yields = {"Mining": Resource.ORE, "Farming": Resource.CREDITS, "Jovian": Resource.ENERGY}
+            if planet.type in primary_yields:
+                if self.resources[Resource.INFLUENCE] < 3:
+                    self.resources[Resource.INFLUENCE] += 1
                 else:
-                    self.resources[Resource.INFLUENCE] += 1 # Default for special planets
-            
-            # Colony Moon
+                    self.resources[primary_yields[planet.type]] += 2
+            else:
+                # Elder, Xenophobic, Terraforming Candidate: yield Influence
+                self.resources[Resource.INFLUENCE] += 1
+
+            # Colony Moon: +1 Influence
             if planet.moon == "Colony":
                 self.resources[Resource.INFLUENCE] += 1
 
@@ -350,7 +360,7 @@ class ParsecSim:
             "Stage1": list(range(1, 19)),
             "Stage2": list(range(101, 119)),
             "Secrets": list(range(201, 218)),
-            "Agendas": list(range(1, 41)),
+            "Agendas": list(range(1, 46)),
             "Tactics": list(range(1, 26))
         }
         random.shuffle(self.decks["Stage1"])
@@ -372,9 +382,9 @@ class ParsecSim:
             player.secret_objective = random.choice([choice1, choice2])
             player.sim = self
         
-        self.council_unlocked = True # Immediate Variant: Council starts from Round 1
+        self.council_unlocked = True # Skipped to enable Council from the start and ignoreElder Variant
         self.start_player_index = 0
-        self.elder_variant = True # Default to Elder Variant trigger
+        self.elder_variant = True # Recommended variant per rules
         self.planetary_capital = None
 
     def log(self, message):
@@ -437,6 +447,7 @@ class ParsecSim:
                 player.destroyed_ship_this_round = False
                 player.destroyed_flagship_this_round = False
                 player.forged_elder_alliance_this_round = False
+                player.blocked_from_scoring = False  # Reset Public Disgrace flag each round
                 self.calculate_priorities(player)
             
             self.phase_upkeep()
@@ -707,41 +718,159 @@ class ParsecSim:
 
     def process_exploration(self, player, planet):
         roll = random.randint(1, 6)
-        
-        # Civilization Exploration Reroll
+
+        # Civilization Exploration Reroll (Rim Worlds, General Reroll)
         bonus = FACTIONS[player.civ_name].get("bonus")
-        if bonus in ["ExploreReroll", "CommandReroll", "GeneralReroll"] and roll >= 4:
-            # Rule: Must accept second result. Reroll if first is "bad" (4 or 5)
-            # In explorations 1-3 is good (settle), 4-5 is dangerous/special
-            if roll in [4, 5]:
-                self.log(f"Player {player.id} triggered Exploration Reroll (First roll: {roll})")
-                roll = random.randint(1, 6)
+        # Deep Space Sensors (ext 7): roll 2 dice, pick better result
+        has_sensors = any(s.is_flagship and 7 in s.extensions for s in player.ships)
+        if has_sensors:
+            roll2 = random.randint(1, 6)
+            # Prefer rolls 1-3 (standard worlds) over 4+ (dangerous/candidate)
+            if roll2 <= 3 and roll > 3:
+                roll = roll2
+            elif roll <= 3 and roll2 > 3:
+                pass  # keep original good roll
+            else:
+                roll = min(roll, roll2)  # pick lower (safer) if both in same tier
+        if bonus in ["ExploreReroll", "GeneralReroll"] and roll in [4, 5, 6]:
+            self.log(f"Player {player.id} triggered Exploration Reroll (First roll: {roll})")
+            roll = random.randint(1, 6)
 
         self.log(f"Player {player.id} exploring ({planet.x},{planet.y}). Final Roll: {roll}")
+
+        # --- PLANETARY ATLAS (Fix #1 / #2 / #3 / #4) ---
+        # Roll 1: Mining  — settle for 3 Credits
+        # Roll 2: Farming — settle for 3 Influence
+        # Roll 3: Jovian  — settle for 3 Ore
+        # Roll 4: Xenophobic Empire — combat encounter (+5 Defense)
+        # Roll 5: Elder Civilization — diplomatic alliance (1d3+2 Influence)
+        # Roll 6: Terraforming Candidate — pay to choose planet type
+
+        settle_costs = [
+            {Resource.CREDITS: 3},    # Roll 1: Mining
+            {Resource.INFLUENCE: 3},  # Roll 2: Farming
+            {Resource.ORE: 3},        # Roll 3: Jovian
+        ]
+
         if roll <= 3:
-            # Settle (3 Ore)
-            if player.resources[Resource.ORE] >= 3:
-                player.resources[Resource.ORE] -= 3
+            # Standard World: pay type-specific settlement cost
+            planet_type = ["Mining", "Farming", "Jovian"][roll - 1]
+            cost = settle_costs[roll - 1]
+            if player.can_afford(cost):
+                player.spend(cost)
                 planet.is_unknown = False
-                planet.type = ["Mining", "Farming", "Jovian"][roll-1]
+                planet.type = planet_type
                 planet.owner_id = player.id
                 player.planets.append(planet)
-                self.log(f"Player {player.id} settled {planet.type} Planet.")
-        elif roll == 4: # Xeno
-            # Simplified Combat Reward
+                player.revealed_this_round += 1
+                self.log(f"Player {player.id} settled {planet.type} World (cost: {cost}).")
+            else:
+                self.log(f"Player {player.id} cannot afford to settle {planet_type} World (needs {cost}).")
+
+        elif roll == 4:
+            # Xenophobic Empire: must fight — defender has +5 Defense Strength
+            self.log(f"Player {player.id} encountered Xenophobic Empire! Combat begins (+5 Defense).")
             planet.is_unknown = False
-            planet.type = random.choice(["Mining", "Farming", "Jovian"])
-            planet.owner_id = player.id
-            player.planets.append(planet)
-            self.log(f"Player {player.id} conquered Xenophobic Empire.")
-        elif roll == 5: # Elder
-            if player.resources[Resource.INFLUENCE] >= 4:
-                player.resources[Resource.INFLUENCE] -= 4
-                planet.is_unknown = False
-                planet.type = random.choice(["Mining", "Farming", "Jovian"])
+            planet.type = "Xenophobic"
+
+            attk_roll = random.randint(1, 6)
+            atk_bonus = TECH_TREES[player.ship_flavor]["Weapons"][player.tech["Weapons"]]["bonus"]
+            flagship_ship = next((s for s in player.ships if s.is_flagship), None)
+            ship_base = player.flagship_combat_ships if flagship_ship else 1
+            if flagship_ship and 4 in flagship_ship.extensions:
+                ship_base += 1  # Precision Targeting AI
+            attacker_str = attk_roll + atk_bonus + ship_base
+
+            xeno_roll = random.randint(1, 6)
+            xeno_str = xeno_roll + 5
+            self.log(f"  Attacker {attacker_str} vs Xeno {xeno_str}")
+
+            if attacker_str > xeno_str:
+                # Victory: roll to determine planet type, draw random moon
+                c_roll = random.randint(1, 6)
+                planet.type = "Mining" if c_roll <= 2 else ("Farming" if c_roll <= 4 else "Jovian")
+                planet.moon = random.choice(["Colony", "Shipyard"])
                 planet.owner_id = player.id
                 player.planets.append(planet)
-                self.log(f"Player {player.id} allied with Elder Civ.")
+                player.revealed_this_round += 1
+                player.destroyed_ship_this_round = True
+                self.log(f"Player {player.id} conquered Xenophobic Empire → {planet.type} World + {planet.moon} Moon (no settlement cost).")
+                if self.elder_variant:
+                    self.check_council_trigger()
+            else:
+                # Defeat: ship destroyed, planet remains unconquered (owner_id stays None)
+                if player.ships:
+                    lost = player.ships[-1]
+                    player.ships.remove(lost)
+                    if lost.is_flagship:
+                        player.flagship_active = False
+                        lost.extensions.clear()
+                        player.built_extensions.clear()
+                self.log(f"Player {player.id} failed to conquer Xenophobic Empire. Ship destroyed. Planet remains contested.")
+
+        elif roll == 5:
+            # Elder Civilization: diplomatic alliance costs 1d3+2 Influence
+            elder_cost = random.randint(1, 3) + 2  # 3, 4, or 5
+            # Diplomatic Envoy Protocol (ext 9) reduces cost by 2
+            if any(s.is_flagship and 9 in s.extensions for s in player.ships):
+                elder_cost = max(0, elder_cost - 2)
+            self.log(f"Player {player.id} found Elder Civilization! Alliance cost: {elder_cost} Influence.")
+            planet.is_unknown = False
+            planet.type = "Elder"
+
+            if player.resources[Resource.INFLUENCE] >= elder_cost:
+                player.spend({Resource.INFLUENCE: elder_cost})
+                planet.owner_id = player.id
+                player.planets.append(planet)
+                # No moon for Elder planets
+                player.forged_elder_alliance_this_round = True
+                player.revealed_this_round += 1
+                self.log(f"Player {player.id} forged Elder Alliance (no settlement cost, no moon).")
+                if self.elder_variant:
+                    self.check_council_trigger()
+            else:
+                # Failed: lose 1 Influence, planet marked but stays unowned
+                player.spend({Resource.INFLUENCE: min(1, player.resources[Resource.INFLUENCE])})
+                self.log(f"Player {player.id} failed Elder diplomacy. Lost 1 Influence. Planet remains available.")
+
+        elif roll == 6:
+            # Terraforming Candidate: pay type-specific cost to settle; optional
+            self.log(f"Player {player.id} discovered a Terraforming Candidate!")
+            planet.is_unknown = False
+            planet.type = "Terraforming"  # Marks candidate state; unowned until terraformed
+
+            terraform_costs = {
+                "Mining":  {Resource.CREDITS: 4, Resource.INFLUENCE: 1},
+                "Farming": {Resource.ENERGY: 4, Resource.INFLUENCE: 1},
+                "Jovian":  {Resource.ORE: 4, Resource.INFLUENCE: 1},
+            }
+            # Terraforming Charges (ext 12): reduce primary resource cost by 2
+            has_charges = any(s.is_flagship and 12 in s.extensions for s in player.ships)
+
+            chosen_type = None
+            chosen_cost = None
+            for t_type, t_cost in terraform_costs.items():
+                adjusted = dict(t_cost)
+                if has_charges:
+                    for res in list(adjusted.keys()):
+                        if res != Resource.INFLUENCE:
+                            adjusted[res] = max(0, adjusted[res] - 2)
+                if player.can_afford(adjusted):
+                    chosen_type = t_type
+                    chosen_cost = adjusted
+                    break
+
+            if chosen_type:
+                player.spend(chosen_cost)
+                planet.type = chosen_type
+                planet.owner_id = player.id
+                planet.moon = random.choice(["Colony", "Shipyard"])
+                player.planets.append(planet)
+                player.revealed_this_round += 1
+                self.log(f"Player {player.id} terraformed into {planet.type} World + {planet.moon} Moon (cost: {chosen_cost}).")
+            else:
+                self.log(f"Player {player.id} cannot afford terraforming. Candidate remains available for others.")
+
 
     def check_sector_combat(self, sector_id, x, y):
         in_sector = []
@@ -778,7 +907,7 @@ class ParsecSim:
             if not is_attacker: # Shields bonus if defending
                  tech_bonus = TECH_TREES[player.ship_flavor]["Shields"][player.tech["Shields"]]["bonus"]
 
-            ship_bonus = 2 if ship.is_flagship else 1
+            ship_bonus = player.flagship_combat_ships if ship.is_flagship else 1  # Fix #fix-AdmiralOfFleet
             if ship.is_flagship:
                 if 3 in ship.extensions and not is_attacker:
                     ship_bonus += 1
@@ -801,7 +930,7 @@ class ParsecSim:
         # Tactical Retreat Heuristic (Defender chooses to flee if outclassed)
         defender_id = s2[0]
         defender_player = self.players[defender_id]
-        if defender_player.resources[Resource.ENERGY] >= 2:
+        if defender_player.resources[Resource.ENERGY] >= 1:  # Fix #6: Retreat costs 1 resource (Energy), not 2
             # Heuristic: Compare approximate strength (using average roll 3.5)
             # This is a simple AI decision for the simulation.
             s1_p = self.players[s1[0]]
@@ -809,8 +938,7 @@ class ParsecSim:
             str2_est = 3.5 + TECH_TREES[defender_player.ship_flavor]["Shields"][defender_player.tech["Shields"]]["bonus"] + (2 if s2[1].is_flagship else 1)
             
             if str2_est < str1_est - 2: # Defender feels outmatched
-                defender_player.spend({Resource.ENERGY: 2})
-                # Move ship away (simplified: move to HW or just "abort" combat here)
+                defender_player.spend({Resource.ENERGY: 1})  # Fix #6: Cost is 1 resource per rules
                 self.log(f"Player {defender_id} performed a Tactical Retreat! Aborting combat.")
                 return 
         
@@ -897,6 +1025,10 @@ class ParsecSim:
                     w_player.destroyed_flagship_this_round = True
                     self.check_immediate_score(w_player, 217)
                     l_player.flagship_active = False
+                    # Fix #11: Clear extensions on flagship death
+                    loser_ship.extensions.clear()
+                    l_player.built_extensions.clear()
+                    self.log(f"Player {loser_id} Flagship destroyed — all extensions lost.")
 
                 self.players[loser_id].ships.remove(loser_ship)
                 self.log(f"Combat Result: P{winner_id} wins. P{loser_id} ship destroyed.")
@@ -929,7 +1061,7 @@ class ParsecSim:
 
     def phase_council(self):
         if not self.decks["Agendas"]:
-            self.decks["Agendas"] = list(range(1, 41))
+            self.decks["Agendas"] = list(range(1, 46))
             random.shuffle(self.decks["Agendas"])
 
         agenda_id = self.decks["Agendas"].pop()
@@ -940,13 +1072,16 @@ class ParsecSim:
         votes = {} # Player Index -> Total Power
         for idx, p in enumerate(self.players):
             power = 0
-            # 1. Passive Planet Power
+            # Fix #5: Homeworld always grants +1 vote (or +3 if Head of Diplomacy)
+            # Homeworld is in board but NOT in player.planets, so add it explicitly
+            power += 3 if p.head_of_diplomacy else 1
+
+            # 1. Passive Planet Power (controlled non-HW planets)
             for planet in p.planets:
                 p_power = 0
-                if planet.type == "Homeworld": p_power = 3 if p.head_of_diplomacy else 1
-                elif planet.type == "Elder": p_power = 3
+                if planet.type == "Elder": p_power = 3
                 elif planet.type == "Xenophobic": p_power = 2
-                else: p_power = 1
+                else: p_power = 1  # Mining, Farming, Jovian, Terraformed
                 
                 if planet.type == self.planetary_capital: p_power = 3
                 if getattr(planet, 'moon', None) == "Colony": p_power += 1
@@ -976,13 +1111,20 @@ class ParsecSim:
                 self.players[idx].vote_history.append((self.round_number, agenda_id, choice, power))
             
             if vote_tally["FOR"] == vote_tally["AGAINST"]:
-                winning_choice = "TIE"
-                self.log(f"Resolution Outcome: TIE (No Effect)")
+                # Tie-breaking (Fix #5): Start Player's chosen outcome prevails
+                sp_vote = voters_decisions.get(self.start_player_index)
+                if sp_vote:
+                    winning_choice = sp_vote
+                    self.log(f"Resolution Outcome: TIE broken by Start Player → {winning_choice}")
+                    agenda["effect"](self, winning_choice == "FOR")
+                else:
+                    winning_choice = "TIE"
+                    self.log(f"Resolution Outcome: TIE (Start Player abstained — No Effect)")
             else:
                 winning_choice = "FOR" if vote_tally["FOR"] > vote_tally["AGAINST"] else "AGAINST"
                 self.log(f"Resolution Outcome: {winning_choice} (For {vote_tally['FOR']} vs Against {vote_tally['AGAINST']})")
                 agenda["effect"](self, winning_choice == "FOR")
-                
+
             self.council_outcomes.append((agenda_id, winning_choice))
         else:
             # ELECT Player/Planet
@@ -1014,13 +1156,20 @@ class ParsecSim:
                     p_tally[vote_for] += power
                     self.players[idx].vote_history.append((self.round_number, agenda_id, f"PLAYER_{vote_for}", power))
                 
-                # Tie-breaking: TIE = No effect
+                # Tie-breaking (Fix #6): Start Player's vote choice prevails
                 max_power = max(p_tally.values())
                 winners = [pid for pid, pwr in p_tally.items() if pwr == max_power]
-                
+
                 if len(winners) > 1:
-                    self.log(f"Election Outcome: TIE (No candidate elected)")
-                    self.council_outcomes.append((agenda_id, "TIE"))
+                    sp_choice = voters_decisions.get(self.start_player_index)
+                    if sp_choice is not None and sp_choice in winners:
+                        elected_idx = sp_choice
+                        self.log(f"Election Outcome: TIE broken by Start Player → Player {elected_idx} Elected")
+                        agenda["effect"](self, self.players[elected_idx])
+                        self.council_outcomes.append((agenda_id, f"PLAYER_{elected_idx}"))
+                    else:
+                        self.log(f"Election Outcome: TIE (No candidate elected)")
+                        self.council_outcomes.append((agenda_id, "TIE"))
                 else:
                     elected_idx = winners[0]
                     self.log(f"Election Outcome: Player {elected_idx} Elected")
@@ -1054,13 +1203,20 @@ class ParsecSim:
                     p_tally[vote_for] += power
                     self.players[idx].vote_history.append((self.round_number, agenda_id, f"PLANET_{vote_for}", power))
                 
-                # Tie-breaking: TIE = No effect
+                # Tie-breaking (Fix #6): Start Player's vote choice prevails
                 max_power = max(p_tally.values())
                 winners = [pt for pt, pwr in p_tally.items() if pwr == max_power]
-                
+
                 if len(winners) > 1:
-                    self.log(f"Election Outcome: TIE (No planet type elected)")
-                    self.council_outcomes.append((agenda_id, "TIE"))
+                    sp_choice = voters_decisions.get(self.start_player_index)
+                    if sp_choice is not None and sp_choice in winners:
+                        elected_type = sp_choice
+                        self.log(f"Election Outcome: TIE broken by Start Player → Planet Type {elected_type} Elected")
+                        agenda["effect"](self, elected_type)
+                        self.council_outcomes.append((agenda_id, f"PLANET_{elected_type}"))
+                    else:
+                        self.log(f"Election Outcome: TIE (No planet type elected)")
+                        self.council_outcomes.append((agenda_id, "TIE"))
                 else:
                     elected_type = winners[0]
                     self.log(f"Election Outcome: Planet Type {elected_type} Elected")
@@ -1068,25 +1224,77 @@ class ParsecSim:
                     self.council_outcomes.append((agenda_id, f"PLANET_{elected_type}"))
 
     def apply_resolution(self, agenda_id, is_for):
-        # Simplified implementations
+        # Fix #12: Implement key resource-affecting resolutions
         if is_for:
-            self.log(f"Resolution {agenda_id} enforced.")
+            self.log(f"Resolution {agenda_id} enforced (FOR).")
+            if agenda_id == 3:   # Arms Trade: all players gain 2 Ore
+                for p in self.players:
+                    p.resources[Resource.ORE] += 2
+            elif agenda_id == 5: # Imperial Taxation: all players lose 2 Credits or 1 ship
+                for p in self.players:
+                    if p.resources[Resource.CREDITS] >= 2:
+                        p.spend({Resource.CREDITS: 2})
+                    elif p.ships:
+                        p.ships.pop()
+            elif agenda_id == 6: # Economic Stimulus: all gain 2 Credits, 1 Energy
+                for p in self.players:
+                    p.resources[Resource.CREDITS] += 2
+                    p.resources[Resource.ENERGY] += 1
+            elif agenda_id == 11: # Fleet Restrictions: destroy ships over limit of 3
+                for p in self.players:
+                    while len(p.ships) > 3:
+                        p.ships.pop()
+            elif agenda_id == 17: # Colonial Tax: Colony Moons yield Credits not Influence
+                pass  # Effect tracked on upkeep; logged only
         else:
-            self.log(f"Resolution {agenda_id} rejected.")
+            self.log(f"Resolution {agenda_id} enforced (AGAINST).")
+            if agenda_id == 5:   # Imperial Taxation AGAINST: Start Player loses 3 Credits
+                sp = self.players[self.start_player_index]
+                sp.spend({Resource.CREDITS: min(sp.resources[Resource.CREDITS], 3)})
+            elif agenda_id == 6: # Economic Stimulus AGAINST: no effect
+                pass
 
     def apply_election(self, agenda_id, elected_player):
         self.log(f"Player {elected_player.id} received mandate {agenda_id}.")
-        if agenda_id == 28: # Vanguard: +1 VP
-            elected_player.vp += 1
-        elif agenda_id == 24: # Head of Diplomacy
+        if agenda_id == 28:   # Vanguard: +1 persistent VP (Fix #8: use mandate_vp)
+            elected_player.mandate_vp += 1
+            self.log(f"Player {elected_player.id} gains 1 mandate VP (Vanguard).")
+        elif agenda_id == 24: # Head of Diplomacy: +2 Influence, HW gives +3 votes
             elected_player.resources[Resource.INFLUENCE] += 2
             for p in self.players: p.head_of_diplomacy = False
             elected_player.head_of_diplomacy = True
+        elif agenda_id == 43: # Admiral of the Fleet: Flagship counts as 3 ships
+            elected_player.flagship_combat_ships = 3
+            self.log(f"Player {elected_player.id} is Admiral of the Fleet.")
+        elif agenda_id == 44: # Public Disgrace: blocked from scoring public objectives next round
+            elected_player.blocked_from_scoring = True
+            self.log(f"Player {elected_player.id} is disgraced — blocked from scoring public objectives next round.")
+        elif agenda_id == 45: # Public Hero: +1 VP if Flagship active
+            if elected_player.flagship_active:
+                elected_player.mandate_vp += 1
+                self.log(f"Player {elected_player.id} gains 1 mandate VP (Public Hero).")
 
     def apply_election_planet(self, agenda_id, planet_type):
         self.log(f"Planets of type {planet_type} received mandate {agenda_id}.")
-        if agenda_id == 40: # Planetary Capital
+        if agenda_id == 40: # Planetary Capital: type provides 3 VP
             self.planetary_capital = planet_type
+        elif agenda_id == 31: # Mining Subsidies: Fix #13 — controllers get 2 Ore
+            for p in self.players:
+                if any(pl.type == planet_type for pl in p.planets):
+                    count = sum(1 for pl in p.planets if pl.type == planet_type)
+                    p.resources[Resource.ORE] += 2 * count
+                    self.log(f"Player {p.id} gains {2*count} Ore from Mining Subsidies.")
+        elif agenda_id == 32: # Agricultural Grants: Fix #13 — controllers get 2 Credits
+            for p in self.players:
+                if any(pl.type == planet_type for pl in p.planets):
+                    count = sum(1 for pl in p.planets if pl.type == planet_type)
+                    p.resources[Resource.CREDITS] += 2 * count
+                    self.log(f"Player {p.id} gains {2*count} Credits from Agricultural Grants.")
+        elif agenda_id == 38: # Bountiful Harvest: controllers gain 1 persistent VP (Fix #8: use mandate_vp)
+            for p in self.players:
+                if any(pl.type == planet_type for pl in p.planets):
+                    p.mandate_vp += 1
+                    self.log(f"Player {p.id} gains 1 mandate VP from Bountiful Harvest.")
 
     def check_immediate_score(self, player, objective_id):
         if objective_id in player.claimed_objectives: return
@@ -1107,31 +1315,25 @@ class ParsecSim:
         self.log(f"Turn {self.round_number}: New Public Objective Revealed: {OBJECTIVES[new_obj]['name']}")
 
         for player in self.players:
-            player.vp = 0 # VP is now objective-based.
             scored_public = False
-            
-            
-            # Check Revealed Public Objectives (Limit to ONE)
+
+            # Check Revealed Public Objectives
             active_publics = self.public_objectives[:self.revealed_public_count]
             for obj_id in active_publics:
                 if obj_id not in player.claimed_objectives:
-                    if OBJECTIVES[obj_id]["check"](player):
+                    if OBJECTIVES[obj_id]["check"](player) and not player.blocked_from_scoring:
                         player.claimed_objectives.add(obj_id)
-                        player.vp += OBJECTIVES[obj_id]["vp"]
                         self.log(f"Player {player.id} scored Public Objective: {OBJECTIVES[obj_id]['name']}")
                         scored_public = True
-                        # break # REMOVED: Any number of objectives can be scored.
-            
-            # Check Secret Objective (Any number - simplified as player has only 1 secret)
+
+            # Check Secret Objective
             if player.secret_objective not in player.claimed_objectives:
                 if OBJECTIVES[player.secret_objective]["check"](player):
                     player.claimed_objectives.add(player.secret_objective)
-                    player.vp += OBJECTIVES[player.secret_objective]["vp"]
                     self.log(f"Player {player.id} scored Secret Objective: {OBJECTIVES[player.secret_objective]['name']}")
 
             # --- AIIJI MASTER PASSIVES ---
             if player.civ_name == "The Aiiji":
-                # 1. Political Synthesis: Spend scaling Inf for an objective
                 cost_infl = 6 + (player.aiiji_synthesis_count * 3)
                 if not scored_public and player.resources[Resource.INFLUENCE] >= cost_infl:
                     active_publics = self.public_objectives[:self.revealed_public_count]
@@ -1141,17 +1343,11 @@ class ParsecSim:
                             player.claimed_objectives.add(obj_id)
                             player.aiiji_synthesis_count += 1
                             self.log(f"[Aiiji] Political Synthesis: Spent {cost_infl} Influence to claim {OBJECTIVES[obj_id]['name']}")
-                            scored_public = True
                             break
-                
 
-            # Recalculate VP from all claimed objectives (Persistent points)
-            player.vp = 0
-                
+            # Recalculate VP from claimed objectives + persistent mandate VP (Fix #8)
+            player.vp = player.mandate_vp
             for oid in player.claimed_objectives:
-                # if oid == "AiijiVP":
-                #     player.vp += 1
-                # else:
                 player.vp += OBJECTIVES[oid]["vp"]
             
         # End of Scoring: No automatic reveal here anymore
