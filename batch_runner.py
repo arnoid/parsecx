@@ -66,5 +66,13 @@ def generate_report(stats, current_count, vp_target, filename):
     with open(filename, "w", encoding="utf-8") as f:
         f.write("\n".join(report))
 
+def run_full_verification():
+    # 5VP Baseline (30k sweep)
+    run_batch(10000, 200, vp_target=5, filename="master_edition_report_5vp.md")
+    # 7VP Endurance
+    run_batch(10000, 200, vp_target=7, filename="master_edition_report_7vp.md")
+    # 10VP Conquest
+    run_batch(10000, 200, vp_target=10, filename="master_edition_report_10vp.md")
+
 if __name__ == "__main__":
-    run_batch(10000, 200, vp_target=10, filename="simulation_balance_report_epic_10vp.md")
+    run_full_verification()

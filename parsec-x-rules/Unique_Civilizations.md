@@ -20,18 +20,19 @@ There are 8 unique civilizations in the game:
 
 ### Wulfram Collective
 * Convert 1 Ore to 1 Influence
-* Upkeep: Gain 1 Ore
+* Upkeep: Gain 1 Influence
 * Encounter: Attack: 1 reroll of any one die during encounter (attack) phase. Must accept the second result.
 
 ### Rim Worlds Combine
 * Convert 1 Ore to 1 Credit
-* Upkeep: Gain 1 Credit
+* Upkeep: Gain 1 Credit and 1 Ore
 * Encounter: 1 reroll of any one die during encounter (Encountering an unknown planet) phase. Must accept the second result.
 
 ### The Aiiji
-* Convert 1 Influence to 1 Credit
-* Upkeep: Gain 1d3 Credits
-* Encounter: Command: 1 reroll of any one die during encounter phase. Must accept the second result.
+* Convert 1 Influence to 1 Credit, **1 Credit to 1 Ore (Enlightenment Synthesis)**
+* Upkeep: Gain 2 Credits
+* Upgrade: Command: -1 To Influence
+* Encounter: **Insightful Maneuver**: 1 reroll of any one die (Attack, Defense, or Exploration) once per encounter. Must accept the second result.
 
 ### Altair Divide
 * Convert 1 Ore to 1 Influence, 1 Influence to 1 Credit

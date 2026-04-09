@@ -1,24 +1,12 @@
 # Parsec X: ADVANCED TACTICS EXPANSION
 
-By expanding upon the base rules and our previous modules, this expansion fundamentally completes the *Parsec X* experience. It introduces a physical deck of unpredictable Tactic Cards that add extreme bluffing and sudden plot twists to the table, and dramatically shifts table dynamics with the addition of the highly-contested Galactic Core.
+By expanding upon the base rules and our previous modules, this expansion fundamentally completes the *Parsec X* experience. It introduces a physical deck of unpredictable Tactic Cards that add extreme bluffing and sudden plot twists to the table.
 
 This expansion integrates cleanly with the *Galactic Council*, *Flagships*, and *Galactic Objectives* rulesets.
 
 ---
 
-## 1. The Galactic Core
-
-The map is about to become significantly more dangerous. 
-
-**Setup:** During board setup, remove the central-most Spacewarp interlink card from the map and replace it with **The Galactic Core** Sector map card.
-*   **The Hub:** The Galactic Core acts as a universal Spacewarp. A ship moving onto the Galactic Core may leave it via any other Spacewarp on the board globally.
-*   **Barren:** The Core produces absolutely 0 resources. 
-*   **The Crown:** Controlling the Galactic Core immediately grants you **+1 Victory Point** and a massive **+5 Voting Power** during the Galactic Council phase. 
-*   *Note: Control requires a physical presence. If you move your last ship away from the Galactic Core, or if it is destroyed, you immediately lose control of the Core and must subtract the VP from your total.*
-
----
-
-## 2. Combat Refinements (Taking Hits & Retreating)
+## 1. Combat Refinements (Taking Hits & Retreating)
 
 Combat in Parsec X is often brutally swift. These advanced rules inject tactical agency when facing impossible odds.
 
@@ -34,7 +22,7 @@ Combat in Parsec X is often brutally swift. These advanced rules inject tactical
 
 ---
 
-## 3. The Tactic Deck
+## 2. The Tactic Deck
 
 Tactic cards represent sudden maneuvers, espionage, and brilliant strategic traps. 
 *   **Drawing Cards:** During **Phase 1: Upkeep**, after gathering resources from your planets, you may immediately draw **1 Tactic Card** from the deck.
