@@ -339,10 +339,9 @@ class ParsecSim:
         random.shuffle(self.decks["Stage2"])
         random.shuffle(self.decks["Secrets"])
         
-        # Public Objective Track (3 Stage1, 2 Stage2 face down)
-        self.public_objectives = [self.decks["Stage1"].pop() for _ in range(3)] + \
-                                 [self.decks["Stage2"].pop() for _ in range(2)]
-        self.revealed_public_count = 1
+        # Public Objective Track (Dynamic reveal)
+        self.public_objectives = []
+        self.revealed_public_count = 0
         
         # Secret Objective Draft (Deal 2, keep 1)
         for player in self.players:
@@ -390,9 +389,10 @@ class ParsecSim:
                     planets.append(obj)
         return planets
 
-    def run(self, max_rounds=100):
+    def run(self):
+        max_rounds = 10
         game_over = False
-        while not game_over and self.round_number <= max_rounds:
+        while self.round_number <= max_rounds:
             self.log(f"--- Round {self.round_number} ---")
             
             # Reset Round Metrics
@@ -422,28 +422,23 @@ class ParsecSim:
                 self.check_council_trigger()
 
             # Phase 6: Scoring
-            game_over = self.phase_scoring()
+            self.phase_scoring()
             
-            if self.round_number == max_rounds and not game_over:
-                self.log("Max round limit reached. Resolving with current VP.")
-                game_over = True
-            
-            if not game_over:
-                self.start_player_index = (self.start_player_index + 1) % self.players_count
-                self.round_number += 1
+            self.start_player_index = (self.start_player_index + 1) % self.players_count
+            self.round_number += 1
         
         if not self.silent:
             self.generate_final_report()
         
-        # Return summary for batch simulation
-        # Tie-breaker: Highest VP if max_rounds reached
-        winner = sorted(self.players, key=lambda p: p.vp, reverse=True)[0]
+        # Tie-breaker: Shared Victory (multiple winners)
+        max_vp = max(p.vp for p in self.players)
+        winners = [p for p in self.players if p.vp == max_vp]
         return {
-            "winner_civ": winner.civ_name,
-            "rounds": self.round_number,
+            "winner_civ": [w.civ_name for w in winners], # Return list for shared victory
+            "rounds": self.round_number - 1,
             "vp_counts": {p.civ_name: p.vp for p in self.players},
-            "extensions_built": winner.built_extensions,
-            "tech_levels": winner.tech
+            "extensions_built": winners[0].built_extensions if len(winners) == 1 else [],
+            "tech_levels": winners[0].tech if len(winners) == 1 else {}
         }
 
     def calculate_priorities(self, player):
@@ -993,11 +988,20 @@ class ParsecSim:
             self.log(f"!!! Player {player.id} scored ACTION PHASE Objective: {OBJECTIVES[objective_id]['name']} !!!")
 
     def phase_scoring(self) -> bool:
+        # 1. Reveal New Objective (Escalating Schedule)
+        if self.round_number <= 5:
+            new_obj = self.decks["Stage1"].pop()
+        else:
+            new_obj = self.decks["Stage2"].pop()
+        
+        self.public_objectives.append(new_obj)
+        self.revealed_public_count = len(self.public_objectives)
+        self.log(f"Turn {self.round_number}: New Public Objective Revealed: {OBJECTIVES[new_obj]['name']}")
+
         for player in self.players:
             player.vp = 0 # VP is now objective-based.
-            
             scored_public = False
-            scored_secret = False
+            
             
             # Check Revealed Public Objectives (Limit to ONE)
             active_publics = self.public_objectives[:self.revealed_public_count]
@@ -1006,17 +1010,16 @@ class ParsecSim:
                     if OBJECTIVES[obj_id]["check"](player):
                         player.claimed_objectives.add(obj_id)
                         player.vp += OBJECTIVES[obj_id]["vp"]
-                        self.log(f"Player {player.id} scored ONE Public Objective: {OBJECTIVES[obj_id]['name']}")
+                        self.log(f"Player {player.id} scored Public Objective: {OBJECTIVES[obj_id]['name']}")
                         scored_public = True
-                        break # Rule: Exactly ONE Public per round
+                        # break # REMOVED: Any number of objectives can be scored.
             
-            # Check Secret Objective (Limit to ONE)
+            # Check Secret Objective (Any number - simplified as player has only 1 secret)
             if player.secret_objective not in player.claimed_objectives:
                 if OBJECTIVES[player.secret_objective]["check"](player):
                     player.claimed_objectives.add(player.secret_objective)
                     player.vp += OBJECTIVES[player.secret_objective]["vp"]
-                    self.log(f"Player {player.id} scored ONE Secret Objective: {OBJECTIVES[player.secret_objective]['name']}")
-                    scored_secret = True
+                    self.log(f"Player {player.id} scored Secret Objective: {OBJECTIVES[player.secret_objective]['name']}")
 
             # --- AIIJI MASTER PASSIVES ---
             if player.civ_name == "The Aiiji":
@@ -1043,24 +1046,16 @@ class ParsecSim:
                 # else:
                 player.vp += OBJECTIVES[oid]["vp"]
             
-            if player.vp >= self.vp_target:
-                self.log(f"*** PLAYER {player.id} WINS! (VP: {player.vp}) ***")
-                return True
-        
-        # End of Scoring: Reveal next public objective
-        if self.revealed_public_count < len(self.public_objectives):
-            self.revealed_public_count += 1
-            next_obj = OBJECTIVES[self.public_objectives[self.revealed_public_count-1]]
-            self.log(f"Next Public Objective Revealed: {next_obj['name']}")
-            
+        # End of Scoring: No automatic reveal here anymore
         return False
 
     def generate_final_report(self):
         self.log("\n## Simulation Results (Summary Table)\n")
         self.log("| Player | Civilization | VP | Result | Extensions Count | Tactics Played | Total Votes |")
         self.log("|---|---|---|---|---|---|---|")
+        max_vp = max(p.vp for p in self.players)
         for p in self.players:
-            res = "Winner" if p.vp >= self.vp_target else "Loser"
+            res = "Winner" if p.vp == max_vp else "Loser"
             self.log(f"| P{p.id} | {p.civ_name} | {p.vp} | {res} | {len(p.built_extensions)} | {len(p.claimed_objectives)} | {p.votes_cast_total} |")
 
         self.log("\n### Detailed Action Logs")

@@ -48,8 +48,8 @@ Some actions require Parsec X expansions. List of expansions available:
 4. **Starting Fleet:** Each player places 2 ships (cubes) on their Homeworld sector.
 5. **Resources:** Place tracking cubes on the starting resource markers on your Ship Card.
 6. **[GalObj]** **Objectives:**
-   - Deal 3 Stage 1 Public and 2 Stage 2 Public objectives face down. Reveal the first Stage 1 card.
-   - Deal 2 Secret Objectives to each player; they keep one.
+    - Prepare the Stage 1 and Stage 2 Public Objective decks. The public objective track starts empty; one new objective will be added to the board each turn (see Appendix D).
+    - Deal 2 Secret Objectives to each player; they keep one.
 7. **[Flag]** **Flagship:** Every player starts with the right to designate one of their ships as a Flagship during the game.
 
 ---
@@ -93,7 +93,7 @@ A round consists of six sequential phases. Phases 1 and 2 are simultaneous; 3, 4
 ### **Phase 6: Scoring
 - **[GalObj]** **Public Objectives:** If you meet the criteria, place a cube on a Public Objective.
 - **[GalObj]** **Secret Objectives:** Reveal and score one Secret Objective.
-- **Victory:** The first player to reach the VP target (**Standard: 5, Long: 7, Epic: 10**) wins immediately.
+- **Victory:** The game ends after **Round 10**. The player with the highest Victory Points is the winner. If multiple players share the high score, they share a joint victory.
 
 ---
 
@@ -396,20 +396,18 @@ This unofficial expansion introduces an alternative victory point system for **P
 
 ### 1. New Mechanics: Victory Points (VP)
 
-The game is no longer won by simply controlling 4 planets. Instead, players compete to score **Objective Cards** to earn Victory Points (VP). The game ends immediately the moment a player reaches the designated VP limit for your game.
+### Game Length
+The game is played over a fixed duration of **10 Rounds**. After the 10th round is completed, the game ends.
 
-### Game Length Variations
-Before the game begins, players agree on the target number of Victory Points required to win:
-* **Standard Game:** 5 VP (Ideal for learning the expansion)
-* **Long Game:** 7 VP (Offers more complex late-game strategies)
-* **Super Long / Epic Game:** 10 VP (A true clash of galactic superpowers)
+### Victory Condition
+The player with the most Victory Points at the end of Round 10 is the winner. If there is a tie for the most VP, the result is a **shared victory**.
 
 ### 2. Objective Deck Setup
 
 Before the game begins, split the objectives into three decks: **Stage 1 Public**, **Stage 2 Public**, and **Secret Objectives**. Shuffle each deck separately.
 
-1.  Deal **3 Stage 1 Public Objectives** and **2 Stage 2 Public Objectives** face down in a row to form the public objective track.
-2.  Reveal the **first** Stage 1 Public Objective. 
+1.  Place the **Stage 1 Public** and **Stage 2 Public** objective decks face down near the board.
+2.  The public objective track starts empty.
 3.  Deal each player **two Secret Objectives**. Each player keeps one and discards the other face down to the box.
 
 ### 3. New Phase: SCORING (Phase 5)
@@ -418,9 +416,11 @@ Rounds in Parsec X now feature a fifth phase:
 **Phase 1:** Upkeep ➔ **Phase 2:** Upgrade ➔ **Phase 3:** Movement ➔ **Phase 4:** Encounter ➔ **Phase 5: SCORING**
 
 During the Scoring Phase, beginning with the Start Player and proceeding clockwise:
-1.  **Score Objectives:** A player may score exactly **ONE** Public Objective and **ONE** Secret Objective they qualify for. To score a Public Objective, the player places a cube on it. They do not claim the card, allowing other players to score it on future turns.
-2.  Once all players have had a chance to score, **reveal the next face-down Public Objective** from left to right. 
-    *(If all objectives are already revealed, no new objective is revealed. The game continues until a player hits the VP threshold).*
+1.  **Reveal New Objective:** At the start of the phase, add a new Public Objective to the track from the decks:
+    - **Turns 1–5:** Reveal a card from the **Stage 1** deck.
+    - **Turns 6–10:** Reveal a card from the **Stage 2** deck.
+2.  **Score Objectives:** A player scores **ALL** Public Objectives and Secret Objectives they qualify for. To score a Public Objective, the player places a cube on it. They do not claim the card, allowing other players to score it on future turns.
+    *(The previously enforced limit of one public objective per round is removed).*
 
 ### Action Phase Secret Objectives
 Some Secret Objectives have the **(Action Phase)** tag. These are the *only* objectives that are not scored during Phase 5. A player may instantly reveal and score an Action Phase objective immediately when its condition is met during Phase 2 (Upgrade), Phase 3 (Movement), or Phase 4 (Encounter). The objective is placed face up in the player's play area and its VP applies immediately.

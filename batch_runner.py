@@ -10,7 +10,7 @@ def run_batch(total_iterations=10000, checkpoint_size=200, vp_target=7, filename
         "winner_techs": collections.defaultdict(list)
     }
 
-    print(f"Starting LONG batch simulation of {total_iterations} games (Target: {vp_target} VP) in batches of {checkpoint_size}...")
+    print(f"Starting batch simulation of {total_iterations} games (Fixed 10 Rounds) in batches of {checkpoint_size}...")
     
     for i in range(total_iterations):
         sim = ParsecSim(players_count=4, vp_target=vp_target, silent=True)
@@ -18,9 +18,11 @@ def run_batch(total_iterations=10000, checkpoint_size=200, vp_target=7, filename
             stats["civs_played"][p.civ_name] += 1
             
         result = sim.run()
-        print(f"Simulation #{i + 1} executed: Winner = {result['winner_civ']}, Rounds = {result['rounds']}")
+        winners_str = ", ".join(result['winner_civ'])
+        print(f"Simulation #{i + 1} executed: Winner(s) = {winners_str}, Rounds = {result['rounds']}")
         
-        stats["wins"][result["winner_civ"]] += 1
+        for winner in result["winner_civ"]:
+            stats["wins"][winner] += 1
         stats["total_rounds"] += result["rounds"]
         
         for ext_id in result["extensions_built"]:
@@ -35,7 +37,7 @@ def run_batch(total_iterations=10000, checkpoint_size=200, vp_target=7, filename
 
 def generate_report(stats, current_count, vp_target, filename):
     report = []
-    report.append(f"# Parsec X Balance Report: {current_count} Simulations (Long {vp_target}VP Mode)\n")
+    report.append(f"# Parsec X Balance Report: {current_count} Simulations (Fixed 10-Round Mode)\n")
     report.append(f"**Total Games:** {current_count}")
     report.append(f"**Average Game Length:** {stats['total_rounds'] / current_count:.2f} rounds\n")
 
