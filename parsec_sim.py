@@ -81,6 +81,24 @@ EXTENSION_NAMES = {
     13: "Galactic Broadcast Node", 14: "Stealth Recon Uplink", 15: "Mobile Command Center"
 }
 
+EXTENSION_DESCRIPTIONS = {
+    1: "Roll 1d6 before combat; on 5-6, destroy one defending ship.",
+    2: "Protects friendly standard ships from being chosen as casualties.",
+    3: "Innate +1 Defense Strength in combat.",
+    4: "Innate +1 Attack Strength in combat.",
+    5: "Spend 1 Energy to negate opponent's Weapon/Shield tech bonus.",
+    6: "Spend 3 Energy to jump to any Spacewarp icon.",
+    7: "Roll 2 dice for exploration and choose the better result.",
+    8: "Drag one adjacent enemy ship along during movement.",
+    9: "Elder Civilization alliance cost reduced by 2 Influence.",
+    10: "Gain 1 Ore or 1 Credit after winning a combat.",
+    11: "Spawn new ships directly on the Flagship's sector.",
+    12: "Terraforming cost reduced by 2 resources.",
+    13: "Innate +3 Voting Power in Galactic Council.",
+    14: "Hold 1 additional Secret Objective card.",
+    15: "Flagship sector counts as 1 controlled planet for objectives."
+}
+
 TACTIC_NAMES = {
     1: "Emergency Thrusters", 2: "Shield Overload", 3: "Experimental Ordnance",
     4: "Bypass Codes", 5: "Flanking Maneuver", 6: "Sabotage", 7: "Point Defense Grid",
@@ -100,40 +118,40 @@ AGENDAS = {
     4: {"name": "Technological Subsidies", "type": "RESOLUTION", "desc": "For: Next tech -1 cost. Against: 3+ Techs lose 1 Energy.", "effect": lambda sim, choice: sim.apply_resolution(4, choice)},
     5: {"name": "Imperial Taxation", "type": "RESOLUTION", "desc": "For: Lose 2 Credits or destroy 1 ship. Against: Start Player lose 3 Credits.", "effect": lambda sim, choice: sim.apply_resolution(5, choice)},
     6: {"name": "Economic Stimulus", "type": "RESOLUTION", "desc": "For: Gain 2 Credits, 1 Energy. Against: No effect.", "effect": lambda sim, choice: sim.apply_resolution(6, choice)},
-    7: {"name": "Deforestation Acts", "type": "RESOLUTION", "desc": "For: Farming Worlds +1 Ore, -1 Credit. Against: Farming controllers gain 1 Influence.", "effect": lambda sim, choice: sim.apply_resolution(7, choice)},
-    8: {"name": "Mining Regulations", "type": "RESOLUTION", "desc": "For: Mining Worlds -1 Ore upkeep. Against: Most Mining Worlds lose 2 Ore.", "effect": lambda sim, choice: sim.apply_resolution(8, choice)},
-    9: {"name": "Xenobiology Grants", "type": "RESOLUTION", "desc": "For: Xeno/Elder controllers gain 2 Energy. Against: Xeno gain +1 Def.", "effect": lambda sim, choice: sim.apply_resolution(9, choice)},
-    10: {"name": "Strict Borders", "type": "RESOLUTION", "desc": "For: Ships give +2 Def to planets. Against: Clear Spacewarps.", "effect": lambda sim, choice: sim.apply_resolution(10, choice)},
+    7: {"name": "Deforestation Acts", "type": "RESOLUTION", "desc": "For: Farming Worlds +1 Ore, -1 Credit. Against: Controllers gain 1 Influence.", "effect": lambda sim, choice: sim.apply_resolution(7, choice)},
+    8: {"name": "Mining Regulations", "type": "RESOLUTION", "desc": "For: Mining Worlds -1 Ore during Upkeep. Against: Most Mining Worlds lose 2 Ore.", "effect": lambda sim, choice: sim.apply_resolution(8, choice)},
+    9: {"name": "Xenobiology Grants", "type": "RESOLUTION", "desc": "For: Control Xeno/Elder gain 2 Energy. Against: Xeno gain +1 Defense.", "effect": lambda sim, choice: sim.apply_resolution(9, choice)},
+    10: {"name": "Strict Borders", "type": "RESOLUTION", "desc": "For: Ships give +2 Defense to planets. Against: Remove ships on Spacewarps.", "effect": lambda sim, choice: sim.apply_resolution(10, choice)},
     11: {"name": "Fleet Restrictions", "type": "RESOLUTION", "desc": "For: Max fleet 3 ships. Against: No effect.", "effect": lambda sim, choice: sim.apply_resolution(11, choice)},
-    12: {"name": "Shield Harmonization", "type": "RESOLUTION", "desc": "For: DEF Tech +1 tier. Against: No effect.", "effect": lambda sim, choice: sim.apply_resolution(12, choice)},
-    13: {"name": "Accelerated Deployment", "type": "RESOLUTION", "desc": "For: Spawn anywhere. Against: Build costs +1 Ore.", "effect": lambda sim, choice: sim.apply_resolution(13, choice)},
-    14: {"name": "Peace Accords", "type": "RESOLUTION", "desc": "For: No combat next round. Against: Most votes lose 1 ship.", "effect": lambda sim, choice: sim.apply_resolution(14, choice)},
-    15: {"name": "War Effort", "type": "RESOLUTION", "desc": "For: Spend 2 Credits for +1 Attack. Against: Discard 1 Ore/Energy.", "effect": lambda sim, choice: sim.apply_resolution(15, choice)},
-    16: {"name": "Resource Scarcity", "type": "RESOLUTION", "desc": "For: Only HW yields next round. Against: No effect.", "effect": lambda sim, choice: sim.apply_resolution(16, choice)},
-    17: {"name": "Colonial Tax", "type": "RESOLUTION", "desc": "For: Colony Moons yield 1 Credit (not Inf). Against: Destroy all Colony Moons.", "effect": lambda sim, choice: sim.apply_resolution(17, choice)},
-    18: {"name": "Void Research", "type": "RESOLUTION", "desc": "For: Reveal gives 1 Energy. Against: Unknown planets +1 Def.", "effect": lambda sim, choice: sim.apply_resolution(18, choice)},
-    19: {"name": "Expansion Initiative", "type": "RESOLUTION", "desc": "For: Settlement costs -1 resource. Against: Settlement costs +1.", "effect": lambda sim, choice: sim.apply_resolution(19, choice)},
+    12: {"name": "Shield Harmonization", "type": "RESOLUTION", "desc": "For: DEF Tech +1 tier higher. Against: No effect.", "effect": lambda sim, choice: sim.apply_resolution(12, choice)},
+    13: {"name": "Accelerated Deployment", "type": "RESOLUTION", "desc": "For: Spawn on any planet. Against: Build costs +1 Ore.", "effect": lambda sim, choice: sim.apply_resolution(13, choice)},
+    14: {"name": "Peace Accords", "type": "RESOLUTION", "desc": "For: No combat next Round. Against: Most votes lose 1 ship.", "effect": lambda sim, choice: sim.apply_resolution(14, choice)},
+    15: {"name": "War Effort", "type": "RESOLUTION", "desc": "For: Discard 2 Credits for +1 Attack. Against: Discard 1 Ore/Energy.", "effect": lambda sim, choice: sim.apply_resolution(15, choice)},
+    16: {"name": "Resource Scarcity", "type": "RESOLUTION", "desc": "For: Gather from HW only. Against: No effect.", "effect": lambda sim, choice: sim.apply_resolution(16, choice)},
+    17: {"name": "Colonial Tax", "type": "RESOLUTION", "desc": "For: Colony Moons yield 1 Credit (not Inf). Against: Destroy Colony Moons.", "effect": lambda sim, choice: sim.apply_resolution(17, choice)},
+    18: {"name": "Void Research", "type": "RESOLUTION", "desc": "For: Uncovering planet gives 1 Energy. Against: Unknown planets +1 Def.", "effect": lambda sim, choice: sim.apply_resolution(18, choice)},
+    19: {"name": "Expansion Initiative", "type": "RESOLUTION", "desc": "For: Settlement costs -1 Resource. Against: Costs +1 Resource.", "effect": lambda sim, choice: sim.apply_resolution(19, choice)},
     20: {"name": "Diplomatic Immunity", "type": "RESOLUTION", "desc": "For: Cannot attack HW/Elder. Against: No effect.", "effect": lambda sim, choice: sim.apply_resolution(20, choice)},
     # Elections (ELECT PLAYER/PLANET)
-    21: {"name": "Galactic Treasurer", "type": "ELECT_PLAYER", "desc": "Elected gain 3 Credits per upkeep.", "effect": lambda sim, p: sim.apply_election(21, p)},
-    22: {"name": "Supreme Commander", "type": "ELECT_PLAYER", "desc": "Elected ships +1 Attack.", "effect": lambda sim, p: sim.apply_election(22, p)},
-    23: {"name": "Minister of Science", "type": "ELECT_PLAYER", "desc": "Elected unlock 1 tech for free.", "effect": lambda sim, p: sim.apply_election(23, p)},
-    24: {"name": "Head of Diplomacy", "type": "ELECT_PLAYER", "desc": "Elected gain 2 Influence, HW counts as 3 votes.", "effect": lambda sim, p: sim.apply_election(24, p)},
-    25: {"name": "Outcast", "type": "ELECT_PLAYER", "desc": "Elected cannot vote next 2 councils.", "effect": lambda sim, p: sim.apply_election(25, p)},
-    26: {"name": "Imperial Sanctions", "type": "ELECT_PLAYER", "desc": "Elected lose half resources.", "effect": lambda sim, p: sim.apply_election(26, p)},
-    27: {"name": "Architect of Ruin", "type": "ELECT_PLAYER", "desc": "Elected destroy 1 adjacent opponent ship.", "effect": lambda sim, p: sim.apply_election(27, p)},
-    28: {"name": "Vanguard", "type": "ELECT_PLAYER", "desc": "Elected gain 1 Victory Point.", "effect": lambda sim, p: sim.apply_election(28, p)},
-    29: {"name": "Public Enemy", "type": "ELECT_PLAYER", "desc": "Attacking elected ship gives 1 Influence.", "effect": lambda sim, p: sim.apply_election(29, p)},
-    30: {"name": "Propaganda Target", "type": "ELECT_PLAYER", "desc": "Elected lose all Influence tracker cubes.", "effect": lambda sim, p: sim.apply_election(30, p)},
+    21: {"name": "Galactic Treasurer", "type": "ELECT_PLAYER", "desc": "Elected gain 3 Credits per Upkeep.", "effect": lambda sim, p: sim.apply_election(21, p)},
+    22: {"name": "Supreme Commander", "type": "ELECT_PLAYER", "desc": "Elected ships roll with +1 Attack.", "effect": lambda sim, p: sim.apply_election(22, p)},
+    23: {"name": "Minister of Science", "type": "ELECT_PLAYER", "desc": "Elected unlock 1 Tech for free.", "effect": lambda sim, p: sim.apply_election(23, p)},
+    24: {"name": "Head of Diplomacy", "type": "ELECT_PLAYER", "desc": "Elected gain 2 Influence. HW counts as 3 votes.", "effect": lambda sim, p: sim.apply_election(24, p)},
+    25: {"name": "Outcast", "type": "ELECT_PLAYER", "desc": "Elected cannot vote in next 2 Councils.", "effect": lambda sim, p: sim.apply_election(25, p)},
+    26: {"name": "Imperial Sanctions", "type": "ELECT_PLAYER", "desc": "Elected lose half stored resources.", "effect": lambda sim, p: sim.apply_election(26, p)},
+    27: {"name": "Architect of Ruin", "type": "ELECT_PLAYER", "desc": "Elected destroy 1 adjacent ship.", "effect": lambda sim, p: sim.apply_election(27, p)},
+    28: {"name": "Vanguard", "type": "ELECT_PLAYER", "desc": "Elected immediately gains 1 VP.", "effect": lambda sim, p: sim.apply_election(28, p)},
+    29: {"name": "Public Enemy", "type": "ELECT_PLAYER", "desc": "Attacking Elected player gives 1 Influence.", "effect": lambda sim, p: sim.apply_election(29, p)},
+    30: {"name": "Propaganda Target", "type": "ELECT_PLAYER", "desc": "Elected lose all Influence cubes.", "effect": lambda sim, p: sim.apply_election(30, p)},
     31: {"name": "Mining Subsidies", "type": "ELECT_PLANET", "desc": "Planets of this type yield 2 Ore immediately.", "effect": lambda sim, t: sim.apply_election_planet(31, t)},
     32: {"name": "Agricultural Grants", "type": "ELECT_PLANET", "desc": "Planets of this type yield 2 Credits immediately.", "effect": lambda sim, t: sim.apply_election_planet(32, t)},
-    33: {"name": "Core Exploitation", "type": "ELECT_PLANET", "desc": "+1 Yield Native, but move cost +1 Energy.", "effect": lambda sim, t: sim.apply_election_planet(33, t)},
-    34: {"name": "Cultural Preservation", "type": "ELECT_PLANET", "desc": "Type cannot be attacked or terraformed.", "effect": lambda sim, t: sim.apply_election_planet(34, t)},
-    35: {"name": "Planetary Embargo", "type": "ELECT_PLANET", "desc": "Type generates no resources during upkeep.", "effect": lambda sim, t: sim.apply_election_planet(35, t)},
-    36: {"name": "Subspace Anomaly", "type": "ELECT_PLANET", "desc": "Moving AWAY from type costs +1 Energy.", "effect": lambda sim, t: sim.apply_election_planet(36, t)},
-    37: {"name": "Fortified Worlds", "type": "ELECT_PLANET", "desc": "Type gains +6 Defense baseline.", "effect": lambda sim, t: sim.apply_election_planet(37, t)},
+    33: {"name": "Core Exploitation", "type": "ELECT_PLANET", "desc": "+1 native yield, but move cost +1 Energy.", "effect": lambda sim, t: sim.apply_election_planet(33, t)},
+    34: {"name": "Cultural Preservation", "type": "ELECT_PLANET", "desc": "Planets of this type cannot be attacked.", "effect": lambda sim, t: sim.apply_election_planet(34, t)},
+    35: {"name": "Planetary Embargo", "type": "ELECT_PLANET", "desc": "Planets of this type generate no resources.", "effect": lambda sim, t: sim.apply_election_planet(35, t)},
+    36: {"name": "Subspace Anomaly", "type": "ELECT_PLANET", "desc": "Ships moving away from type cost +1 Energy.", "effect": lambda sim, t: sim.apply_election_planet(36, t)},
+    37: {"name": "Fortified Worlds", "type": "ELECT_PLANET", "desc": "Type gains +6 Defense Strength.", "effect": lambda sim, t: sim.apply_election_planet(37, t)},
     38: {"name": "Bountiful Harvest", "type": "ELECT_PLANET", "desc": "Controllers of this type gain 1 VP.", "effect": lambda sim, t: sim.apply_election_planet(38, t)},
-    39: {"name": "Unstable Core", "type": "ELECT_PLANET", "desc": "Both Attacker and Defender lose 1 ship before rolls.", "effect": lambda sim, t: sim.apply_election_planet(39, t)},
+    39: {"name": "Unstable Core", "type": "ELECT_PLANET", "desc": "Both Attacker and Defender lose 1 ship.", "effect": lambda sim, t: sim.apply_election_planet(39, t)},
     40: {"name": "Planetary Capital", "type": "ELECT_PLANET", "desc": "Type provides 3 Voting Power.", "effect": lambda sim, t: sim.apply_election_planet(40, t)},
 }
 
@@ -338,10 +356,14 @@ class ParsecSim:
         random.shuffle(self.decks["Stage1"])
         random.shuffle(self.decks["Stage2"])
         random.shuffle(self.decks["Secrets"])
+        random.shuffle(self.decks["Agendas"])
+        random.shuffle(self.decks["Tactics"])
         
         # Public Objective Track (Dynamic reveal)
         self.public_objectives = []
         self.revealed_public_count = 0
+        self.agendas_proposed = []
+        self.council_outcomes = [] # List of (agenda_id, winning_choice)
         
         # Secret Objective Draft (Deal 2, keep 1)
         for player in self.players:
@@ -350,7 +372,7 @@ class ParsecSim:
             player.secret_objective = random.choice([choice1, choice2])
             player.sim = self
         
-        self.council_unlocked = False
+        self.council_unlocked = True # Immediate Variant: Council starts from Round 1
         self.start_player_index = 0
         self.elder_variant = True # Default to Elder Variant trigger
         self.planetary_capital = None
@@ -388,6 +410,14 @@ class ParsecSim:
                 if isinstance(obj, Planet):
                     planets.append(obj)
         return planets
+
+    def get_planet_counts(self, player):
+        counts = {"Mining": 0, "Farming": 0, "Jovian": 0, "Elder": 0, "Xeno": 0}
+        for planet in player.planets:
+            t = planet.type.replace("PLANET_", "")
+            if t in counts:
+                counts[t] += 1
+        return counts
 
     def run(self):
         max_rounds = 10
@@ -933,31 +963,109 @@ class ParsecSim:
             power += inf_to_spend
             votes[idx] = power
             p.votes_cast_total += power
-            p.max_votes_in_single_round = power
-            p.vote_history.append((self.round_number, agenda_id, "VOTE", power))
+            p.max_votes_in_single_round = max(p.max_votes_in_single_round, power)
 
         # Resolution (Start player tiebreaks)
-        # For simplicity, AI votes FOR or chooses random player for election
-        vote_tally = {"FOR": 0, "AGAINST": 0}
         if agenda["type"] == "RESOLUTION":
+            voters_decisions = {}
+            vote_tally = {"FOR": 0, "AGAINST": 0}
             for idx, power in votes.items():
                 choice = random.choice(["FOR", "AGAINST"])
+                voters_decisions[idx] = choice
                 vote_tally[choice] += power
-            winning_choice = "FOR" if vote_tally["FOR"] >= vote_tally["AGAINST"] else "AGAINST"
-            self.log(f"Resolution Outcome: {winning_choice} (For {vote_tally['FOR']} vs Against {vote_tally['AGAINST']})")
-            agenda["effect"](self, winning_choice == "FOR")
+                self.players[idx].vote_history.append((self.round_number, agenda_id, choice, power))
+            
+            if vote_tally["FOR"] == vote_tally["AGAINST"]:
+                winning_choice = "TIE"
+                self.log(f"Resolution Outcome: TIE (No Effect)")
+            else:
+                winning_choice = "FOR" if vote_tally["FOR"] > vote_tally["AGAINST"] else "AGAINST"
+                self.log(f"Resolution Outcome: {winning_choice} (For {vote_tally['FOR']} vs Against {vote_tally['AGAINST']})")
+                agenda["effect"](self, winning_choice == "FOR")
+                
+            self.council_outcomes.append((agenda_id, winning_choice))
         else:
             # ELECT Player/Planet
-            p_tally = {pid: 0 for pid in range(self.players_count)}
-            for idx, power in votes.items():
-                vote_for = random.randint(0, self.players_count - 1)
-                p_tally[vote_for] += power
-            elected_idx = sorted(p_tally.items(), key=lambda x: x[1], reverse=True)[0][0]
-            self.log(f"Election Outcome: Player {elected_idx} Elected")
-            agenda["effect"](self, self.players[elected_idx])
-            for idx, p in enumerate(self.players):
-                if p_tally[idx] >= 10: # Filibuster / Lobbyist logic
-                    pass
+            voters_decisions = {}
+            p_tally = {}
+            if agenda["type"] == "ELECT_PLAYER":
+                beneficial_ids = [21, 22, 23, 24, 27, 28]
+                p_tally = {pid: 0 for pid in range(self.players_count)}
+                for idx, power in votes.items():
+                    if agenda_id in beneficial_ids:
+                        # Vote for self
+                        vote_for = idx
+                    else:
+                        # Harmful: Vote for the player with the most VPs who isn't me
+                        sorted_players = sorted(self.players, key=lambda x: x.vp, reverse=True)
+                        if sorted_players[0].id != idx:
+                            # Standard Case: Target the leader
+                            candidates = [p for p in sorted_players if p.vp == sorted_players[0].vp and p.id != idx]
+                            if not candidates: candidates = [p for p in self.players if p.id != idx]
+                            vote_for = random.choice(candidates).id
+                        else:
+                            # Voter is the leader: Target the 2nd leader
+                            leader_2_vp = sorted_players[1].vp
+                            candidates = [p for p in self.players if p.vp == leader_2_vp and p.id != idx]
+                            if not candidates: candidates = [p for p in self.players if p.id != idx]
+                            vote_for = random.choice(candidates).id
+                    
+                    voters_decisions[idx] = vote_for
+                    p_tally[vote_for] += power
+                    self.players[idx].vote_history.append((self.round_number, agenda_id, f"PLAYER_{vote_for}", power))
+                
+                # Tie-breaking: TIE = No effect
+                max_power = max(p_tally.values())
+                winners = [pid for pid, pwr in p_tally.items() if pwr == max_power]
+                
+                if len(winners) > 1:
+                    self.log(f"Election Outcome: TIE (No candidate elected)")
+                    self.council_outcomes.append((agenda_id, "TIE"))
+                else:
+                    elected_idx = winners[0]
+                    self.log(f"Election Outcome: Player {elected_idx} Elected")
+                    agenda["effect"](self, self.players[elected_idx])
+                    self.council_outcomes.append((agenda_id, f"PLAYER_{elected_idx}"))
+                
+            elif agenda["type"] == "ELECT_PLANET":
+                beneficial_ids = [31, 32, 33, 34, 37, 38, 40]
+                planet_types = ["Mining", "Farming", "Jovian", "Elder", "Xeno"]
+                p_tally = {pt: 0 for pt in planet_types}
+                for idx, power in votes.items():
+                    voter = self.players[idx]
+                    counts = self.get_planet_counts(voter)
+                    
+                    if agenda_id in beneficial_ids:
+                        # Beneficial: Vote for type I own most
+                        max_owned = max(counts.values())
+                        candidates = [pt for pt, count in counts.items() if count == max_owned]
+                        vote_for = random.choice(candidates)
+                    else:
+                        # Harmful: Identify target player (leader or 2nd leader)
+                        sorted_players = sorted(self.players, key=lambda x: x.vp, reverse=True)
+                        target = sorted_players[1] if sorted_players[0].id == idx else sorted_players[0]
+                        target_counts = self.get_planet_counts(target)
+                        
+                        # Vote for type target owns most
+                        max_target_owned = max(target_counts.values())
+                        vote_for = random.choice([pt for pt, count in target_counts.items() if count == max_target_owned])
+                    
+                    voters_decisions[idx] = vote_for
+                    p_tally[vote_for] += power
+                    self.players[idx].vote_history.append((self.round_number, agenda_id, f"PLANET_{vote_for}", power))
+                
+                # Tie-breaking: TIE = No effect
+                max_power = max(p_tally.values())
+                winners = [pt for pt, pwr in p_tally.items() if pwr == max_power]
+                
+                if len(winners) > 1:
+                    self.log(f"Election Outcome: TIE (No planet type elected)")
+                    self.council_outcomes.append((agenda_id, "TIE"))
+                else:
+                    elected_type = winners[0]
+                    self.log(f"Election Outcome: Planet Type {elected_type} Elected")
+                    agenda["effect"](self, elected_type)
+                    self.council_outcomes.append((agenda_id, f"PLANET_{elected_type}"))
 
     def apply_resolution(self, agenda_id, is_for):
         # Simplified implementations
