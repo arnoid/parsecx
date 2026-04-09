@@ -502,7 +502,7 @@ class ParsecSim:
 
             # Build Ship
             if len(player.ships) < 4:
-                cost = {Resource.ORE: 1, Resource.ENERGY: 1, Resource.CREDITS: 1, Resource.INFLUENCE: 1}
+                cost = {Resource.ORE: 2} # Standard basic hull cost
                 if player.can_afford(cost):
                     player.spend(cost)
                     player.ships.append(Ship(player.id))
@@ -760,7 +760,7 @@ class ParsecSim:
                 if 4 in ship.extensions and is_attacker:
                     ship_bonus += 1
                     
-            other_support = len(other_ships) # +1 per other ship in sector
+            other_support = sum(2 if s.is_flagship else 1 for s in other_ships) # +2 for Flagship support
             total = roll + tech_bonus + ship_bonus + other_support
             
             # Purist Hegemony Defense Bonus (+1)
@@ -772,6 +772,22 @@ class ParsecSim:
         # Simple 1-round resolution for the algorithm
         s1 = next(s for s in ships_in_sector if s[0] == p_ids[0])
         s2 = next(s for s in ships_in_sector if s[0] == p_ids[1])
+        
+        # Tactical Retreat Heuristic (Defender chooses to flee if outclassed)
+        defender_id = s2[0]
+        defender_player = self.players[defender_id]
+        if defender_player.resources[Resource.ENERGY] >= 2:
+            # Heuristic: Compare approximate strength (using average roll 3.5)
+            # This is a simple AI decision for the simulation.
+            s1_p = self.players[s1[0]]
+            str1_est = 3.5 + TECH_TREES[s1_p.ship_flavor]["Weapons"][s1_p.tech["Weapons"]]["bonus"] + (2 if s1[1].is_flagship else 1)
+            str2_est = 3.5 + TECH_TREES[defender_player.ship_flavor]["Shields"][defender_player.tech["Shields"]]["bonus"] + (2 if s2[1].is_flagship else 1)
+            
+            if str2_est < str1_est - 2: # Defender feels outmatched
+                defender_player.spend({Resource.ENERGY: 2})
+                # Move ship away (simplified: move to HW or just "abort" combat here)
+                self.log(f"Player {defender_id} performed a Tactical Retreat! Aborting combat.")
+                return 
         
         # Tactic Usage Simulation
         for p_id in [s1[0], s2[0]]:
@@ -978,9 +994,7 @@ class ParsecSim:
 
     def phase_scoring(self) -> bool:
         for player in self.players:
-            # 1 VP per planet (Legacy rule or expansion choice? Expansion says VP per Objective).
-            # We'll use 1 VP per Planet as an in-built baseline if requested, but officially it's per Objective.
-            player.vp = len(player.planets)
+            player.vp = 0 # VP is now objective-based.
             
             scored_public = False
             scored_secret = False
@@ -1019,19 +1033,15 @@ class ParsecSim:
                             scored_public = True
                             break
                 
-                # 2. Voice of the Galaxy: +1 VP for 12+ total votes (Cumulative)
-                if player.votes_cast_total >= 12 and "AiijiVP" not in player.claimed_objectives:
-                    player.claimed_objectives.add("AiijiVP")
-                    self.log("[Aiiji] Voice of the Galaxy: +1 VP granted for 12+ total votes.")
 
             # Recalculate VP from all claimed objectives (Persistent points)
-            player.vp = len(player.planets)
+            player.vp = 0
                 
             for oid in player.claimed_objectives:
-                if oid == "AiijiVP":
-                    player.vp += 1
-                else:
-                    player.vp += OBJECTIVES[oid]["vp"]
+                # if oid == "AiijiVP":
+                #     player.vp += 1
+                # else:
+                player.vp += OBJECTIVES[oid]["vp"]
             
             if player.vp >= self.vp_target:
                 self.log(f"*** PLAYER {player.id} WINS! (VP: {player.vp}) ***")
