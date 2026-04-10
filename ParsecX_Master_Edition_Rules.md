@@ -101,6 +101,8 @@ When encountering an Unknown Planet, roll 1d6 and resolve the result:
 2. Randomly draw a Moon cube. **White** = Colony Moon (grants +1 Influence during Upkeep). **Black** = Shipyard Moon.
 3. The player does **not** pay any settlement resources — the planet is claimed by right of conquest.
 
+> **Sharnak Imperium Special Rule:** When Sharnak attacks a Xenophobic Empire, they apply their *Combat Attack Reroll* bonus (reroll if 1–3) and gain a **+2 Attack Strength bonus** vs. Xenophobic Empires. See Section 5 for details.
+
 **Roll 5 (Elder Civilization):** The player may attempt a Diplomatic Alliance with this ancient civilization. The player must spend Influence equal to a **1d3+2** roll (resulting in a cost of 3, 4, or 5 Influence). If the player can pay the cost, the alliance is forged:
 1. Roll 1d6 to determine the planet type: **1–2** = Mining World, **3–4** = Farming World, **5–6** = Jovian World.
 2. There are **no Moons** for Elder Civilization planets.
@@ -129,6 +131,8 @@ If terraformed, the player also randomly draws a Moon cube. **White** = Colony M
 - **[GalObj]** **Secret Objectives:** Reveal and score one Secret Objective.
 - **Victory:** The game ends after **Round 10**. The player with the highest Victory Points is the winner. If multiple players share the high score, they share a joint victory.
 
+> **Altair Divide Special Rule:** During Scoring, the Altair Divide's Flagship sector counts as 1 controlled Mining World for the purpose of **EXP-type objectives only** (e.g. *Expand Borders*, *Galactic Dominance*, *Cultural Hub*, *Miner's Guild*). The Flagship must be active and on the board. See Section 5 for full details.
+
 ---
 
 ## 4. The Tech Tree
@@ -149,20 +153,37 @@ Players choose one of two hull types at setup, which determines their starting s
 ---
 
 ## 5. Civilizations of the Parsec
-Each civilization has a unique starting resource conversion ability and upkeep costs, along with a passive Elite Bonus.
+Each civilization has a unique passive upkeep bonus, a resource conversion action, tech discounts, and an Elite Bonus.
 
-| Faction | Upkeep | Resource Conversion Action | Elite Bonus |
-| :--- | :--- | :--- | :--- |
-| **Sharnak Imperium** | None | Credits ➔ Ore (1:1) | Combat Attack Reroll |
-| **The Conversation** | 1C, 1I | Bi-directional Credits ➔ Influence (1:1) | Combat Defense Reroll |
-| **Wulfram Collective** | 1I | Ore ➔ Influence (1:1) | Combat Attack Reroll |
-| **Rim Worlds Combine**| 1C, 1O | Ore ➔ Credits (1:1) | Exploration Discovery Reroll |
-| **The Aiiji** | 2C | Inf ➔ Credits // Credits ➔ Ore | General Action Reroll |
-| **Altair Divide** | None | Ore ➔ Inf // Inf ➔ Credits | Prevent Enemy Rerolls |
-| **Gaian Empire** | None | Credits ➔ Influence (1:1) | Combat Defense Reroll |
-| **Purist Hegemony** | None | Influence ➔ Ore (1:1) | Innate +1 Defense Strength |
+| Faction | Passive Upkeep | Resource Conversion | Tech Discounts | Elite Bonus |
+| :--- | :--- | :--- | :--- | :--- |
+| **Sharnak Imperium** | +1 Ore, +1 Credits | Credits ➔ Ore (1:1) | Weapons (Ore), **Shields (Ore)** | Combat Attack Reroll |
+| **The Conversation** | +1 Credits, +1 Influence | Bi-directional Credits ↔ Influence | Engines (Ore), Command (Credits) | Combat Defense Reroll |
+| **Wulfram Collective** | +1 Influence | Ore ➔ Influence (1:1) | — | Combat Attack Reroll |
+| **Rim Worlds Combine** | +1 Credits, +1 Ore | Ore ➔ Credits (1:1) | — | Exploration Discovery Reroll |
+| **The Aiiji** | +2 Credits | Influence ➔ Credits // Credits ➔ Ore | Command (Influence) | General Action Reroll |
+| **Altair Divide** | **+1 Influence** | Ore ➔ Influence // Influence ➔ Credits | Weapons (Energy), **Command (Credits)** | Prevent Enemy Rerolls |
+| **Gaian Empire** | **+1 Credits, +1 Energy** | Credits ➔ Influence (1:1) | Shields (Energy), **Engines (Ore)** | Combat Defense Reroll |
+| **Purist Hegemony** | **+1 Credits, +1 Influence** | **Bi-directional** Influence ↔ Ore | Command (Energy), **Engines (Credits)** | Innate +1 Defense Strength |
 
-*Resource Legend: C=Credits, I=Influence, E=Energy, O=Ore*
+*Resource Legend: C=Credits, I=Influence, E=Energy, O=Ore. Changes from v1.0 are in **bold**.*
+
+### Civilization Special Rules
+
+**Sharnak Imperium — Military Doctrine:**  
+When the Sharnak Imperium attacks a **Xenophobic Empire** (Planetary Atlas, Roll 4), they apply their *Combat Attack Reroll* bonus in that encounter (reroll if the die shows 1–3). Additionally, the Sharnak military machine grants a **+2 bonus to their Attack Strength** specifically against Xenophobic Empires, representing their unmatched doctrine for sustained assault warfare.
+
+**Purist Hegemony — Fortified Homeworld:**  
+The Purist Hegemony's Homeworld is a heavily fortified capital. It grants **+2 Passive Voting Power** in the Galactic Council instead of the standard +1 (or +4 if the player holds the Head of Diplomacy mandate). This reflects their political weight derived from their impenetrable core world. Their bidirectional Influence ↔ Ore conversion allows them to shift between fortress-building and political campaigning each round.
+
+**Gaian Empire — Ecological Specialization:**  
+Gaian culture has a deep bond with fertile worlds. During **Phase 1 (Upkeep)**, each **Farming World** the Gaian Empire controls yields an additional **+1 Credit** on top of its standard output. This encourages specialization in Farming Worlds (explored via Planetary Atlas Roll 2) and gives the Gaian economy a distinctive ecological identity.
+
+**Altair Divide — Flagship Intelligence Network:**  
+The Altair Divide operates a vast intelligence fleet. During **Phase 6 (Scoring)**, their Flagship sector counts as **1 controlled planet** (type: Mining) for the purpose of scoring **Exploration (EXP) type objectives only** (e.g. *Expand Borders*, *Galactic Dominance*, *Cultural Hub*). This bonus does not apply to Military, Tech, Diplomatic, or Economic objectives. The Flagship must be active and deployed on the board.
+
+**Altair Divide — Prevent Rerolls:**  
+Once per combat, if an opponent would trigger their civilization's reroll bonus (e.g. *Attack Reroll*, *Defense Reroll*, *General Reroll*), the Altair Divide player may **cancel that reroll**. The original die result stands. This cancellation is declared aloud before the new roll is made.
 
 ---
 
@@ -349,6 +370,8 @@ Once the Galactic Council has been unlocked, the following steps occur during Ph
         *   *Standard Planets (Mining/Farming/Jovian/Terraformed):* +1 Vote each
         *   *Colony Moons (White Cube):* Add +1 Vote to their attached planet.
 4.  **Resolution:** The outcome with the highest total votes passes, and its text immediately comes into effect. **Tie-Breaking:** In the event of a tied vote, the Start Player's chosen outcome prevails. If the Start Player abstained, the agenda fails with no effect.
+
+> **Purist Hegemony Special Rule:** The Purist Homeworld grants **+2 Passive Voting Power** (instead of the standard +1). If the Purist player holds the *Head of Diplomacy* mandate, their Homeworld grants **+4 votes** instead of +3. See Section 5 for details.
 
 ---
 

@@ -8,14 +8,52 @@ class Resource:
     ALL = [ORE, ENERGY, CREDITS, INFLUENCE]
 
 FACTIONS = {
-    "Sharnak Imperium": {"convert": (Resource.CREDITS, Resource.ORE), "discount": {"Weapons": Resource.ORE}, "bonus": "AttackReroll"},
-    "The Conversation": {"convert": [(Resource.INFLUENCE, Resource.CREDITS), (Resource.CREDITS, Resource.INFLUENCE)], "upkeep": {Resource.CREDITS: 1, Resource.INFLUENCE: 1}, "discount": {"Engines": Resource.ORE, "Command": Resource.CREDITS}, "bonus": "DefenseReroll"},
-    "Wulfram Collective": {"convert": (Resource.ORE, Resource.INFLUENCE), "upkeep": {Resource.INFLUENCE: 1}, "bonus": "AttackReroll"},
-    "Rim Worlds Combine": {"convert": (Resource.ORE, Resource.CREDITS), "upkeep": {Resource.CREDITS: 1, Resource.ORE: 1}, "bonus": "ExploreReroll"},
-    "The Aiiji": {"convert": [(Resource.INFLUENCE, Resource.CREDITS), (Resource.CREDITS, Resource.ORE)], "upkeep": {Resource.CREDITS: 2}, "discount": {"Command": Resource.INFLUENCE}, "bonus": "GeneralReroll"},
-    "Altair Divide": {"convert": [(Resource.ORE, Resource.INFLUENCE), (Resource.INFLUENCE, Resource.CREDITS)], "discount": {"Weapons": Resource.ENERGY}, "bonus": "PreventReroll"},
-    "Gaian Empire": {"convert": (Resource.CREDITS, Resource.INFLUENCE), "discount": {"Shields": Resource.ENERGY}, "bonus": "DefenseReroll"},
-    "Purist Hegemony": {"convert": (Resource.INFLUENCE, Resource.ORE), "discount": {"Command": Resource.ENERGY}, "bonus": "DefensePlusOne"}
+    "Sharnak Imperium": {
+        "upkeep": {Resource.ORE: 1, Resource.CREDITS: 1},          # Buff: frontier war‑economy
+        "convert": (Resource.CREDITS, Resource.ORE),
+        "discount": {"Weapons": Resource.ORE, "Shields": Resource.ORE},  # Buff: dual combat discount
+        "bonus": "AttackReroll"
+    },
+    "The Conversation": {
+        "convert": [(Resource.INFLUENCE, Resource.CREDITS), (Resource.CREDITS, Resource.INFLUENCE)],
+        "upkeep": {Resource.CREDITS: 1, Resource.INFLUENCE: 1},
+        "discount": {"Engines": Resource.ORE, "Command": Resource.CREDITS},
+        "bonus": "DefenseReroll"
+    },
+    "Wulfram Collective": {
+        "convert": (Resource.ORE, Resource.INFLUENCE),
+        "upkeep": {Resource.INFLUENCE: 1},
+        "bonus": "AttackReroll"
+    },
+    "Rim Worlds Combine": {
+        "convert": (Resource.ORE, Resource.CREDITS),
+        "upkeep": {Resource.CREDITS: 1, Resource.ORE: 1},
+        "bonus": "ExploreReroll"
+    },
+    "The Aiiji": {
+        "convert": [(Resource.INFLUENCE, Resource.CREDITS), (Resource.CREDITS, Resource.ORE)],
+        "upkeep": {Resource.CREDITS: 2},
+        "discount": {"Command": Resource.INFLUENCE},
+        "bonus": "GeneralReroll"
+    },
+    "Altair Divide": {
+        "upkeep": {Resource.INFLUENCE: 1},                           # Nerf: Ore removed, focus on political identity
+        "convert": [(Resource.ORE, Resource.INFLUENCE), (Resource.INFLUENCE, Resource.CREDITS)],
+        "discount": {"Weapons": Resource.ENERGY, "Command": Resource.CREDITS},  # Buff: tactical intel
+        "bonus": "PreventReroll"
+    },
+    "Gaian Empire": {
+        "upkeep": {Resource.CREDITS: 1, Resource.ENERGY: 1},          # Buff: self‑sustaining ecology
+        "convert": (Resource.CREDITS, Resource.INFLUENCE),
+        "discount": {"Shields": Resource.ENERGY, "Engines": Resource.ORE},  # Buff: mobility
+        "bonus": "DefenseReroll"
+    },
+    "Purist Hegemony": {
+        "upkeep": {Resource.CREDITS: 1, Resource.INFLUENCE: 1},       # Buff: fortress‑state baseline
+        "convert": [(Resource.INFLUENCE, Resource.ORE), (Resource.ORE, Resource.INFLUENCE)],  # Buff: bidirectional
+        "discount": {"Command": Resource.ENERGY, "Engines": Resource.CREDITS},  # Buff: mobility
+        "bonus": "DefensePlusOne"
+    }
 }
 
 TECH_TREES = {
@@ -331,6 +369,10 @@ class Player:
             # Colony Moon: +1 Influence
             if planet.moon == "Colony":
                 self.resources[Resource.INFLUENCE] += 1
+
+            # Gaian Empire: Farming Worlds yield +1 bonus Credits (ecological identity buff)
+            if self.civ_name == "Gaian Empire" and planet.type == "Farming":
+                self.resources[Resource.CREDITS] += 1
 
     def can_afford(self, resources):
         for res, amt in resources.items():
@@ -779,7 +821,15 @@ class ParsecSim:
             ship_base = player.flagship_combat_ships if flagship_ship else 1
             if flagship_ship and 4 in flagship_ship.extensions:
                 ship_base += 1  # Precision Targeting AI
-            attacker_str = attk_roll + atk_bonus + ship_base
+
+            # Sharnak Imperium buff: AttackReroll applies in Xeno combat + +2 military doctrine
+            if player.civ_name == "Sharnak Imperium":
+                if attk_roll <= 3:
+                    self.log(f"Player {player.id} (Sharnak) Xeno Combat Reroll (First roll: {attk_roll})")
+                    attk_roll = random.randint(1, 6)
+                attacker_str = attk_roll + atk_bonus + ship_base + 2  # +2 Sharnak military doctrine
+            else:
+                attacker_str = attk_roll + atk_bonus + ship_base
 
             xeno_roll = random.randint(1, 6)
             xeno_str = xeno_roll + 5
@@ -890,18 +940,25 @@ class ParsecSim:
         self.log(f"Step-by-Step Combat between Player {p_ids[0]} and {p_ids[1]}...")
         
         # Calculate Strength for p1 and p2
-        def get_strength(p_id, ship, other_ships, is_attacker=True):
+        def get_strength(p_id, ship, other_ships, is_attacker=True, opponent_id=None):
             player = self.players[p_id]
             roll = random.randint(1, 6)
-            
+
+            # Altair Divide: PreventReroll — cancel one opponent reroll per combat
+            # If the opponent has a triggered reroll bonus, Altair negates it (intelligence/deception)
+            opponent = self.players[opponent_id] if opponent_id is not None else None
+            altair_prevents = opponent is not None and opponent.civ_name == "Altair Divide"
+
             # Civilization Combat Reroll
             bonus = FACTIONS[player.civ_name].get("bonus")
-            # Logic: Reroll if roll is low (1, 2, or 3) and bonus matches phase
-            if (is_attacker and bonus in ["AttackReroll", "GeneralReroll"]) or \
-               (not is_attacker and bonus in ["DefenseReroll", "GeneralReroll"]):
-                if roll <= 3:
-                    self.log(f"Player {player.id} triggered Combat Reroll (First roll: {roll})")
-                    roll = random.randint(1, 6)
+            if not altair_prevents:  # Altair cancels opponent's reroll
+                if (is_attacker and bonus in ["AttackReroll", "GeneralReroll"]) or \
+                   (not is_attacker and bonus in ["DefenseReroll", "GeneralReroll"]):
+                    if roll <= 3:
+                        self.log(f"Player {player.id} triggered Combat Reroll (First roll: {roll})")
+                        roll = random.randint(1, 6)
+            else:
+                self.log(f"Player {opponent.id} (Altair) prevented Player {player.id}'s combat reroll.")
 
             tech_bonus = TECH_TREES[player.ship_flavor]["Weapons"][player.tech["Weapons"]]["bonus"]
             if not is_attacker: # Shields bonus if defending
@@ -913,10 +970,10 @@ class ParsecSim:
                     ship_bonus += 1
                 if 4 in ship.extensions and is_attacker:
                     ship_bonus += 1
-                    
+
             other_support = sum(2 if s.is_flagship else 1 for s in other_ships) # +2 for Flagship support
             total = roll + tech_bonus + ship_bonus + other_support
-            
+
             # Purist Hegemony Defense Bonus (+1)
             if not is_attacker and bonus == "DefensePlusOne":
                 total += 1
@@ -965,9 +1022,9 @@ class ParsecSim:
             s1_support = [s for s in s1_support if s.sector_id == s1[1].sector_id and s != s1[1]]
             s2_support = getattr(self.players[s2[0]], 'ships', [])
             s2_support = [s for s in s2_support if s.sector_id == s2[1].sector_id and s != s2[1]]
-            
-            str1, roll1 = get_strength(s1[0], s1[1], s1_support, is_attacker=True)
-            str2, roll2 = get_strength(s2[0], s2[1], s2_support, is_attacker=False)
+            # Pass opponent_id so PreventReroll can be evaluated
+            str1, roll1 = get_strength(s1[0], s1[1], s1_support, is_attacker=True,  opponent_id=s2[0])
+            str2, roll2 = get_strength(s2[0], s2[1], s2_support, is_attacker=False, opponent_id=s1[0])
         
         self.log(f"P{s1[0]} rolls {roll1} (Total {str1}) vs P{s2[0]} rolls {roll2} (Total {str2})")
         
@@ -1072,9 +1129,11 @@ class ParsecSim:
         votes = {} # Player Index -> Total Power
         for idx, p in enumerate(self.players):
             power = 0
-            # Fix #5: Homeworld always grants +1 vote (or +3 if Head of Diplomacy)
-            # Homeworld is in board but NOT in player.planets, so add it explicitly
-            power += 3 if p.head_of_diplomacy else 1
+            # Homeworld votes: Purist Hegemony HW is fortified (+2 base, +4 if Head of Diplomacy)
+            if p.civ_name == "Purist Hegemony":
+                power += 4 if p.head_of_diplomacy else 2  # Buff: fortified homeworld
+            else:
+                power += 3 if p.head_of_diplomacy else 1
 
             # 1. Passive Planet Power (controlled non-HW planets)
             for planet in p.planets:
@@ -1318,19 +1377,47 @@ class ParsecSim:
             scored_public = False
 
             # Check Revealed Public Objectives
+            # Altair Divide: Flagship counts as a controlled planet for EXP objectives only (nerf: was all types)
             active_publics = self.public_objectives[:self.revealed_public_count]
             for obj_id in active_publics:
                 if obj_id not in player.claimed_objectives:
+                    # Add virtual flagship planet only for Altair + EXP objectives
+                    altair_flagship_planet = None
+                    if (player.civ_name == "Altair Divide" and player.flagship_active
+                            and OBJECTIVES[obj_id].get("type") == "EXP"):
+                        altair_flagship_planet = Planet(
+                            sector_id=player.id, x=0, y=0, type="Mining", is_unknown=False
+                        )
+                        altair_flagship_planet.owner_id = player.id
+                        player.planets.append(altair_flagship_planet)
+
                     if OBJECTIVES[obj_id]["check"](player) and not player.blocked_from_scoring:
                         player.claimed_objectives.add(obj_id)
                         self.log(f"Player {player.id} scored Public Objective: {OBJECTIVES[obj_id]['name']}")
                         scored_public = True
 
-            # Check Secret Objective
+                    # Always clean up virtual planet after each check
+                    if altair_flagship_planet is not None and altair_flagship_planet in player.planets:
+                        player.planets.remove(altair_flagship_planet)
+
+            # Check Secret Objective (apply Altair flagship bonus if EXP type)
             if player.secret_objective not in player.claimed_objectives:
-                if OBJECTIVES[player.secret_objective]["check"](player):
+                sec_obj = OBJECTIVES[player.secret_objective]
+                altair_flagship_planet = None
+                if (player.civ_name == "Altair Divide" and player.flagship_active
+                        and sec_obj.get("type") == "EXP"):
+                    altair_flagship_planet = Planet(
+                        sector_id=player.id, x=0, y=0, type="Mining", is_unknown=False
+                    )
+                    altair_flagship_planet.owner_id = player.id
+                    player.planets.append(altair_flagship_planet)
+
+                if sec_obj["check"](player):
                     player.claimed_objectives.add(player.secret_objective)
-                    self.log(f"Player {player.id} scored Secret Objective: {OBJECTIVES[player.secret_objective]['name']}")
+                    self.log(f"Player {player.id} scored Secret Objective: {sec_obj['name']}")
+
+                if altair_flagship_planet is not None and altair_flagship_planet in player.planets:
+                    player.planets.remove(altair_flagship_planet)
 
             # --- AIIJI MASTER PASSIVES ---
             if player.civ_name == "The Aiiji":

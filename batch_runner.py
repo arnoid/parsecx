@@ -23,8 +23,9 @@ def run_batch(total_iterations=10000, checkpoint_size=200, vp_target=7, filename
             stats["civs_played"][p.civ_name] += 1
             
         result = sim.run()
-        winners_str = ", ".join(result['winner_civ'])
-        print(f"Simulation #{i + 1} executed: Winner(s) = {winners_str}, Rounds = {result['rounds']}")
+        if total_iterations <= 1000 or (i + 1) % 1000 == 0:
+            winners_str = ", ".join(result['winner_civ'])
+            print(f"Simulation #{i + 1} executed: Winner(s) = {winners_str}, Rounds = {result['rounds']}")
         
         for winner_civ in result["winner_civ"]:
             stats["wins"][winner_civ] += 1
