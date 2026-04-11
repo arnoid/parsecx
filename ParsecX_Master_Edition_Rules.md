@@ -159,11 +159,11 @@ Each civilization has a unique passive upkeep bonus, a resource conversion actio
 | :--- | :--- | :--- | :--- | :--- |
 | **Sharnak Imperium** | +1 Ore, +1 Credits | Credits ➔ Ore (1:1) | Weapons (Ore), **Shields (Ore)** | Combat Attack Reroll |
 | **The Conversation** | +1 Credits, +1 Influence | Bi-directional Credits ↔ Influence | Engines (Ore), Command (Credits) | Combat Defense Reroll |
-| **Wulfram Collective** | +1 Influence | Ore ➔ Influence (1:1) | — | Combat Attack Reroll |
+| **Wulfram Collective** | **+1 Ore, +1 Credits** | **Bi-directional** Ore ↔ Influence | **Weapons (Energy), Engines (Ore)** | Combat Attack Reroll |
 | **Rim Worlds Combine** | +1 Credits, +1 Ore | Ore ➔ Credits (1:1) | — | Exploration Discovery Reroll |
 | **The Aiiji** | +2 Credits | Influence ➔ Credits // Credits ➔ Ore | Command (Influence) | General Action Reroll |
 | **Altair Divide** | **+1 Influence** | Ore ➔ Influence // Influence ➔ Credits | Weapons (Energy), **Command (Credits)** | Prevent Enemy Rerolls |
-| **Gaian Empire** | **+1 Credits, +1 Energy** | Credits ➔ Influence (1:1) | Shields (Energy), **Engines (Ore)** | Combat Defense Reroll |
+| **Gaian Empire** | **+1 Credits, +1 Energy, +1 Influence** | **Bi-directional** Credits ↔ Influence | Shields (Energy), **Engines (Ore)** | Combat Defense Reroll |
 | **Purist Hegemony** | **+1 Credits, +1 Influence** | **Bi-directional** Influence ↔ Ore | Command (Energy), **Engines (Credits)** | Innate +1 Defense Strength |
 
 *Resource Legend: C=Credits, I=Influence, E=Energy, O=Ore. Changes from v1.0 are in **bold**.*
@@ -184,6 +184,9 @@ The Altair Divide operates a vast intelligence fleet. During **Phase 6 (Scoring)
 
 **Altair Divide — Prevent Rerolls:**  
 Once per combat, if an opponent would trigger their civilization's reroll bonus (e.g. *Attack Reroll*, *Defense Reroll*, *General Reroll*), the Altair Divide player may **cancel that reroll**. The original die result stands. This cancellation is declared aloud before the new roll is made.
+
+**Wulfram Collective — Salvage Raiders:**  
+The Wulfram Collective operates as an industrial raiding syndicate. Each time they win a combat (PvP), their fleet scavenges the wreckage, gaining **+1 Ore** immediately. This innate salvage bonus is distinct from and stacks with the *Scavenger Harvesters* flagship extension. Their technology is optimized for rapid raiding, granting them discounts on **Weapons (Energy)** and **Engines (Ore)**. Their core economy is highly flexible, allowing for bidirectional **Ore ↔ Influence** conversion to shift between material production and political maneuvering.
 
 ---
 

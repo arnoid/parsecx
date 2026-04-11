@@ -21,8 +21,9 @@ FACTIONS = {
         "bonus": "DefenseReroll"
     },
     "Wulfram Collective": {
-        "convert": (Resource.ORE, Resource.INFLUENCE),
-        "upkeep": {Resource.INFLUENCE: 1},
+        "convert": [(Resource.ORE, Resource.INFLUENCE), (Resource.INFLUENCE, Resource.ORE)],  # Buff: bidirectional
+        "upkeep": {Resource.ORE: 1, Resource.CREDITS: 1},                                      # Buff: match Sharnak baseline
+        "discount": {"Weapons": Resource.ENERGY, "Engines": Resource.ORE},                     # Buff: dual raider discount
         "bonus": "AttackReroll"
     },
     "Rim Worlds Combine": {
@@ -37,14 +38,14 @@ FACTIONS = {
         "bonus": "GeneralReroll"
     },
     "Altair Divide": {
-        "upkeep": {Resource.INFLUENCE: 1},                           # Nerf: Ore removed, focus on political identity
+        "upkeep": {Resource.INFLUENCE: 1, Resource.ENERGY: 1},          # Buff: mobility for intel
         "convert": [(Resource.ORE, Resource.INFLUENCE), (Resource.INFLUENCE, Resource.CREDITS)],
         "discount": {"Weapons": Resource.ENERGY, "Command": Resource.CREDITS},  # Buff: tactical intel
         "bonus": "PreventReroll"
     },
     "Gaian Empire": {
-        "upkeep": {Resource.CREDITS: 1, Resource.ENERGY: 1},          # Buff: self‑sustaining ecology
-        "convert": (Resource.CREDITS, Resource.INFLUENCE),
+        "upkeep": {Resource.ENERGY: 1, Resource.INFLUENCE: 1},         # Nerf: Credits removed to curb dominance
+        "convert": [(Resource.CREDITS, Resource.INFLUENCE), (Resource.INFLUENCE, Resource.CREDITS)], # Buff: bidirectional
         "discount": {"Shields": Resource.ENERGY, "Engines": Resource.ORE},  # Buff: mobility
         "bonus": "DefenseReroll"
     },
@@ -1094,7 +1095,12 @@ class ParsecSim:
                 w_ship = s1[1] if winner_id == s1[0] else s2[1]
                 if w_ship.is_flagship and 10 in w_ship.extensions:
                     self.players[winner_id].resources[Resource.ORE] += 1
-        
+
+                # Wulfram Collective: Innate Salvage Raider — gain 1 Ore on any combat victory
+                if self.players[winner_id].civ_name == "Wulfram Collective":
+                    self.players[winner_id].resources[Resource.ORE] += 1
+                    self.log(f"[Wulfram] Salvage Raiders: Player {winner_id} gains 1 Ore from wreckage.")
+
         if winner_id is not None:
             self.players[winner_id].combat_count += 1
             self.players[winner_id].combat_count_this_round += 1
