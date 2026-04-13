@@ -318,12 +318,7 @@ class Player:
         self.id = id
         self.civ_name = civ_name
         self.ship_flavor = ship_flavor
-        self.resources = {Resource.ORE: 2, Resource.ENERGY: 3, Resource.CREDITS: 2, Resource.INFLUENCE: 1}
-        # Faction-specific starting adjustments
-        if civ_name == "Altair Divide":
-            self.resources[Resource.ENERGY] = 2  # Nerf: -1 Starting Energy
-        elif civ_name == "Purist Hegemony":
-            self.resources[Resource.INFLUENCE] = 2 # Buff: +1 Starting Influence
+        self.resources = {Resource.ORE: 3, Resource.ENERGY: 9, Resource.CREDITS: 3, Resource.INFLUENCE: 3}
         self.tech = {"Weapons": 1, "Shields": 1, "Engines": 1, "Command": 1}
         self.ships = [Ship(id), Ship(id)]
         self.planets = []

@@ -6,12 +6,11 @@
 3. [Phase Structure](#3-the-galactic-round-phase-structure)
 4. [The Tech Tree](#4-the-tech-tree)
 5. [Civilizations](#5-civilizations-of-the-parsec)
-6. [Flagship Appendix](#6-flagship-appendix)
-- [Appendix A: Advanced Tactics](#appendix-a-advanced-tactics-expansion)
-- [Appendix B: Flagships](#appendix-b-flagship-expansion)
-- [Appendix C: Galactic Council](#appendix-c-galactic-council-expansion)
-- [Appendix D: Galactic Objectives](#appendix-d-galactic-objectives-expansion)
-- [Summary of Enhancements](#summary-of-master-edition-enhancements)
+6. [Summary of Enhancements](#summary-of-master-edition-enhancements)
+- [Appendix A: Advanced Tactics Expansion](#appendix-a-advanced-tactics-expansion)
+- [Appendix B: Flagships Expansion](#appendix-b-flagship-expansion)
+- [Appendix C: Galactic Council Expansion](#appendix-c-galactic-council-expansion)
+- [Appendix D: Galactic Objectives Expansion](#appendix-d-galactic-objectives-expansion)
 
 Welcome to **Parsec X**, a micro-4X space simulation game for 2 to 4 players. This Master Edition rulebook integrates the base rules with the *Advanced Tactics*, *Flagships*, *Galactic Council*, and *Galactic Objectives* expansions, reflecting the latest V1.2 balance adjustments derived from large-scale simulation analysis.
 
@@ -58,7 +57,7 @@ Some actions require Parsec X expansions. List of expansions available:
 2. **Civilization:** Each player receives 2 Civilization cards, chooses one, and discards the other.
 3. **Hull Choice:** Choose either a **Wanderer** or **Raider** hull and receive your Tech Tree card.
 4. **Starting Fleet:** Each player places 2 ships (cubes) on their Homeworld sector.
-5. **Resources:** Place tracking cubes on the starting resource markers on your Ship Card. Note: **Altair Divide** starting energy is reduced to **2** for game balance.
+5. **Resources:** Place tracking cubes on the starting resource markers. All civilizations start with **3 Credits, 9 Energy, 3 Ore, and 3 Influence**.
 6. **[GalObj]** **Objectives:**
     - Prepare the Stage 1 and Stage 2 Public Objective decks.
     - Deal 2 Secret Objectives to each player; they keep one.
@@ -67,85 +66,54 @@ Some actions require Parsec X expansions. List of expansions available:
 
 ---
 
-## 3. The Galactic Round (Phase Structure)
-A round consists of six sequential phases.
-*   **Phase 1: Upkeep:** Resolved simultaneously by all players.
-*   **Phase 2: Bidding for Turn Order:** Players submit a simultaneous secret bid of **Influence**. The highest bidder becomes the new Start Player (Position 1), resetting the turn order list. If two or more players bid the same amount, their **relative order** from the previous round remains the same.
-*   **Phase 3-6:** Proceed in the new turn order.
+### 3. The Galactic Round (Phase Structure)
+A round consists of seven sequential phases.
+*   **Phase 1: Upkeep:** Resolved simultaneously.
+*   **Phase 2: Bidding for Turn Order:** Players bid Influence to determine the new turn order.
+*   **Phases 3 to 7:** Proceed in the new turn order.
+
+---
 
 ### Phase 1: Upkeep
-- **Resource Gathering:** Collect native yields from your Homeworld and any controlled planets.
-- **[ATac]** **Tactic Cards:** Draw 1 Tactic Card from the deck.
-- **[Flag]** **Jettison Flagship Extensions:** You may jettison one Flagship Extension to remove a Damage Token from your Flagship.
+- **Resource Gathering:** Collect yields from Homeworlds and planets.
+- **[ATac]** **Tactic Cards:** Draw 1 Tactic Card (limit 4).
+- **[Flag]** **Repairs:** You may jettison one Flagship Extension to remove a Damage Token from your Flagship.
 
-### Phase 2: Upgrade
-- **Ship Construction:** Pay the indicated Ore/Credit cost to build new ships. Newly built ships are placed in your **Homeworld** sector (or a sector containing a **Shipyard Moon**).
-- **Tech Research:** Pay resources to move cubes down your Tech Tree (Engines, Command, Shields, Weapons).
-- **[Flag]** **Flagship Designation:** If you have no Flagship, designate an existing ship as one.
-- **[Flag]** **Extensions:** Buy unique modules for your Flagship (Cost: 2/4/6/8 resources for slots 1/2/3/4).
+---
 
-### Phase 3: Movement
-- **Grid Travel:** Move ships orthogonally. Movement costs **Energy**.
-- **Distance:** Your movement limit is defined by your Engines tech (e.g., Level 1 = 3 spaces).
-- **Spacewarps:** If a ship is on a Spacewarp icon (4, 2), it may jump to a Spacewarp on an **adjacent** sector (clockwise or counter-clockwise).
+### Phase 2: Bidding for Turn Order
+Players submit a simultaneous secret bid of **Influence**. 
+*   **Winner:** The highest bidder moves first this round.
+*   **Ties:** If bids are equal, players maintain their **relative order** from the previous round.
 
-### Phase 4: Encounter
-- **Exploration:** If a ship enters a sector containing an Unknown Planet (a planet with no type defined yet), the player rolls 1d6 and consults the **Planetary Atlas** below to determine the outcome.
-  - **Strength:** Roll 1d6 + Weapons/Shields tech + Support (+1 for every additional friendly ship in the sector).
-  - **Initiative:** The player currently taking their turn is strictly designated as the **Attacker**.
-  - **[Flag]** **Flagships:** Count as 2 ships for strength/support and have native combat modules.
-  - **Ties:** If totals are equal, **both ships are destroyed** (**[Flag]** unless protected by a *Command Carrier Bay*).
-  - **[ATac]** **Tactical Retreat:** Before combat dice are rolled, the **Defender** may choose to pay **3 Energy** to safely retreat to an adjacent safe sector. No combat die is rolled. If the defender cannot afford 3 Energy or no safe sector is available, they must fight.
+---
 
-#### Planetary Atlas
+### Phase 3: Upgrade
+- **Ship Construction:** Pay Ore/Credits to build ships. Deploy at Homeworld or Shipyards.
+- **Tech Research:** Advance technology in the Tech Tree.
+- **[Flag]** **Flagships:** Designate one ship as a Flagship and purchase Extensions.
 
-When encountering an Unknown Planet, roll 1d6 and resolve the result:
+### Phase 4: Movement
+- **Grid Travel:** Move ships orthogonally (Cost: Energy).
+- **Spacewarps:** Jump between adjacent Spacewarp nodes (clockwise/counter-clockwise).
 
-| Roll | Discovery | Settlement | Upkeep Yield |
-|------|-----------|------------|--------------|
-| 1 | Mining World | 3 Credits | 2 Ore or 1 Influence |
-| 2 | Farming World | 3 Influence | 2 Credits or 1 Influence |
-| 3 | Jovian World | 3 Ore | 2 Energy or 1 Influence |
-| 4 | Xenophobic Empire | Combat (see below) | Determined by conquest roll |
-| 5 | Elder Civilization | Diplomatic Alliance (see below) | Determined by alliance roll |
-| 6 | Terraforming Candidate | Player's choice (see below) | Based on chosen type |
+### Phase 5: Encounter
+- **Exploration:** Reveal Unknown Planets and resolve results.
+- **Combat:** Engage enemy ships or planets. Active player is the **Attacker**.
+- **[ATac]** **Tactical Retreat:** Before dice are rolled, the **Defender** may pay **3 Energy** to retreat to an adjacent safe sector.
 
-**Rolls 1–3 (Standard Worlds):** The player discovers the planet type and may immediately settle it by paying the listed settlement cost. If settled, the player places a Civilization Marker on the planet and will collect its Upkeep Yield each round during Phase 1.
-
-**Roll 4 (Xenophobic Empire):** The player encounters a warlike force that will not negotiate. The player must attack the planet in Combat. The Xenophobic Empire adds **+5 to its Defense Strength** die roll. If the player fails and their ship is destroyed, the Xenophobic Empire remains on the board — this player or any other player may fly a ship to the location on subsequent turns and attempt to conquer it again. If the player is successful, they:
-1. Roll 1d6 to determine the planet type they now control: **1–2** = Mining World, **3–4** = Farming World, **5–6** = Jovian World.
-2. Randomly draw a Moon cube. **White** = Colony Moon (grants +1 Influence during Upkeep). **Black** = Shipyard Moon.
-3. The player does **not** pay any settlement resources — the planet is claimed by right of conquest.
-
-> **Sharnak Imperium Special Rule:** When Sharnak attacks a Xenophobic Empire, they apply their *Combat Attack Reroll* bonus (reroll if 1–3) and gain a **+2 Attack Strength bonus** vs. Xenophobic Empires. See Section 5 for details.
-
-**Roll 5 (Elder Civilization):** The player may attempt a Diplomatic Alliance with this ancient civilization. The player must spend Influence equal to a **1d3+2** roll (resulting in a cost of 3, 4, or 5 Influence). If the player can pay the cost, the alliance is forged:
-1. Roll 1d6 to determine the planet type: **1–2** = Mining World, **3–4** = Farming World, **5–6** = Jovian World.
-2. There are **no Moons** for Elder Civilization planets.
-3. The planet provides **+3 Passive Voting Power** in the Galactic Council.
-
-If the player cannot or chooses not to pay, they lose **1 Influence** and the Elder Civilization remains available — any player may attempt to forge an alliance on subsequent turns.
-
-**Roll 6 (Terraforming Candidate):** The player discovers a barren world suitable for terraforming. The player may choose to terraform it into any standard planet type by paying the corresponding cost:
-- **Mining World:** 4 Credits + 1 Influence
-- **Farming World:** 4 Energy + 1 Influence
-- **Jovian World:** 4 Ore + 1 Influence
-
-If terraformed, the player also randomly draws a Moon cube. **White** = Colony Moon (+1 Influence during Upkeep). **Black** = Shipyard Moon. Terraforming is optional — if the player declines, the Terraforming Candidate remains on the board and any player may attempt terraforming on later turns.
-
-### **[GalCon]** Phase 5: Galactic Council**
+### **[GalCon]** Phase 6: Galactic Council
 *Triggered once an Elder Civilization is claimed or all planets are revealed.*
 1. **Convene:** The Start Player draws 1 Agenda card.
-2. **Voting:** Players vote using **Influence** (1:1) and **Passive Voting Power** from planets.
-   - *Homeworld:* +1 Vote (or +3 if Head of Diplomacy).
-   - *Planetary Capital:* +3 Votes.
-   - *Elder/Xenophobic:* +3 / +2 Votes.
+2. **Voting:** Players vote using Influence (1:1), passive voting power, and **[ATac]** Tactic Cards.
 3. **Resolution:** Highest total passes immediately.
 
-### **[GalObj]** Phase 6: Scoring**
+### **[GalObj]** Phase 7: Scoring
+1. **Public Objectives:** Reveal one new objective and score all eligible cards.
+2. **Secret Objectives:** Reveal and score one Secret Objective.
+3. **Victory:** The game ends after **Round 10**.
 - **[GalObj]** **Public Objectives:** If you meet the criteria, place a cube on a Public Objective.
 - **[GalObj]** **Secret Objectives:** Reveal and score one Secret Objective.
-- **Victory:** The game ends after **Round 10**. The player with the highest Victory Points is the winner. If multiple players share the high score, they share a joint victory.
 
 > **Altair Divide Special Rule:** During Scoring, the Altair Divide's Flagship sector counts as 1 controlled Mining World for the purpose of **EXP-type objectives only** (e.g. *Expand Borders*, *Galactic Dominance*, *Cultural Hub*, *Miner's Guild*). The Flagship must be active and on the board. See Section 5 for full details.
 
@@ -199,7 +167,7 @@ Gaian culture has a deep bond with fertile worlds. During **Phase 1 (Upkeep)**, 
 The Aiiji possess advanced alchemy and manufacturing. During **Phase 1 (Upkeep)**, they gain **+1 Ore** in addition to their standard Credit yield. Furthermore, their **Political Synthesis** master passive allows them to spend Influence during Phase 6 to claim a Public Objective even if they did not meet its standard criteria (Cost: 4 + 2x Influence, where x is the number of syntheses already performed).
 
 **Altair Divide — Flagship Intelligence Network:**  
-The Altair Divide operates a vast intelligence fleet. During **Phase 6 (Scoring)**, their Flagship sector counts as **1 controlled planet** (type: Mining) for the purpose of scoring **Exploration (EXP) type objectives only** (e.g. *Expand Borders*, *Galactic Dominance*, *Cultural Hub*). This bonus does not apply to Military, Tech, Diplomatic, or Economic objectives. The Flagship must be active and deployed on the board.
+The Altair Divide operates a vast intelligence fleet. During **Phase 7 (Scoring)**, their Flagship sector counts as **1 controlled planet** (type: Mining) for the purpose of scoring **Exploration (EXP) type objectives only** (e.g. *Expand Borders*, *Galactic Dominance*, *Cultural Hub*). This bonus does not apply to Military, Tech, Diplomatic, or Economic objectives. The Flagship must be active and deployed on the board.
 
 **Altair Divide — Prevent Rerolls:**  
 Once per combat, if an opponent would trigger their civilization's reroll bonus (e.g. *Attack Reroll*, *Defense Reroll*, *General Reroll*), the Altair Divide player may **cancel that reroll**. The original die result stands. This cancellation is declared aloud before the new roll is made.
@@ -209,42 +177,20 @@ The Wulfram Collective operates as an industrial raiding syndicate. Each time th
 
 ---
 
-## **[Flag]** 6. Flagship Appendix
-- **Damage:** Flagships take 2 hits to destroy. The first hit grants a "Damage Token."
-- **Extensions:** Unique modules built during Phase 2.
-- **Death:** If destroyed, all Extensions are lost. You must rebuild from slot 1 if you designate a new hull.
-
----
 ## Appendix A: Advanced Tactics Expansion
 
-By expanding upon the base rules and our previous modules, this expansion fundamentally completes the *Parsec X* experience. It introduces a physical deck of unpredictable Tactic Cards that add extreme bluffing and sudden plot twists to the table.
+This expansion adds depth to combat and strategy through the Tactic Deck and refined movement options.
 
-This expansion integrates cleanly with the *Galactic Council*, *Flagships*, and *Galactic Objectives* rulesets.
-
----
-
-### 1. Combat Refinements (Taking Hits & Retreating)
-
-Combat in Parsec X is often brutally swift. These advanced rules inject tactical agency when facing impossible odds.
-
-**Tactical Retreats:** 
-*   Immediately before combat dice are rolled in the Encounter Phase, either the Attacker or Defender may declare a structural Retreat. 
-*   To retreat, the player must immediately discard **1 Resource** from their tracker (representing logistical chaos). 
-*   They then immediately move their surviving fleet back to an adjacent, safe sector (a sector containing no enemy ships). No combat die is rolled. If no safe sector is adjacent, you cannot retreat.
-
-**Flagship Durability:** 
-*   A Flagship boasts immense structural integrity. It now takes **2 full Hits** (Combat roll losses) to destroy a Flagship.
-*   When a Flagship loses a combat roll for the first time, do not destroy it. Instead, place a **Damage Token** on it.
-*   If a Flagship with a Damage Token loses a combat roll, it is destroyed completely, clearing its Extension Board.
-
----
+### 1. Tactical Retreats
+*   **Trigger:** Immediately before combat dice are rolled in the Encounter Phase (Phase 5).
+*   **Cost:** The **Defender** may pay **3 Energy** to retreat.
+*   **Resolution:** Move the surviving fleet to an adjacent safe sector. No combat occurs.
 
 ### 2. The Tactic Deck
-
-Tactic cards represent sudden maneuvers, espionage, and brilliant strategic traps. 
-*   **Drawing Cards:** During **Phase 1: Upkeep**, after gathering resources from your planets, you may immediately draw **1 Tactic Card** from the deck.
-*   **Hand Limit:** You may never hold more than **4 Tactic Cards** in your hand at any given time. If you draw a 5th, you must discard one.
-*   **Playing Cards:** Every Tactic Card has a specific timing window described on the card (e.g. *Action*, *Combat*, *Agenda Phase*). Playing a card costs no resources unless the card explicitly states otherwise. Resolve its effect and discard it.
+Tactic cards represent sudden maneuvers, espionage, and brilliant traps. 
+*   **Drawing Cards:** During **Phase 1: Upkeep**, draw **1 Tactic Card**.
+*   **Hand Limit:** Maximum of **4 Tactic Cards**.
+*   **Playing Cards:** Cards have specific timing windows (Action, Combat, Council Phase). Playing a card costs no resources unless specified. Resolve its effect and discard it.
 
 ---
 
@@ -286,88 +232,55 @@ Assemble a deck using the following 25 Tactic Cards.
 25. **Blackmail:** *(Council)* Play before votes are cast. Target an opponent; steal **2 Influence** from their tracker and add it to yours.
 
 
-## Appendix B: Flagship Expansion
+---
 
-Towering above standard cruisers, the Flagships are the crowning achievement of a civilization's military and logistical engineering. This expansion lets a player designate a capital ship and bolt devastating modular technology onto its hull.
+## Appendix B: Flagships Expansion
 
-### 1. Flagship Designation
+Flagships are the crowning achievement of a civilization's engineering, serving as heavily armored command centers.
 
-Every player has the right to field exactly one Flagship at any given time.
-*   **Designating the Hull:** During **Phase 2 (Upgrade)**, if you do not currently have an active Flagship on the board, you may freely designate any one of your existing, standard ships as your Flagship. Place a coin, specialized token, or a differently colored acrylic cube underneath it.
-*   **Combat Prowess:** Because it commands your forces from the front lines, a Flagship counts as **2 ships** for the purpose of calculating Combat Strength bonuses (providing a native +2 instead of +1 to a sector's total numerical strength).
+### 1. Flagship Designation & Prowess
+Every player may field exactly one Flagship.
+*   **Designation:** During **Phase 3 (Upgrade)**, designate any standard ship as your Flagship.
+*   **Strength:** Counts as **2 ships** (+2 Strength bonus/support).
+*   **Durability (2 Hits):** It takes **2 full combat losses** to destroy a Flagship. 
+    *   The first loss adds a **Damage Token**.
+    *   The second loss (while damaged) destroys the ship and all its Extensions.
 
 ### 2. The Extension Board
-
-When you designate a Flagship, you unlock the use of a personal **Flagship Extension Board**. 
-This board contains exactly **4 Slots** into which you can plug powerful Extensions.
-
-### Building Extensions
-During **Phase 2 (Upgrade)**, you may pay resources to build a new Extension from the global catalog and slot it into your Extension Board.
-*   **Uniqueness Requirement:** You may never build two of the exact same Extension on your Flagship. Every module must be unique.
-*   **Escalating Cost:** The price of installing an Extension increases as the ship becomes heavier and more technologically saturated. The cost must be paid using any combination of Ore, Energy, or Credits:
-    *   **1st Extension:** Costs 2 Resources
-    *   **2nd Extension:** Costs 4 Resources
-    *   **3rd Extension:** Costs 6 Resources
-    *   **4th Extension:** Costs 8 Resources
-
-*Note: You may only ever have a maximum of 4 Extensions active simultaneously.*
-
-### 3. Flagship Destruction
-
-If you lose a combat that involved your Flagship, your Flagship is destroyed along with any standard ships mandated by combat casualty rules. 
-
-**Catastrophic Loss:** If your Flagship is destroyed, your entire Extension Board is flushed. You must discard and clear all built Extensions.
-During a future Phase 2, you may designate a new Flagship, but you must start over from scratch with zero Extensions, paying starting costs for the first slots.
-
-### 4. Emergency Repairs
-
-If a Flagship has sustained a **Damage Token** (via the Advanced Tactics module), you may repair the hull by sacrificing its upgrades.
-
-**Jettisoning Components:** During **Phase 1 (Upkeep)**, you may permanently discard one active Extension from your Flagship's Extension Board to immediately remove its Damage Token. The slot becomes empty, and the component is destroyed.
+Flagships have **4 Slots** for unique modular technology.
+*   **Building:** During **Phase 3 (Upgrade)**, pay resources to slot new Extensions.
+*   **Escalating Cost:** Slot 1 costs 2 Resources, Slot 2 costs 4, Slot 3 costs 6, Slot 4 costs 8.
+*   **Repairs:** During **Phase 1 (Upkeep)**, you may jettison one Extension to remove a Damage Token.
 
 ---
 
 ### APPENDIX: THE EXTENSION CATALOG
+1.  **Orbital Bombardment Array:** *(Phase 5)* Destroy one defending ship on a planet on a 5-6.
+2.  **Command Carrier Bay:** *(Passive)* Friendly standard ships in the Flagship's sector cannot be lost in ties or combat first.
+3.  **Ablative Hull Plating:** *(Passive)* +1 Defense Strength.
+4.  **Precision Targeting AI:** *(Passive)* +1 Attack Strength.
+5.  **EMP Pulse Caster:** *(Phase 5)* Spend 1 Energy to negate enemy Tech bonuses for one combat.
+6.  **Quantum Slipstream Drive:** *(Phase 4)* Spend 3 Energy to jump to any Spacewarp.
+7.  **Deep Space Sensors:** *(Phase 5)* Roll 2 dice for exploration and pick the best.
+8.  **Tractor Beam:** *(Phase 4)* Drag one enemy ship to your destination.
+9.  **Diplomatic Envoy Protocol:** *(Phase 5)* Alliance cost reduced by 2.
+10. **Scavenger Harvesters:** *(Passive)* Gain 1 Ore/Credit when the Flagship wins combat.
+11. **Advanced Logistics Hub:** *(Phase 3)* Spawn ships directly onto the Flagship's sector.
+12. **Terraforming Charges:** *(Phase 5)* Terraforming cost reduced by 2.
+13. **Galactic Broadcast Node:** *(Phase 6)* +3 Voting Power.
+14. **Stealth Recon Uplink:** *(Phase 7)* Increase Secret Objective hand limit by 1.
+15. **Mobile Command Center:** *(Phase 7)* Counts as 1 controlled planet for scoring objectives.
 
-When purchasing an Extension, select one of the following 15 unique modules. It remains active as long as your Flagship is alive.
 
-### Combat Operations
-1.  **Orbital Bombardment Array:** *(Action: Encounter Phase)* Before standard combat rolls begin against an enemy planet, the Flagship may roll 1 die. On a 5 or 6, one defending enemy ship on that planet is unconditionally destroyed.
-2.  **Command Carrier Bay:** *(Passive)* Any other friendly standard ships in the same sector as the Flagship cannot be chosen as casualties during tiebreaker combats or standard losses, protecting your smaller vessels.
-3.  **Ablative Hull Plating:** *(Passive)* The physical bulk of the ship protects it; the Flagship confers a permanent, innate +1 Defense Strength to any combat it participates in.
-4.  **Precision Targeting AI:** *(Passive)* The Flagship links targeting arrays across the fleet, conferring a permanent, innate +1 Attack Strength to any combat it participates in.
-5.  **EMP Pulse Caster:** *(Action: Encounter Phase)* Once per round, before combat dice are rolled, spend 1 Energy. You may completely negate the opponent's "Weapon" or "Shield" technology tree bonus for this combat.
-
-### Navigation & Exploration
-6.  **Quantum Slipstream Drive:** *(Action: Movement Phase)* Spend 3 Energy to instantly jump the Flagship (and any ships physically sliding underneath it) to any Spacewarp icon on the board, regardless of adjacency.
-7.  **Deep Space Sensors:** *(Action: Encounter Phase)* When the Flagship is in a sector discovering an Unknown Planet, roll 2 dice instead of 1. You may choose which of the two results you want to use.
-8.  **Tractor Beam:** *(Action: Movement Phase)* When moving out of a sector, the Flagship may hook onto exactly one opposing enemy ship located in its starting sector and forcefully drag that ship along into its destination sector.
-
-### Logistics & Economy
-9.  **Diplomatic Envoy Protocol:** *(Passive)* The Influence cost to successfully forge a Diplomatic Alliance with an Elder Civilization is fundamentally reduced by 2 if the Flagship is stationed in that sector.
-10. **Scavenger Harvesters:** *(Passive)* Every time the Flagship wins a combat and destroys an enemy ship, your civilization immediately salvages the wreckage, gaining either 1 Ore or 1 Credit.
-11. **Advanced Logistics Hub:** *(Passive)* During the Upgrade Phase, your Flagship operates as a mobile command base. You may spawn newly purchased ships directly onto the Flagship's sector exactly as if it were a Shipyard Moon.
-12. **Terraforming Charges:** *(Passive)* The sheer engineering power on board allows the Flagship to reshape worlds. The resource cost to terraform a Terraforming Candidate (Planetary Atlas, Roll 6) is reduced by 2 if the Flagship is stationed in that sector.
-
-### Intergalactic Politics & Glory (Requires Expansions)
-*These extensions bridge your Flagship directly into the mechanics of the Objective and Council modules.*
-
-13. **Galactic Broadcast Node:** *(Passive - Requires Galactic Council)* During Phase 5 (Galactic Council), your Flagship grants you an innate **+3 Voting Power**, acting as a massive, mobile seat of political influence.
-14. **Stealth Recon Uplink:** *(Passive - Requires Galactic Objectives)* During Objective Deck Setup or whenever you draw a Secret Objective, you may hold 1 additional Secret Objective card in your hand beyond the standard limit, giving you more hidden paths to Victory Points.
-15. **Mobile Command Center:** *(Passive - Requires Galactic Objectives)* During Phase 6 (Scoring), the sector containing your Flagship may count as 1 controlled planet (of any basic planetary type of your choice) solely for the purpose of meeting requirements for Stage 1 or Stage 2 Public Objectives.
-
+---
 
 ## Appendix C: Galactic Council Expansion
 
-Welcome to the Senate. This rule module injects complex political maneuvers into the micro-footprint of **Parsec X**. Leveraging the new Phase structure introduced in the *Galactic Objectives Expansion*, this module shifts the Scoring phase to allow players to enact game-altering laws and direct sanctions. 
+The Galactic Council allows players to enact laws and election agendas during a dedicated political phase.
 
-> [!NOTE]
-> This module requires the *Galactic Objectives Expansion* to be in play.
-
-### 1. Updated Round Structure
-
-The phase sequence for Parsec X is updated as follows:
-**Phase 1:** Upkeep ➔ **Phase 2:** Upgrade ➔ **Phase 3:** Movement ➔ **Phase 4:** Encounter ➔ **Phase 5: GALACTIC COUNCIL** ➔ **Phase 6: SCORING**
+### 1. The Council Sequence
+Once unlocked, the Council occurs in **Phase 6** of every round.
+**Phase 1:** Upkeep ➔ **Phase 2:** Bidding ➔ **Phase 3:** Upgrade ➔ **Phase 4:** Movement ➔ **Phase 5:** Encounter ➔ **Phase 6: GALACTIC COUNCIL** ➔ **Phase 7: SCORING**
 
 ### 2. Setting the Trigger Condition
 Before the game begins, the table must collectively choose **one** of the following four variants which dictates when the Galactic Council is unlocked and convenes for the first time:
@@ -377,9 +290,8 @@ Before the game begins, the table must collectively choose **one** of the follow
 3.  **The Planetary Milestone Variant:** The Council unlocks the round immediately after any player successfully leaves their Homeworld and takes control of a 2nd planet.
 4.  **The Immediate Variant:** The Council happens every single round starting from Round 1.
 
-### 3. The Galactic Council Phase mechanics
-
-Once the Galactic Council has been unlocked, the following steps occur during Phase 5:
+### 2. The Galactic Council Phase mechanics
+During **Phase 6**, the following steps occur:
 
 1.  **Convene:** The Start Player draws the top card of the Agenda Deck and reads it aloud to the table.
 2.  **Voting Sequence:** Starting with the player to the left of the Start Player and moving clockwise, each player must declare their votes. You may choose to pass/abstain. Once a vote has been stated, it is locked. The Start Player votes last and acts as the tiebreaker.
@@ -472,38 +384,19 @@ These target specific players or specific types of planets (e.g. Jovian Worlds).
 
 ## Appendix D: Galactic Objectives Expansion
 
-This unofficial expansion introduces an alternative victory point system for **Parsec X** inspired by *Twilight Imperium*, replacing the original "first to 4 planets" win condition with dynamic, diverse economic, technological, and militaristic objectives. Instead of simply racing for planets, players will compete over public directives and hidden agendas set by the Galactic Council.
+This expansion shifts the game focus to Victory Points (VP) and Public/Secret Objectives.
 
-### 1. New Mechanics: Victory Points (VP)
+### 1. Round & Scoring Sequence
+The game is played over **10 Rounds**. Scoring occurs in **Phase 7**.
+**Phase 1-5:** Standard ➔ **Phase 6:** Council (if active) ➔ **Phase 7: SCORING**
 
-### Game Length
-The game is played over a fixed duration of **10 Rounds**. After the 10th round is completed, the game ends.
-
-### Victory Condition
-The player with the most Victory Points at the end of Round 10 is the winner. If there is a tie for the most VP, the result is a **shared victory**.
-
-### 2. Objective Deck Setup
-
-Before the game begins, split the objectives into three decks: **Stage 1 Public**, **Stage 2 Public**, and **Secret Objectives**. Shuffle each deck separately.
-
-1.  Place the **Stage 1 Public** and **Stage 2 Public** objective decks face down near the board.
-2.  The public objective track starts empty.
-3.  Deal each player **two Secret Objectives**. Each player keeps one and discards the other face down to the box.
-
-### 3. New Phase: SCORING (Phase 5)
-
-Rounds in Parsec X now feature a fifth phase:
-**Phase 1:** Upkeep ➔ **Phase 2:** Upgrade ➔ **Phase 3:** Movement ➔ **Phase 4:** Encounter ➔ **Phase 5: SCORING**
-
-During the Scoring Phase, beginning with the Start Player and proceeding clockwise:
-1.  **Reveal New Objective:** At the start of the phase, add a new Public Objective to the track from the decks:
-    - **Turns 1–5:** Reveal a card from the **Stage 1** deck.
-    - **Turns 6–10:** Reveal a card from the **Stage 2** deck.
-2.  **Score Objectives:** A player scores **ALL** Public Objectives and Secret Objectives they qualify for. To score a Public Objective, the player places a cube on it. They do not claim the card, allowing other players to score it on future turns.
-    *(The previously enforced limit of one public objective per round is removed).*
+### 2. Phase 7: SCORING
+During the Scoring Phase:
+1.  **Reveal New Objective:** Add a new Public Objective (Stage 1 for turns 1-5, Stage 2 for turns 6-10).
+2.  **Score Objectives:** Players score all Public and Secret objectives they qualify for.
 
 ### Action Phase Secret Objectives
-Some Secret Objectives have the **(Action Phase)** tag. These are the *only* objectives that are not scored during Phase 5. A player may instantly reveal and score an Action Phase objective immediately when its condition is met during Phase 2 (Upgrade), Phase 3 (Movement), or Phase 4 (Encounter). The objective is placed face up in the player's play area and its VP applies immediately.
+Secret Objectives with the **(Action Phase)** tag are scored instantly during Phases 3, 4, or 5 when their conditions are met. 
 
 *Note: You may only score one Secret Objective per round, regardless of whether it is an Action Phase objective or a Scoring Phase objective.*
 
