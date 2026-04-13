@@ -11,8 +11,20 @@
 - [Appendix B: Flagships](#appendix-b-flagship-expansion)
 - [Appendix C: Galactic Council](#appendix-c-galactic-council-expansion)
 - [Appendix D: Galactic Objectives](#appendix-d-galactic-objectives-expansion)
+- [Summary of Enhancements](#summary-of-master-edition-enhancements)
 
-Welcome to **Parsec X**, a micro-4X space simulation game for 2 to 4 players. This Master Edition rulebook integrates the base rules with the *Advanced Tactics*, *Flagships*, *Galactic Council*, and *Galactic Objectives* expansions, reflecting the latest V1.1 balance adjustments.
+Welcome to **Parsec X**, a micro-4X space simulation game for 2 to 4 players. This Master Edition rulebook integrates the base rules with the *Advanced Tactics*, *Flagships*, *Galactic Council*, and *Galactic Objectives* expansions, reflecting the latest V1.2 balance adjustments derived from large-scale simulation analysis.
+
+---
+
+## **Summary of Master Edition Enhancements**
+
+The Master Edition introduces several critical balancing mechanics and logic fixes to ensure a competitive experience across all 8 civilizations and eliminate "First-Player Advantage" (Seat 0 bias).
+
+*   **Influence Bidding for Turn Order:** Players now bid Influence simultaneously at the start of each round to determine turn order. The highest bidder moves first, and ties are broken by maintaining the relative order from the previous round. This adds a critical layer of resource management to the sequence.
+*   **Active Player Initiative:** In the Encounter Phase, the player currently taking their turn is ALWAYS considered the **Attacker**. This prevents "Initiative Camping" where lower-ID players would previously default to the attacker role regardless of movement.
+*   **Tactical Retreat Cost:** The flat "1 Resource" cost has been increased to **3 Energy**. This makes retreating a significant strategic decision rather than a trivial escape.
+*   **Randomized Setup Order:** The initial turn order for Round 1 is determined randomly.
 
 ---
 
@@ -46,16 +58,20 @@ Some actions require Parsec X expansions. List of expansions available:
 2. **Civilization:** Each player receives 2 Civilization cards, chooses one, and discards the other.
 3. **Hull Choice:** Choose either a **Wanderer** or **Raider** hull and receive your Tech Tree card.
 4. **Starting Fleet:** Each player places 2 ships (cubes) on their Homeworld sector.
-5. **Resources:** Place tracking cubes on the starting resource markers on your Ship Card.
+5. **Resources:** Place tracking cubes on the starting resource markers on your Ship Card. Note: **Altair Divide** starting energy is reduced to **2** for game balance.
 6. **[GalObj]** **Objectives:**
-    - Prepare the Stage 1 and Stage 2 Public Objective decks. The public objective track starts empty; one new objective will be added to the board each turn (see Appendix D).
+    - Prepare the Stage 1 and Stage 2 Public Objective decks.
     - Deal 2 Secret Objectives to each player; they keep one.
-7. **[Flag]** **Flagship:** Every player starts with the right to designate one of their ships as a Flagship during the game.
+7. **Starting Player:** The Starting Player for **Round 1** is determined randomly.
+8. **[Flag]** **Flagship:** Every player starts with the right to designate one of their ships as a Flagship during the game.
 
 ---
 
 ## 3. The Galactic Round (Phase Structure)
-A round consists of six sequential phases. Phases 1 and 2 are simultaneous; 3, 4, and 5 proceed in clockwise order starting with the Start Player.
+A round consists of six sequential phases.
+*   **Phase 1: Upkeep:** Resolved simultaneously by all players.
+*   **Phase 2: Bidding for Turn Order:** Players submit a simultaneous secret bid of **Influence**. The highest bidder becomes the new Start Player (Position 1), resetting the turn order list. If two or more players bid the same amount, their **relative order** from the previous round remains the same.
+*   **Phase 3-6:** Proceed in the new turn order.
 
 ### Phase 1: Upkeep
 - **Resource Gathering:** Collect native yields from your Homeworld and any controlled planets.
@@ -63,7 +79,7 @@ A round consists of six sequential phases. Phases 1 and 2 are simultaneous; 3, 4
 - **[Flag]** **Jettison Flagship Extensions:** You may jettison one Flagship Extension to remove a Damage Token from your Flagship.
 
 ### Phase 2: Upgrade
-- **Ship Construction:** Pay the indicated Ore/Credit cost to build new ships.
+- **Ship Construction:** Pay the indicated Ore/Credit cost to build new ships. Newly built ships are placed in your **Homeworld** sector (or a sector containing a **Shipyard Moon**).
 - **Tech Research:** Pay resources to move cubes down your Tech Tree (Engines, Command, Shields, Weapons).
 - **[Flag]** **Flagship Designation:** If you have no Flagship, designate an existing ship as one.
 - **[Flag]** **Extensions:** Buy unique modules for your Flagship (Cost: 2/4/6/8 resources for slots 1/2/3/4).
@@ -75,11 +91,11 @@ A round consists of six sequential phases. Phases 1 and 2 are simultaneous; 3, 4
 
 ### Phase 4: Encounter
 - **Exploration:** If a ship enters a sector containing an Unknown Planet (a planet with no type defined yet), the player rolls 1d6 and consults the **Planetary Atlas** below to determine the outcome.
-- **Combat:** If you occupy a sector with an opponent's ship or planet, combat occurs.
   - **Strength:** Roll 1d6 + Weapons/Shields tech + Support (+1 for every additional friendly ship in the sector).
-  - **[Flag]** **Flagships:** Count as 2 ships for support and have native strength bonuses.
+  - **Initiative:** The player currently taking their turn is strictly designated as the **Attacker**.
+  - **[Flag]** **Flagships:** Count as 2 ships for strength/support and have native combat modules.
   - **Ties:** If totals are equal, **both ships are destroyed** (**[Flag]** unless protected by a *Command Carrier Bay*).
-  - **[ATac]** **Retreat:** Before rolls, either the Attacker or Defender may discard **1 Resource** to retreat to an adjacent safe sector. No combat die is rolled.
+  - **[ATac]** **Tactical Retreat:** Before combat dice are rolled, the **Defender** may choose to pay **3 Energy** to safely retreat to an adjacent safe sector. No combat die is rolled. If the defender cannot afford 3 Energy or no safe sector is available, they must fight.
 
 #### Planetary Atlas
 
@@ -157,16 +173,16 @@ Each civilization has a unique passive upkeep bonus, a resource conversion actio
 
 | Faction | Passive Upkeep | Resource Conversion | Tech Discounts | Elite Bonus |
 | :--- | :--- | :--- | :--- | :--- |
-| **Sharnak Imperium** | +1 Ore, +1 Credits | Credits ➔ Ore (1:1) | Weapons (Ore), **Shields (Ore)** | Combat Attack Reroll |
-| **The Conversation** | +1 Credits, +1 Influence | Bi-directional Credits ↔ Influence | Engines (Ore), Command (Credits) | Combat Defense Reroll |
-| **Wulfram Collective** | **+1 Ore, +1 Credits** | **Bi-directional** Ore ↔ Influence | **Weapons (Energy), Engines (Ore)** | Combat Attack Reroll |
+| **Sharnak Imperium** | +1 Ore, +1 Credits | Credits ➔ Ore (1:1) | Weapons (Ore), Shields (Ore) | Combat Attack Reroll |
+| **The Conversation** | +2 Credits, +1 Influence | Bi-directional Credits ↔ Influence | Engines (Ore), Command (Credits) | Combat Defense Reroll |
+| **Wulfram Collective** | +1 Ore, +1 Credits | Bi-directional Ore ↔ Influence | Weapons (Energy), Engines (Ore) | Combat Attack Reroll |
 | **Rim Worlds Combine** | +1 Credits, +1 Ore | Ore ➔ Credits (1:1) | — | Exploration Discovery Reroll |
-| **The Aiiji** | +2 Credits | Influence ➔ Credits // Credits ➔ Ore | Command (Influence) | General Action Reroll |
-| **Altair Divide** | **+1 Influence** | Ore ➔ Influence // Influence ➔ Credits | Weapons (Energy), **Command (Credits)** | Prevent Enemy Rerolls |
-| **Gaian Empire** | **+1 Credits, +1 Energy, +1 Influence** | **Bi-directional** Credits ↔ Influence | Shields (Energy), **Engines (Ore)** | Combat Defense Reroll |
-| **Purist Hegemony** | **+1 Credits, +1 Influence** | **Bi-directional** Influence ↔ Ore | Command (Energy), **Engines (Credits)** | Innate +1 Defense Strength |
+| **The Aiiji** | +2 Credits, +1 Ore | Influence ➔ Credits // Credits ➔ Ore | Command (Influence) | General Action Reroll |
+| **Altair Divide** | +1 Influence, +1 Energy | Ore ➔ Influence // Influence ➔ Credits | Weapons (Energy), Command (Credits) | Prevent Enemy Rerolls |
+| **Gaian Empire** | +1 Energy, +1 Influence | Bi-directional Credits ↔ Influence | Shields (Energy), Engines (Ore) | Combat Defense Reroll |
+| **Purist Hegemony** | +1 Credits, +2 Influence | Bi-directional Influence ↔ Ore | Command (Energy), Engines (Credits) | Innate +1 Defense Strength |
 
-*Resource Legend: C=Credits, I=Influence, E=Energy, O=Ore. Changes from v1.0 are in **bold**.*
+*Resource Legend: C=Credits, I=Influence, E=Energy, O=Ore.*
 
 ### Civilization Special Rules
 
@@ -177,7 +193,10 @@ When the Sharnak Imperium attacks a **Xenophobic Empire** (Planetary Atlas, Roll
 The Purist Hegemony's Homeworld is a heavily fortified capital. It grants **+2 Passive Voting Power** in the Galactic Council instead of the standard +1 (or +4 if the player holds the Head of Diplomacy mandate). This reflects their political weight derived from their impenetrable core world. Their bidirectional Influence ↔ Ore conversion allows them to shift between fortress-building and political campaigning each round.
 
 **Gaian Empire — Ecological Specialization:**  
-Gaian culture has a deep bond with fertile worlds. During **Phase 1 (Upkeep)**, each **Farming World** the Gaian Empire controls yields an additional **+1 Credit** on top of its standard output. This encourages specialization in Farming Worlds (explored via Planetary Atlas Roll 2) and gives the Gaian economy a distinctive ecological identity.
+Gaian culture has a deep bond with fertile worlds. During **Phase 1 (Upkeep)**, each **Farming World** the Gaian Empire controls yields an additional **+1 Credit** on top of its standard output. This represents their efficient agrarian economy. To balance this power, the Gaian baseline upkeep has been narrowed to Energy and Influence only.
+
+**The Aiiji — Resource Synthesis:**
+The Aiiji possess advanced alchemy and manufacturing. During **Phase 1 (Upkeep)**, they gain **+1 Ore** in addition to their standard Credit yield. Furthermore, their **Political Synthesis** master passive allows them to spend Influence during Phase 6 to claim a Public Objective even if they did not meet its standard criteria (Cost: 4 + 2x Influence, where x is the number of syntheses already performed).
 
 **Altair Divide — Flagship Intelligence Network:**  
 The Altair Divide operates a vast intelligence fleet. During **Phase 6 (Scoring)**, their Flagship sector counts as **1 controlled planet** (type: Mining) for the purpose of scoring **Exploration (EXP) type objectives only** (e.g. *Expand Borders*, *Galactic Dominance*, *Cultural Hub*). This bonus does not apply to Military, Tech, Diplomatic, or Economic objectives. The Flagship must be active and deployed on the board.
@@ -190,7 +209,7 @@ The Wulfram Collective operates as an industrial raiding syndicate. Each time th
 
 ---
 
-## **[Flag]** 6. Flagship Appendix**
+## **[Flag]** 6. Flagship Appendix
 - **Damage:** Flagships take 2 hits to destroy. The first hit grants a "Damage Token."
 - **Extensions:** Unique modules built during Phase 2.
 - **Death:** If destroyed, all Extensions are lost. You must rebuild from slot 1 if you designate a new hull.
@@ -234,37 +253,37 @@ Tactic cards represent sudden maneuvers, espionage, and brilliant strategic trap
 Assemble a deck using the following 25 Tactic Cards.
 
 ### Combat Tricks
-1.  **Emergency Thrusters:** *(Combat)* Play immediately after losing a combat roll. Ignore the loss and do not remove a ship. You must immediately retreat the fleet into an adjacent safe sector.
-2.  **Shield Overload:** *(Combat)* Play before dice are rolled. Gain a temporary +3 Defense Strength for this specific die roll.
-3.  **Experimental Ordnance:** *(Combat)* Play before dice are rolled. If you win this specific roll, destroy 2 enemy ships instead of 1.
-4.  **Bypass Codes:** *(Combat)* Play against a heavily fortified planet. Ignore the planet's native Defense Strength bonuses (e.g., Planetary Capitals or Terraformed planets) for this entire encounter.
-5.  **Flanking Maneuver:** *(Combat)* Play if you are the Attacker. You may re-roll your combat die once.
-6.  **Sabotage:** *(Combat)* Play before dice are rolled. The opposing player cannot apply their current *Weapon* or *Shield* Tech Tree bonus to this encounter.
-7.  **Point Defense Grid:** *(Combat)* Play when an opponent uses a Flagship's Orbital Bombardment. Completely negate the bombardment.
-8.  **Kamikaze Protocol:** *(Combat)* Play immediately after losing a combat roll. Both your ship and the winning enemy ship are destroyed simultaneously.
+1.  **Emergency Thrusters:** *(Combat)* Play during a combat you are **Defending**. Gain an immediate **+3 Defense Strength** for the roll.
+2.  **Shield Overload:** *(Combat)* Play before dice are rolled as a **Defender**. Spend **2 Energy** to gain a massive **+5 Defense Strength** for this roll.
+3.  **Experimental Ordnance:** *(Combat)* Play before dice are rolled as an **Attacker**. Gain **+5 Attack Strength**. **Risk:** Roll 1d6; on a **1 or 2**, your own ship sustains a **Damage Token** (or is destroyed if already damaged).
+4.  **Bypass Codes:** *(Movement)* Play at the start of your Movement phase. The movement cost to use a **Spacewarp** is reduced to **0 Energy** for all your ships this round.
+5.  **Flanking Maneuver:** *(Combat)* Play as an **Attacker**. Gain a permanent **+2 Attack Strength** for this specific encounter.
+6.  **Sabotage:** *(Combat)* Play before dice are rolled. The opposing player **cannot apply any Technology bonuses** (Weapons or Shields) to this encounter.
+7.  **Point Defense Grid:** *(Combat)* Play as a **Defender**. Gain **+2 Defense Strength** (+3 if the attacker is a standard ship).
+8.  **Kamikaze Protocol:** *(Combat)* Play as an **Attacker**. Both your ship and the target enemy ship are **automatically destroyed** regardless of strength rolls.
 
 ### Economic & Strategic
-9.  **Industrial Espionage:** *(Action/Upkeep)* Play during your Upkeep phase. Steal 2 Resources of your choice directly from another player's tracker.
-10. **Trade Network Hack:** *(Action)* Swap the position of two of your ships anywhere on the board instantly.
-11. **Smuggler’s Route:** *(Action/Movement)* During your movement phase, one of your ships may move across diagonals for this turn.
-12. **Deep Cover Agent:** *(Action/Scoring)* Play during the Scoring phase. You may swap one of your hidden Secret Objectives with a newly drawn one from the deck.
-13. **Rapid Deployment:** *(Action/Upgrade)* Play during your Upgrade phase. You may build 1 ship completely for free.
-14. **Ghost Fleet:** *(Action/Movement)* During movement, your fleet may pass directly through sectors occupied by enemy ships without stopping or triggering combat.
-15. **Resource Transmutation:** *(Action)* Completely empty your Ore tracking bar, and gain an identical amount of Credits.
+9.  **Industrial Espionage:** *(Action/Upgrade)* Play during your Upgrade phase. Gain **+3 Credits and +1 Influence** immediately.
+10. **Trade Network Hack:** *(Action/Upgrade)* Play during your Upgrade phase. Steal **2 Credits** from each opponent who currently has 2 or more Credits on their tracker.
+11. **Smuggler’s Route:** *(Action/Movement)* During your movement phase, gain **+4 Movement Distance** for one ship, ignoring enemy presence in intervening sectors.
+12. **Deep Cover Agent:** *(Action/Scoring)* Play during the Scoring phase. Gain **+1 Victory Point** if any opponent currently controls 3 or more planets.
+13. **Rapid Deployment:** *(Action/Upgrade)* During the Upgrade phase, you may build 1 ship for a reduced cost of **1 Ore**.
+14. **Ghost Fleet:** *(Encounter)* Play as an **Attacker**. Gain **+2 Attack Strength**. Furthermore, the defender **cannot apply Flagship Extension bonuses** to this combat.
+15. **Resource Transmutation:** *(Action/Upgrade)* During the Upgrade phase, you may spend **2 Ore** to immediately gain **5 Credits**.
 
-### Uncharted Space
-16. **Astrogation Master:** *(Action/Encounter)* Play when uncovering an Unknown Planet. You may physically dictate what the planet is without rolling a die.
-17. **Distress Beacon:** *(Action/Movement)* Pull any one of your ships from the board directly into the sector containing your Flagship, regardless of distance.
-18. **Anomalous Field:** *(Action)* Play on any Sector map card. No ships may enter or leave that specific map card for the rest of this entire round.
-19. **Diplomatic Backchannels:** *(Action/Encounter)* Automatically succeed in forging a Diplomatic Alliance with an Elder Civilization without rolling or paying the Influence cost.
-20. **Aggressive Terraforming:** *(Action/Encounter)* When encountering a Terraforming Candidate (Planetary Atlas, Roll 6), terraform it for half of the required resource cost (rounded down).
+### Uncharted Space & Movement
+16. **Astrogation Master:** *(Action/Movement)* During your movement phase, gain **+2 Movement Distance** for all your ships.
+17. **Distress Beacon:** *(Combat)* Play before dice are rolled. If you have friendly ships in an adjacent sector, gain **+3 Strength** for this encounter.
+18. **Anomalous Field:** *(Combat)* Play before dice are rolled. Both participants must roll **two dice** and take the **lower result** for their strength calculation.
+19. **Diplomatic Backchannels:** *(Council)* Play during the Council phase. Gain **+3 Influence** before votes are cast.
+20. **Aggressive Terraforming:** *(Encounter)* Play when terraforming a planet. Reduce the resource cost of the terraforming by **2**.
 
 ### Political Sabotage (requires Galactic Council Expansion)
-21. **Veto Power:** *(Agenda Phase)* Play instantly when a Resolution (For/Against) is passed. Cancel the outcome. The Agenda fails.
-22. **Bribery:** *(Agenda Phase)* Play before votes are cast. You may subtract up to 3 votes from any opponent's final voting total this round.
-23. **Political Assassination:** *(Agenda Phase)* Play after an Election has been designated. Choose one specific player; they cannot be voted for on this Agenda. 
-24. **Filibuster Delay:** *(Agenda Phase)* Push the currently revealed Agenda card to the bottom of the deck and immediately draw a new one to vote on instead.
-25. **Blackmail:** *(Agenda Phase)* Play before a player casts their vote. You declare exactly how that player must cast their base planetary voting power.
+21. **Veto Power:** *(Council)* Play when an Agenda is revealed. Immediately **cancel the current Agenda** and discard it. No voting occurs.
+22. **Bribery:** *(Council)* Play before votes are cast. Spend **2 Credits** to gain **+6 Voting Power** for the current Agenda.
+23. **Political Assassination:** *(Council)* Play before votes are cast. The player with the **highest Victory Points** (the leader) is excluded from this vote and provides 0 Voting Power.
+24. **Filibuster Delay:** *(Council)* Play if you are the **Start Player**. Gain an additional **+4 Voting Power** for the current Agenda.
+25. **Blackmail:** *(Council)* Play before votes are cast. Target an opponent; steal **2 Influence** from their tracker and add it to yours.
 
 
 ## Appendix B: Flagship Expansion
@@ -366,7 +385,8 @@ Once the Galactic Council has been unlocked, the following steps occur during Ph
 2.  **Voting Sequence:** Starting with the player to the left of the Start Player and moving clockwise, each player must declare their votes. You may choose to pass/abstain. Once a vote has been stated, it is locked. The Start Player votes last and acts as the tiebreaker.
 3.  **Voting Power (The Currency):** Players cast votes using two cumulative methods:
     *   **Spending Influence:** You may spend Influence Resources directly from your resource tracker. (1 Spent Influence = 1 Vote).
-    *   **Passive Planet Voting Power:** Planets you control inherently provide voting power without needing to be "spent" or exhausted:
+    *   **Passive Planet Voting Power:** Planets you control inherently provide voting power without needing to be "spent" or exhausted.
+    *   **Tactical Influence:** Players may play **[ATac]** Tactic Cards (e.g., *Bribery*, *Veto*) to alter the session's outcome before or after voting.
         *   *Homeworlds:* +1 Vote
         *   *Elder Civilizations:* +3 Votes
         *   *Xenophobic Empires:* +2 Votes

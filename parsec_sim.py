@@ -16,7 +16,7 @@ FACTIONS = {
     },
     "The Conversation": {
         "convert": [(Resource.INFLUENCE, Resource.CREDITS), (Resource.CREDITS, Resource.INFLUENCE)],
-        "upkeep": {Resource.CREDITS: 1, Resource.INFLUENCE: 1},
+        "upkeep": {Resource.CREDITS: 2, Resource.INFLUENCE: 1},                  # Buff: +1 Credit to match Hegemony
         "discount": {"Engines": Resource.ORE, "Command": Resource.CREDITS},
         "bonus": "DefenseReroll"
     },
@@ -33,15 +33,16 @@ FACTIONS = {
     },
     "The Aiiji": {
         "convert": [(Resource.INFLUENCE, Resource.CREDITS), (Resource.CREDITS, Resource.ORE)],
-        "upkeep": {Resource.CREDITS: 2},
+        "upkeep": {Resource.CREDITS: 2, Resource.ORE: 1},                       # Buff: +1 Ore upkeep (resource synthesis)
         "discount": {"Command": Resource.INFLUENCE},
         "bonus": "GeneralReroll"
     },
     "Altair Divide": {
-        "upkeep": {Resource.INFLUENCE: 1, Resource.ENERGY: 1},          # Buff: mobility for intel
+        "upkeep": {Resource.INFLUENCE: 1, Resource.ENERGY: 1},
         "convert": [(Resource.ORE, Resource.INFLUENCE), (Resource.INFLUENCE, Resource.CREDITS)],
-        "discount": {"Weapons": Resource.ENERGY, "Command": Resource.CREDITS},  # Buff: tactical intel
-        "bonus": "PreventReroll"
+        "discount": {"Weapons": Resource.ENERGY, "Command": Resource.CREDITS},
+        "bonus": "PreventReroll",
+        "start_nerf": True                                                      # flag for resource adjustment
     },
     "Gaian Empire": {
         "upkeep": {Resource.ENERGY: 1, Resource.INFLUENCE: 1},         # Nerf: Credits removed to curb dominance
@@ -50,9 +51,9 @@ FACTIONS = {
         "bonus": "DefenseReroll"
     },
     "Purist Hegemony": {
-        "upkeep": {Resource.CREDITS: 1, Resource.INFLUENCE: 1},       # Buff: fortress‑state baseline
-        "convert": [(Resource.INFLUENCE, Resource.ORE), (Resource.ORE, Resource.INFLUENCE)],  # Buff: bidirectional
-        "discount": {"Command": Resource.ENERGY, "Engines": Resource.CREDITS},  # Buff: mobility
+        "upkeep": {Resource.CREDITS: 1, Resource.INFLUENCE: 2},                # Buff: +1 Influence upkeep
+        "convert": [(Resource.INFLUENCE, Resource.ORE), (Resource.ORE, Resource.INFLUENCE)],
+        "discount": {"Command": Resource.ENERGY, "Engines": Resource.CREDITS},
         "bonus": "DefensePlusOne"
     }
 }
@@ -137,7 +138,6 @@ EXTENSION_DESCRIPTIONS = {
     14: "Hold 1 additional Secret Objective card.",
     15: "Flagship sector counts as 1 controlled planet for objectives."
 }
-
 TACTIC_NAMES = {
     1: "Emergency Thrusters", 2: "Shield Overload", 3: "Experimental Ordnance",
     4: "Bypass Codes", 5: "Flanking Maneuver", 6: "Sabotage", 7: "Point Defense Grid",
@@ -147,6 +147,34 @@ TACTIC_NAMES = {
     17: "Distress Beacon", 18: "Anomalous Field", 19: "Diplomatic Backchannels",
     20: "Aggressive Terraforming", 21: "Veto Power", 22: "Bribery",
     23: "Political Assassination", 24: "Filibuster Delay", 25: "Blackmail"
+}
+
+TACTIC_EFFECTS = {
+    1: {"types": ["COMBAT_DEF"], "magnitude": 3, "desc": "+3 Defense Strength"},
+    2: {"types": ["COMBAT_DEF"], "magnitude": 5, "cost": {Resource.ENERGY: 2}, "desc": "+5 Defense, lose 2 Energy"},
+    3: {"types": ["COMBAT_ATK"], "magnitude": 5, "desc": "+5 Attack, risk of damage"},
+    4: {"types": ["MOVEMENT"], "magnitude": 1, "desc": "Free Spacewarp"},
+    5: {"types": ["COMBAT_ATK"], "magnitude": 2, "desc": "+2 Attack Strength"},
+    6: {"types": ["COMBAT_ATK"], "magnitude": 4, "desc": "Negate opponent Tech"},
+    7: {"types": ["COMBAT_DEF"], "magnitude": 2, "desc": "+2 Defense vs Standard"},
+    8: {"types": ["COMBAT_ATK"], "magnitude": 10, "desc": "Self-destruct for kill"},
+    9: {"types": ["ECON"], "magnitude": 4, "desc": "+3 Credits, +1 Influence"},
+    10: {"types": ["ECON"], "magnitude": 2, "desc": "Steal 2 Credits from each"},
+    11: {"types": ["MOVEMENT"], "magnitude": 4, "desc": "Long move (4 hexes)"},
+    12: {"types": ["INTEL"], "magnitude": 1, "desc": "+1 VP if opponent strong"},
+    13: {"types": ["MILITARY"], "magnitude": 1, "desc": "Half-cost ship"},
+    14: {"types": ["COMBAT_ATK"], "magnitude": 2, "desc": "+2 Attack, immune to extensions"},
+    15: {"types": ["ECON"], "magnitude": 3, "desc": "2 Ore -> 5 Credits"},
+    16: {"types": ["MOVEMENT"], "magnitude": 2, "desc": "+2 Move distance"},
+    17: {"types": ["COMBAT_ATK", "COMBAT_DEF"], "magnitude": 3, "desc": "+3 with neighbors"},
+    18: {"types": ["COMBAT_ATK", "COMBAT_DEF"], "magnitude": 0, "desc": "Lower of 2 dice"},
+    19: {"types": ["COUNCIL"], "magnitude": 3, "desc": "+3 Influence"},
+    20: {"types": ["ECON"], "magnitude": 2, "desc": "Terraform cost -2"},
+    21: {"types": ["COUNCIL"], "magnitude": 10, "desc": "Veto current Agenda"},
+    22: {"types": ["COUNCIL"], "magnitude": 6, "cost": {Resource.CREDITS: 2}, "desc": "Spend 2 Credits for +6 Power"},
+    23: {"types": ["COUNCIL"], "magnitude": 10, "desc": "Exclude highest VP from vote"},
+    24: {"types": ["COUNCIL"], "magnitude": 4, "desc": "Filibuster: Start Player +4 Power"},
+    25: {"types": ["COUNCIL"], "magnitude": 2, "desc": "Steal 2 Influence from Start Player"}
 }
 
 AGENDAS = {
@@ -291,6 +319,11 @@ class Player:
         self.civ_name = civ_name
         self.ship_flavor = ship_flavor
         self.resources = {Resource.ORE: 2, Resource.ENERGY: 3, Resource.CREDITS: 2, Resource.INFLUENCE: 1}
+        # Faction-specific starting adjustments
+        if civ_name == "Altair Divide":
+            self.resources[Resource.ENERGY] = 2  # Nerf: -1 Starting Energy
+        elif civ_name == "Purist Hegemony":
+            self.resources[Resource.INFLUENCE] = 2 # Buff: +1 Starting Influence
         self.tech = {"Weapons": 1, "Shields": 1, "Engines": 1, "Command": 1}
         self.ships = [Ship(id), Ship(id)]
         self.planets = []
@@ -333,6 +366,50 @@ class Player:
         self.mandate_vp = 0                # Persistent VP from mandate effects (Vanguard, Public Hero, Bountiful Harvest)
         self.blocked_from_scoring = False  # Set by Public Disgrace agenda
         self.flagship_combat_ships = 2     # Default; set to 3 by Admiral of the Fleet
+    
+    def choose_tactic(self, context):
+        """AI picks a tactic card from hand based on context (COMBAT_ATK, COMBAT_DEF, COUNCIL, ECON)."""
+        if not self.hand_tactics: return None
+        
+        candidates = []
+        for tid in self.hand_tactics:
+            effect = TACTIC_EFFECTS.get(tid)
+            if effect and context in effect["types"]:
+                # Check if player can afford it (if it has a cost)
+                if effect.get("cost") and not self.can_afford(effect["cost"]):
+                    continue
+                candidates.append(tid)
+        
+        if not candidates: return None
+        # Simplified: Pick the one with the highest magnitude
+        return max(candidates, key=lambda x: TACTIC_EFFECTS[x].get("magnitude", 0))
+
+    def play_tactic(self, tid):
+        if tid in self.hand_tactics:
+            self.hand_tactics.remove(tid)
+            self.used_tactics.append(tid)
+            self.tactics_played_count += 1
+            effect = TACTIC_EFFECTS.get(tid)
+            if effect.get("cost"):
+                self.spend(effect["cost"])
+            return True
+        return False
+    
+    def choose_influence_bid(self, round_number):
+        """AI chooses a secret bid for turn order."""
+        inf = self.resources[Resource.INFLUENCE]
+        if inf <= 0: return 0
+        
+        # Strategy: spend if close to winning or have tactical advantage
+        bid = 0
+        if round_number > 7 or self.vp >= 4:
+            # Aggressive bidding for priority
+            bid = random.randint(0, inf)
+        elif inf > 4:
+            # Spend excess influence
+            bid = random.randint(0, 2)
+        
+        return bid
     
     def get_upkeep_yield(self):
         # AI decision for homeworld: prioritize most needed or balanced
@@ -425,10 +502,15 @@ class ParsecSim:
             player.secret_objective = random.choice([choice1, choice2])
             player.sim = self
         
-        self.council_unlocked = True # Skipped to enable Council from the start and ignoreElder Variant
-        self.start_player_index = 0
-        self.elder_variant = True # Recommended variant per rules
+        self.elder_variant = True # Default to true
+        self.council_unlocked = False if self.elder_variant else True
+        self.player_turn_order = list(range(players_count))
+        random.shuffle(self.player_turn_order)
         self.planetary_capital = None
+
+    def get_ordered_players(self):
+        """Returns player objects in the current turn order."""
+        return [self.players[pid] for pid in self.player_turn_order]
 
     def log(self, message):
         if not self.silent:
@@ -472,13 +554,18 @@ class ParsecSim:
                 counts[t] += 1
         return counts
 
+    def get_all_ships(self):
+        all_s = []
+        for p in self.players:
+            all_s.extend(p.ships)
+        return all_s
+
     def run(self):
         max_rounds = 10
-        game_over = False
         while self.round_number <= max_rounds:
-            self.log(f"--- Round {self.round_number} ---")
+            self.log(f"\n=== Round {self.round_number} ===")
             
-            # Reset Round Metrics
+            # Reset Round Metrics & Set AI Priorities
             for player in self.players:
                 player.resources_spent_this_round = 0
                 player.inf_spent_this_round = 0
@@ -490,10 +577,11 @@ class ParsecSim:
                 player.destroyed_ship_this_round = False
                 player.destroyed_flagship_this_round = False
                 player.forged_elder_alliance_this_round = False
-                player.blocked_from_scoring = False  # Reset Public Disgrace flag each round
+                player.blocked_from_scoring = False
                 self.calculate_priorities(player)
-            
+
             self.phase_upkeep()
+            self.phase_bidding()
             self.phase_upgrade()
             self.phase_movement()
             self.phase_encounter()
@@ -502,14 +590,13 @@ class ParsecSim:
             if self.council_unlocked:
                 self.phase_council()
             else:
-                # Check Elder Variant Trigger
                 self.check_council_trigger()
 
             # Phase 6: Scoring
-            self.phase_scoring()
+            game_over = self.phase_scoring()
             
-            self.start_player_index = (self.start_player_index + 1) % self.players_count
             self.round_number += 1
+            if game_over: break
         
         if not self.silent:
             self.generate_final_report()
@@ -518,12 +605,36 @@ class ParsecSim:
         max_vp = max(p.vp for p in self.players)
         winners = [p for p in self.players if p.vp == max_vp]
         return {
-            "winner_civ": [w.civ_name for w in winners], # Return list for shared victory
+            "winner_civ": [w.civ_name for w in winners],
             "rounds": self.round_number - 1,
             "vp_counts": {p.civ_name: p.vp for p in self.players},
             "extensions_built": winners[0].built_extensions if len(winners) == 1 else [],
             "tech_levels": winners[0].tech if len(winners) == 1 else {}
         }
+
+    def phase_bidding(self):
+        """Simultaneous secret bidding for turn order."""
+        self.log("Phase: Bidding for Turn Order...")
+        bids = []
+        for p in self.players:
+            bid = p.choose_influence_bid(self.round_number)
+            p.resources[Resource.INFLUENCE] -= bid
+            # Store (bid, current_rank)
+            current_rank = self.player_turn_order.index(p.id)
+            bids.append({
+                "id": p.id,
+                "bid": bid,
+                "rank": current_rank
+            })
+            if bid > 0:
+                self.log(f"  Player {p.id} bid {bid} Influence.")
+
+        # Sort: Primary = Bid (DESC), Secondary = Previous Rank (ASC)
+        bids.sort(key=lambda x: (-x["bid"], x["rank"]))
+        
+        self.player_turn_order = [b["id"] for b in bids]
+        new_order_str = ", ".join(f"P{pid}" for pid in self.player_turn_order)
+        self.log(f"New Turn Order: {new_order_str}")
 
     def calculate_priorities(self, player):
         # AI strategy: Pick the 'easiest' objective from Public + Secret
@@ -556,7 +667,7 @@ class ParsecSim:
             elif "Energy" in target_obj["desc"]: player.savings_target[Resource.ENERGY] = 8
 
     def phase_upkeep(self):
-        for player in self.players:
+        for player in self.get_ordered_players():
             player.get_upkeep_yield()
             # Draw Tactic Card
             if self.decks["Tactics"] and len(player.hand_tactics) < 4:
@@ -572,7 +683,7 @@ class ParsecSim:
                             self.log(f"Player {player.id} repaired Flagship by jettisoning {lost_ext}")
 
     def phase_upgrade(self):
-        for player in self.players:
+        for player in self.get_ordered_players():
             # Resource Conversion (Sim AI: Simple conversion)
             self.solve_resource_conversion(player)
 
@@ -582,10 +693,39 @@ class ParsecSim:
             # Build Ship
             if len(player.ships) < 4:
                 cost = {Resource.ORE: 2} # Standard basic hull cost
+                
+                # Tactic: Rapid Deployment (13) - half cost
+                if player.choose_tactic("MILITARY") == 13:
+                    player.play_tactic(13)
+                    cost = {Resource.ORE: 1}
+                    self.log(f"P{player.id} used Rapid Deployment (Ship cost: 1 Ore)")
+
                 if player.can_afford(cost):
                     player.spend(cost)
                     player.ships.append(Ship(player.id))
                     self.log(f"Player {player.id} built a ship.")
+
+            # --- TACTIC USAGE (Economy) ---
+            t_id = player.choose_tactic("ECON")
+            if t_id:
+                if t_id == 15: # Transmutation (2 Ore -> 5 Credits)
+                    if player.resources[Resource.ORE] >= 2:
+                        player.play_tactic(t_id)
+                        player.resources[Resource.ORE] -= 2
+                        player.resources[Resource.CREDITS] += 5
+                        self.log(f"P{player.id} used Transmutation (2 Ore -> 5 Credits)")
+                elif t_id == 9: # Industrial Espionage
+                    player.play_tactic(t_id)
+                    player.resources[Resource.CREDITS] += 3
+                    player.resources[Resource.INFLUENCE] += 1
+                    self.log(f"P{player.id} used Industrial Espionage (+3 C, +1 I)")
+                elif t_id == 10: # Trade Network Hack
+                    player.play_tactic(t_id)
+                    for other in self.players:
+                        if other.id != player.id and other.resources[Resource.CREDITS] >= 2:
+                            other.resources[Resource.CREDITS] -= 2
+                            player.resources[Resource.CREDITS] += 2
+                    self.log(f"P{player.id} used Trade Network Hack (Steal 2 from each)")
 
             # Designate Flagship
             if not player.flagship_active and player.ships:
@@ -678,7 +818,7 @@ class ParsecSim:
                     self.log(f"Player {player.id} upgraded {tree_name} to Level {player.tech[tree_name]}")
 
     def phase_movement(self):
-        for player in self.players:
+        for player in self.get_ordered_players():
             # STRATEGIC AI: Targeting based on objective type
             targets_unknown = []
             targets_enemy = []
@@ -701,11 +841,29 @@ class ParsecSim:
             else:
                 targets = targets_unknown + targets_enemy
 
+            # --- TACTIC USAGE (Movement) ---
+            t_id = player.choose_tactic("MOVEMENT")
+            move_bonus_dist = 0
+            free_warp = False
+            if t_id:
+                if t_id == 16: # Astrogation Master
+                    player.play_tactic(t_id)
+                    move_bonus_dist = 2
+                    self.log(f"P{player.id} used Astrogation Master (+2 move distance)")
+                elif t_id == 4: # Bypass Codes
+                    player.play_tactic(t_id)
+                    free_warp = True
+                    self.log(f"P{player.id} used Bypass Codes (Free Warp)")
+                elif t_id == 11: # Smuggler's Route
+                    player.play_tactic(t_id)
+                    move_bonus_dist = 4
+                    self.log(f"P{player.id} used Smuggler's Route (+4 distance)")
+
             for ship in player.ships:
                 engine_lv = player.tech["Engines"]
                 engine_data = TECH_TREES[player.ship_flavor]["Engines"][engine_lv]
-                cost_energy = engine_data["energy_cost"]
-                max_dist = engine_data.get("dist", 3)
+                cost_energy = 0 if free_warp else engine_data["energy_cost"]
+                max_dist = engine_data.get("dist", 3) + move_bonus_dist
                 
                 if player.resources[Resource.ENERGY] >= cost_energy:
                     if targets:
@@ -748,7 +906,7 @@ class ParsecSim:
                                     dist_to_go -= 1
 
     def phase_encounter(self):
-        for player in self.players:
+        for player in self.get_ordered_players():
             for ship in player.ships:
                 # 1. Unknown Planet Encounter
                 if (ship.x, ship.y) in [(2,2), (4,0)]:
@@ -756,8 +914,8 @@ class ParsecSim:
                     if planet and planet.is_unknown:
                         self.process_exploration(player, planet)
                 
-                # 2. Combat (Very simplified: check for enemy ships)
-                self.check_sector_combat(ship.sector_id, ship.x, ship.y)
+                # 2. Combat (Active player is the Attacker)
+                self.check_sector_combat(ship.sector_id, ship.x, ship.y, player.id)
 
     def process_exploration(self, player, planet):
         roll = random.randint(1, 6)
@@ -845,7 +1003,7 @@ class ParsecSim:
                 player.planets.append(planet)
                 player.revealed_this_round += 1
                 player.destroyed_ship_this_round = True
-                self.log(f"Player {player.id} conquered Xenophobic Empire → {planet.type} World + {planet.moon} Moon (no settlement cost).")
+                self.log(f"Player {player.id} conquered Xenophobic Empire -> {planet.type} World + {planet.moon} Moon (no settlement cost).")
                 if self.elder_variant:
                     self.check_council_trigger()
             else:
@@ -906,6 +1064,14 @@ class ParsecSim:
                     for res in list(adjusted.keys()):
                         if res != Resource.INFLUENCE:
                             adjusted[res] = max(0, adjusted[res] - 2)
+            
+                # Tactic: Aggressive Terraforming (20)
+                if player.choose_tactic("ECON") == 20:
+                    player.play_tactic(20)
+                    for res in adjusted:
+                        adjusted[res] = max(0, adjusted[res] - 2)
+                    self.log(f"P{player.id} used Aggressive Terraforming (-2 cost)")
+
                 if player.can_afford(adjusted):
                     chosen_type = t_type
                     chosen_cost = adjusted
@@ -922,8 +1088,7 @@ class ParsecSim:
             else:
                 self.log(f"Player {player.id} cannot afford terraforming. Candidate remains available for others.")
 
-
-    def check_sector_combat(self, sector_id, x, y):
+    def check_sector_combat(self, sector_id, x, y, attacker_id):
         in_sector = []
         for p in self.players:
             for s in p.ships:
@@ -931,19 +1096,27 @@ class ParsecSim:
                     in_sector.append((p.id, s))
         
         if len(set(v[0] for v in in_sector)) > 1:
-            # Multi-player combat
-            self.resolve_combat(in_sector)
+            # Multi-player combat: Ensure attacker_id is involved
+            if any(v[0] == attacker_id for v in in_sector):
+                self.resolve_combat(in_sector, attacker_id)
 
-    def resolve_combat(self, ships_in_sector):
+    def resolve_combat(self, ships_in_sector, attacker_id):
         # ships_in_sector is a list of (p_id, ship)
-        # 1v1 simple loop
-        p_ids = sorted(list(set(v[0] for v in ships_in_sector)))
-        self.log(f"Step-by-Step Combat between Player {p_ids[0]} and {p_ids[1]}...")
+        # Identify Defender (first non-attacker found)
+        defender_tuple = next(v for v in ships_in_sector if v[0] != attacker_id)
+        attacker_tuple = next(v for v in ships_in_sector if v[0] == attacker_id)
+        
+        defender_id = defender_tuple[0]
+        self.log(f"Step-by-Step Combat: P{attacker_id} (Attacker) vs P{defender_id} (Defender)...")
         
         # Calculate Strength for p1 and p2
-        def get_strength(p_id, ship, other_ships, is_attacker=True, opponent_id=None):
+        def get_strength(p_id, ship, other_ships, is_attacker=True, opponent_id=None, tactic_id=None, opp_tactic_id=None):
             player = self.players[p_id]
             roll = random.randint(1, 6)
+            
+            # Tactic: Anomalous Field (18) — both roll 2, take lower
+            if tactic_id == 18 or opp_tactic_id == 18:
+                roll = min(roll, random.randint(1, 6))
 
             # Altair Divide: PreventReroll — cancel one opponent reroll per combat
             # If the opponent has a triggered reroll bonus, Altair negates it (intelligence/deception)
@@ -965,6 +1138,11 @@ class ParsecSim:
             if not is_attacker: # Shields bonus if defending
                  tech_bonus = TECH_TREES[player.ship_flavor]["Shields"][player.tech["Shields"]]["bonus"]
 
+            # Tactic: Sabotage (6) - Negate opponent tech
+            if opp_tactic_id == 6:
+                self.log(f"Player {p_id} Tech negated by Sabotage!")
+                tech_bonus = 0
+
             ship_bonus = player.flagship_combat_ships if ship.is_flagship else 1  # Fix #fix-AdmiralOfFleet
             if ship.is_flagship:
                 if 3 in ship.extensions and not is_attacker:
@@ -975,6 +1153,27 @@ class ParsecSim:
             other_support = sum(2 if s.is_flagship else 1 for s in other_ships) # +2 for Flagship support
             total = roll + tech_bonus + ship_bonus + other_support
 
+            # Tactic Bonuses
+            if tactic_id:
+                effect = TACTIC_EFFECTS[tactic_id]
+                if (is_attacker and "COMBAT_ATK" in effect["types"]) or \
+                   (not is_attacker and "COMBAT_DEF" in effect["types"]):
+                    total += effect["magnitude"]
+                
+                # Specialized: Point Defense Grid (7) - only vs standard
+                if tactic_id == 7 and getattr(self, 'opp_ship', Ship(0)).is_flagship == False:
+                     total += 1 # Total +3 vs standard
+
+            # Tactic: Ghost Fleet (14) - immune to extensions
+            if opp_tactic_id == 14:
+                self.log(f"Player {p_id} Extensions negated by Ghost Fleet!")
+                ship_bonus = 1 # reset flagship bonus to base 1
+
+            # Tactic: Distress Beacon (17)
+            if tactic_id == 17:
+                 neighbors = any(s.owner_id == p_id and s.sector_id == ship.sector_id and s != ship for s in self.get_all_ships())
+                 if neighbors: total += 3
+
             # Purist Hegemony Defense Bonus (+1)
             if not is_attacker and bonus == "DefensePlusOne":
                 total += 1
@@ -982,32 +1181,36 @@ class ParsecSim:
             return total, roll
 
         # Simple 1-round resolution for the algorithm
-        s1 = next(s for s in ships_in_sector if s[0] == p_ids[0])
-        s2 = next(s for s in ships_in_sector if s[0] == p_ids[1])
+        s1 = attacker_tuple
+        s2 = defender_tuple
         
         # Tactical Retreat Heuristic (Defender chooses to flee if outclassed)
-        defender_id = s2[0]
         defender_player = self.players[defender_id]
-        if defender_player.resources[Resource.ENERGY] >= 1:  # Fix #6: Retreat costs 1 resource (Energy), not 2
+        if defender_player.resources[Resource.ENERGY] >= 3:  # Nerf: Retreat cost increased to 3
             # Heuristic: Compare approximate strength (using average roll 3.5)
-            # This is a simple AI decision for the simulation.
             s1_p = self.players[s1[0]]
             str1_est = 3.5 + TECH_TREES[s1_p.ship_flavor]["Weapons"][s1_p.tech["Weapons"]]["bonus"] + (2 if s1[1].is_flagship else 1)
             str2_est = 3.5 + TECH_TREES[defender_player.ship_flavor]["Shields"][defender_player.tech["Shields"]]["bonus"] + (2 if s2[1].is_flagship else 1)
             
             if str2_est < str1_est - 2: # Defender feels outmatched
-                defender_player.spend({Resource.ENERGY: 1})  # Fix #6: Cost is 1 resource per rules
-                self.log(f"Player {defender_id} performed a Tactical Retreat! Aborting combat.")
+                defender_player.spend({Resource.ENERGY: 3})
+                self.log(f"Player {defender_id} performed a Tactical Retreat! (Cost: 3 Energy).")
                 return 
         
         # Tactic Usage Simulation
-        for p_id in [s1[0], s2[0]]:
-            if self.players[p_id].hand_tactics:
-                tactic = self.players[p_id].hand_tactics.pop()
-                self.players[p_id].used_tactics.append(tactic)
-                self.players[p_id].tactics_played_count += 1
-                t_name = TACTIC_NAMES.get(tactic, f"Tactic Card {tactic}")
-                self.log(f"Player {p_id} played Tactic Card {t_name} in combat.")
+        t1_id = self.players[s1[0]].choose_tactic("COMBAT_ATK")
+        t2_id = self.players[s2[0]].choose_tactic("COMBAT_DEF")
+
+        if t1_id:
+            self.players[s1[0]].play_tactic(t1_id)
+            self.log(f"Player {s1[0]} played {TACTIC_NAMES[t1_id]}: {TACTIC_EFFECTS[t1_id]['desc']}")
+        if t2_id:
+            # Shield Overload (2) cost check:
+            if t2_id == 2 and self.players[s2[0]].resources[Resource.ENERGY] < 2:
+                t2_id = None # Can't afford
+            else:
+                self.players[s2[0]].play_tactic(t2_id)
+                self.log(f"Player {s2[0]} played {TACTIC_NAMES[t2_id]}: {TACTIC_EFFECTS[t2_id]['desc']}")
 
         bombard_win = False
         if s1[1].is_flagship and 1 in s1[1].extensions:
@@ -1023,9 +1226,19 @@ class ParsecSim:
             s1_support = [s for s in s1_support if s.sector_id == s1[1].sector_id and s != s1[1]]
             s2_support = getattr(self.players[s2[0]], 'ships', [])
             s2_support = [s for s in s2_support if s.sector_id == s2[1].sector_id and s != s2[1]]
-            # Pass opponent_id so PreventReroll can be evaluated
-            str1, roll1 = get_strength(s1[0], s1[1], s1_support, is_attacker=True,  opponent_id=s2[0])
-            str2, roll2 = get_strength(s2[0], s2[1], s2_support, is_attacker=False, opponent_id=s1[0])
+            # Pass tactics to evaluate
+            str1, roll1 = get_strength(s1[0], s1[1], s1_support, is_attacker=True,  opponent_id=s2[0], tactic_id=t1_id, opp_tactic_id=t2_id)
+            str2, roll2 = get_strength(s2[0], s2[1], s2_support, is_attacker=False, opponent_id=s1[0], tactic_id=t2_id, opp_tactic_id=t1_id)
+            
+            # Specialized: Experimental Ordnance (3) risk
+            if t1_id == 3 and random.randint(1, 6) <= 2:
+                self.log(f"Experimental Ordnance BACKFIRED on P{s1[0]}!")
+                s1[1].damage_token = True
+            
+            # Specialized: Kamikaze Protocol (8)
+            if t1_id == 8:
+                self.log(f"KAMIKAZE! P{s1[0]} and P{s2[0]} ships destroyed!")
+                str1, str2 = 100, 100 # Force mutual destruction
         
         self.log(f"P{s1[0]} rolls {roll1} (Total {str1}) vs P{s2[0]} rolls {roll2} (Total {str2})")
         
@@ -1127,166 +1340,148 @@ class ParsecSim:
             self.decks["Agendas"] = list(range(1, 46))
             random.shuffle(self.decks["Agendas"])
 
-        agenda_id = self.decks["Agendas"].pop()
-        agenda = AGENDAS[agenda_id]
-        self.log(f"Council Convened: {agenda['name']} - {agenda['desc']}")
+        # Elder Variant: 1 agenda per round for the first half, 2 for the second half
+        agenda_count = 1 if self.round_number < 5 else 2
+        for _ in range(agenda_count):
+            if not self.decks["Agendas"]: break
+            agenda_id = self.decks["Agendas"].pop()
+            agenda = AGENDAS[agenda_id]
+            self.log(f"Council Session: {agenda['name']}")
 
-        # Voting Power Calculation
-        votes = {} # Player Index -> Total Power
-        for idx, p in enumerate(self.players):
-            power = 0
-            # Homeworld votes: Purist Hegemony HW is fortified (+2 base, +4 if Head of Diplomacy)
-            if p.civ_name == "Purist Hegemony":
-                power += 4 if p.head_of_diplomacy else 2  # Buff: fortified homeworld
-            else:
-                power += 3 if p.head_of_diplomacy else 1
-
-            # 1. Passive Planet Power (controlled non-HW planets)
-            for planet in p.planets:
-                p_power = 0
-                if planet.type == "Elder": p_power = 3
-                elif planet.type == "Xenophobic": p_power = 2
-                else: p_power = 1  # Mining, Farming, Jovian, Terraformed
-                
-                if planet.type == self.planetary_capital: p_power = 3
-                if getattr(planet, 'moon', None) == "Colony": p_power += 1
-                power += p_power
-                
-            # Flagship Expansion: Galactic Broadcast Node (+3 Votes)
-            if any(s.is_flagship and 13 in s.extensions for s in p.ships):
-                power += 3
-            
-            # 2. Influence Spending (Sim AI: Spend if high importance or randomized)
-            inf_to_spend = min(p.resources[Resource.INFLUENCE], random.randint(0, 3))
-            p.spend({Resource.INFLUENCE: inf_to_spend})
-            p.council_inf_spent = inf_to_spend
-            power += inf_to_spend
-            votes[idx] = power
-            p.votes_cast_total += power
-            p.max_votes_in_single_round = max(p.max_votes_in_single_round, power)
-
-        # Resolution (Start player tiebreaks)
-        if agenda["type"] == "RESOLUTION":
+            # Decision state
             voters_decisions = {}
-            vote_tally = {"FOR": 0, "AGAINST": 0}
-            for idx, power in votes.items():
-                choice = random.choice(["FOR", "AGAINST"])
-                voters_decisions[idx] = choice
-                vote_tally[choice] += power
-                self.players[idx].vote_history.append((self.round_number, agenda_id, choice, power))
-            
-            if vote_tally["FOR"] == vote_tally["AGAINST"]:
-                # Tie-breaking (Fix #5): Start Player's chosen outcome prevails
-                sp_vote = voters_decisions.get(self.start_player_index)
-                if sp_vote:
-                    winning_choice = sp_vote
-                    self.log(f"Resolution Outcome: TIE broken by Start Player → {winning_choice}")
-                    agenda["effect"](self, winning_choice == "FOR")
-                else:
-                    winning_choice = "TIE"
-                    self.log(f"Resolution Outcome: TIE (Start Player abstained — No Effect)")
-            else:
-                winning_choice = "FOR" if vote_tally["FOR"] > vote_tally["AGAINST"] else "AGAINST"
-                self.log(f"Resolution Outcome: {winning_choice} (For {vote_tally['FOR']} vs Against {vote_tally['AGAINST']})")
-                agenda["effect"](self, winning_choice == "FOR")
+            vote_tally = {"FOR": 0, "AGAINST": 0} if agenda["type"] == "RESOLUTION" else {}
+            p_tally = {p.id: 0 for p in self.players} if agenda["type"] == "ELECT_PLAYER" else {}
+            type_tally = {pt: 0 for pt in ["Mining", "Farming", "Jovian", "Elder", "Xeno"]} if agenda["type"] == "ELECT_PLANET" else {}
 
-            self.council_outcomes.append((agenda_id, winning_choice))
-        else:
-            # ELECT Player/Planet
-            voters_decisions = {}
-            p_tally = {}
-            if agenda["type"] == "ELECT_PLAYER":
-                beneficial_ids = [21, 22, 23, 24, 27, 28]
-                p_tally = {pid: 0 for pid in range(self.players_count)}
-                for idx, power in votes.items():
-                    if agenda_id in beneficial_ids:
-                        # Vote for self
-                        vote_for = idx
-                    else:
-                        # Harmful: Vote for the player with the most VPs who isn't me
-                        sorted_players = sorted(self.players, key=lambda x: x.vp, reverse=True)
-                        if sorted_players[0].id != idx:
-                            # Standard Case: Target the leader
-                            candidates = [p for p in sorted_players if p.vp == sorted_players[0].vp and p.id != idx]
-                            if not candidates: candidates = [p for p in self.players if p.id != idx]
-                            vote_for = random.choice(candidates).id
-                        else:
-                            # Voter is the leader: Target the 2nd leader
-                            leader_2_vp = sorted_players[1].vp
-                            candidates = [p for p in self.players if p.vp == leader_2_vp and p.id != idx]
-                            if not candidates: candidates = [p for p in self.players if p.id != idx]
-                            vote_for = random.choice(candidates).id
+            # Execute voting in turn order
+            for p in self.get_ordered_players():
+                # --- TACTIC USAGE (Council Veto Check - 21) ---
+                if p.choose_tactic("COUNCIL") == 21:
+                    p.play_tactic(21)
+                    self.log(f"!!! Player {p.id} used VETO POWER! Skipping current Agenda !!!")
+                    break # Skip current agenda processing
+
+                # 1. Base Logic: Initial Power
+                power = self.calculate_voting_power(p)
+                
+                # --- TACTIC USAGE (Council) ---
+                t_ctx = "COUNCIL"
+                t_id = p.choose_tactic(t_ctx)
+                if t_id:
+                    p.play_tactic(t_id)
+                    self.log(f"Player {p.id} played {TACTIC_NAMES[t_id]}: {TACTIC_EFFECTS[t_id]['desc']}")
                     
-                    voters_decisions[idx] = vote_for
+                    if t_id == 19: # Backchannels
+                        p.resources[Resource.INFLUENCE] += 3
+                    elif t_id == 22: # Bribery (+6 for 2 Credits already spent in play_tactic)
+                        power += 6
+                    elif t_id == 23: # Assassination (Exclude highest VP)
+                        # Identify the leader (highest VP) and prevent them from voting
+                        leader = max(self.players, key=lambda x: x.vp)
+                        if leader.id != p.id:
+                            self.log(f"Leader (Player {leader.id}) excluded from Council by Assassination!")
+                            # In current simple loop, if leader already voted, this is tough.
+                            # But we can just set their power to 0 if they haven't voted yet.
+                            # We'll use a session flag.
+                            setattr(self, 'excluded_player_id', leader.id)
+                    elif t_id == 24: # Filibuster
+                        if p.id == self.start_player_index:
+                            power += 4
+                    elif t_id == 25: # Blackmail
+                        sp = self.players[self.start_player_index]
+                        if sp.id != p.id and sp.resources[Resource.INFLUENCE] >= 2:
+                            sp.resources[Resource.INFLUENCE] -= 2
+                            p.resources[Resource.INFLUENCE] += 2
+                            self.log(f"P{p.id} Blackmailed P{sp.id} for 2 Influence.")
+
+                # Check Exclusion
+                if getattr(self, 'excluded_player_id', None) == p.id:
+                    self.log(f"Player {p.id} is excluded and cannot vote.")
+                    setattr(self, 'excluded_player_id', None) # reset for next agenda
+                    continue
+
+                # 2. Influence Buff
+                inf_spend = min(p.resources[Resource.INFLUENCE], random.randint(0, 2))
+                p.resources[Resource.INFLUENCE] -= inf_spend
+                power += inf_spend
+
+                # 3. Decision Heuristic
+                if agenda["type"] == "RESOLUTION":
+                    choice = random.choice(["FOR", "AGAINST"])
+                    voters_decisions[p.id] = choice
+                    vote_tally[choice] += power
+                elif agenda["type"] == "ELECT_PLAYER":
+                    # Beneficial ids: Treasurer, Commander, Science, Diplomacy, Vanguard, Admiral, Hero
+                    beneficial_ids = [21, 22, 23, 24, 28, 43, 45]
+                    if agenda_id in beneficial_ids:
+                        vote_for = p.id
+                    else:
+                        # Harmful: Target the leader or 2nd leader
+                        sorted_players = sorted(self.players, key=lambda x: x.vp, reverse=True)
+                        target = sorted_players[1] if sorted_players[0].id == p.id else sorted_players[0]
+                        vote_for = target.id
+                    
+                    voters_decisions[p.id] = vote_for
                     p_tally[vote_for] += power
-                    self.players[idx].vote_history.append((self.round_number, agenda_id, f"PLAYER_{vote_for}", power))
-                
-                # Tie-breaking (Fix #6): Start Player's vote choice prevails
-                max_power = max(p_tally.values())
-                winners = [pid for pid, pwr in p_tally.items() if pwr == max_power]
-
-                if len(winners) > 1:
-                    sp_choice = voters_decisions.get(self.start_player_index)
-                    if sp_choice is not None and sp_choice in winners:
-                        elected_idx = sp_choice
-                        self.log(f"Election Outcome: TIE broken by Start Player → Player {elected_idx} Elected")
-                        agenda["effect"](self, self.players[elected_idx])
-                        self.council_outcomes.append((agenda_id, f"PLAYER_{elected_idx}"))
-                    else:
-                        self.log(f"Election Outcome: TIE (No candidate elected)")
-                        self.council_outcomes.append((agenda_id, "TIE"))
-                else:
-                    elected_idx = winners[0]
-                    self.log(f"Election Outcome: Player {elected_idx} Elected")
-                    agenda["effect"](self, self.players[elected_idx])
-                    self.council_outcomes.append((agenda_id, f"PLAYER_{elected_idx}"))
-                
-            elif agenda["type"] == "ELECT_PLANET":
-                beneficial_ids = [31, 32, 33, 34, 37, 38, 40]
-                planet_types = ["Mining", "Farming", "Jovian", "Elder", "Xeno"]
-                p_tally = {pt: 0 for pt in planet_types}
-                for idx, power in votes.items():
-                    voter = self.players[idx]
-                    counts = self.get_planet_counts(voter)
-                    
+                    p.vote_history.append((self.round_number, agenda_id, f"PLAYER_{vote_for}", power))
+                elif agenda["type"] == "ELECT_PLANET":
+                    counts = self.get_planet_counts(p)
+                    # Beneficial ids: Mining, Agriculture, Bountiful, Capital
+                    beneficial_ids = [31, 32, 38, 40]
                     if agenda_id in beneficial_ids:
-                        # Beneficial: Vote for type I own most
-                        max_owned = max(counts.values())
-                        candidates = [pt for pt, count in counts.items() if count == max_owned]
-                        vote_for = random.choice(candidates)
+                        vote_for = max(counts, key=counts.get) if any(counts.values()) else random.choice(list(type_tally.keys()))
                     else:
-                        # Harmful: Identify target player (leader or 2nd leader)
+                        # Harmful: Target leader's most owned type
                         sorted_players = sorted(self.players, key=lambda x: x.vp, reverse=True)
-                        target = sorted_players[1] if sorted_players[0].id == idx else sorted_players[0]
+                        target = sorted_players[1] if sorted_players[0].id == p.id else sorted_players[0]
                         target_counts = self.get_planet_counts(target)
-                        
-                        # Vote for type target owns most
-                        max_target_owned = max(target_counts.values())
-                        vote_for = random.choice([pt for pt, count in target_counts.items() if count == max_target_owned])
+                        vote_for = max(target_counts, key=target_counts.get) if any(target_counts.values()) else random.choice(list(type_tally.keys()))
                     
-                    voters_decisions[idx] = vote_for
-                    p_tally[vote_for] += power
-                    self.players[idx].vote_history.append((self.round_number, agenda_id, f"PLANET_{vote_for}", power))
-                
-                # Tie-breaking (Fix #6): Start Player's vote choice prevails
-                max_power = max(p_tally.values())
-                winners = [pt for pt, pwr in p_tally.items() if pwr == max_power]
+                    voters_decisions[p.id] = vote_for
+                    type_tally[vote_for] += power
+                    p.vote_history.append((self.round_number, agenda_id, f"PLANET_{vote_for}", power))
 
-                if len(winners) > 1:
-                    sp_choice = voters_decisions.get(self.start_player_index)
-                    if sp_choice is not None and sp_choice in winners:
-                        elected_type = sp_choice
-                        self.log(f"Election Outcome: TIE broken by Start Player → Planet Type {elected_type} Elected")
-                        agenda["effect"](self, elected_type)
-                        self.council_outcomes.append((agenda_id, f"PLANET_{elected_type}"))
-                    else:
-                        self.log(f"Election Outcome: TIE (No planet type elected)")
-                        self.council_outcomes.append((agenda_id, "TIE"))
+            # 4. Resolve Verdict
+            outcome = None
+            if agenda["type"] == "RESOLUTION":
+                if vote_tally["FOR"] == vote_tally["AGAINST"]:
+                    outcome = voters_decisions.get(self.start_player_index, "FOR")
+                    self.log(f"Resolution Outcome: TIE broken by Start Player -> {outcome}")
                 else:
-                    elected_type = winners[0]
-                    self.log(f"Election Outcome: Planet Type {elected_type} Elected")
-                    agenda["effect"](self, elected_type)
-                    self.council_outcomes.append((agenda_id, f"PLANET_{elected_type}"))
+                    outcome = "FOR" if vote_tally["FOR"] > vote_tally["AGAINST"] else "AGAINST"
+                agenda["effect"](self, outcome == "FOR")
+                self.council_outcomes.append((agenda_id, outcome))
+            elif agenda["type"] == "ELECT_PLAYER":
+                max_votes = max(p_tally.values())
+                winners = [pid for pid, v in p_tally.items() if v == max_votes]
+                winner_id = self.start_player_index if self.start_player_index in winners else random.choice(winners)
+                self.log(f"Election Outcome: Player {winner_id} Elected")
+                agenda["effect"](self, self.players[winner_id])
+                outcome = f"PLAYER_{winner_id}"
+                self.council_outcomes.append((agenda_id, outcome))
+            elif agenda["type"] == "ELECT_PLANET":
+                max_votes = max(type_tally.values())
+                winners = [pt for pt, v in type_tally.items() if v == max_votes]
+                winner_type = winners[0] # Simplification
+                self.log(f"Election Outcome: Planet Type {winner_type} Elected")
+                agenda["effect"](self, winner_type)
+                outcome = f"PLANET_{winner_type}"
+                self.council_outcomes.append((agenda_id, outcome))
+
+    def calculate_voting_power(self, p):
+        # Base power from seat/diplomacy
+        power = 4 if (p.civ_name == "Purist Hegemony" and p.head_of_diplomacy) else (3 if p.head_of_diplomacy else 1)
+        # Power from planets
+        for planet in p.planets:
+            p_pwr = 3 if planet.type == "Elder" else (2 if planet.type == "Xenophobic" else 1)
+            if planet.type == self.planetary_capital: p_pwr = 3
+            if getattr(planet, 'moon', None) == "Colony": p_pwr += 1
+            power += p_pwr
+        # Power from extensions
+        if any(s.is_flagship and 13 in s.extensions for s in p.ships):
+            power += 3
+        return power
 
     def apply_resolution(self, agenda_id, is_for):
         # Fix #12: Implement key resource-affecting resolutions
@@ -1379,7 +1574,7 @@ class ParsecSim:
         self.revealed_public_count = len(self.public_objectives)
         self.log(f"Turn {self.round_number}: New Public Objective Revealed: {OBJECTIVES[new_obj]['name']}")
 
-        for player in self.players:
+        for player in self.get_ordered_players():
             scored_public = False
 
             # Check Revealed Public Objectives
@@ -1406,8 +1601,16 @@ class ParsecSim:
                     if altair_flagship_planet is not None and altair_flagship_planet in player.planets:
                         player.planets.remove(altair_flagship_planet)
 
-            # Check Secret Objective (apply Altair flagship bonus if EXP type)
+            # Check Secret Objective
             if player.secret_objective not in player.claimed_objectives:
+                # Tactic: Deep Cover Agent (12)
+                if player.choose_tactic("INTEL") == 12:
+                    player.play_tactic(12)
+                    # Simple trigger: gain 1 VP if ANY opponent has 3+ planets
+                    if any(len(other.planets) >= 3 for other in self.players if other.id != player.id):
+                         player.vp += 1
+                         self.log(f"P{player.id} used Deep Cover Agent (+1 VP)")
+
                 sec_obj = OBJECTIVES[player.secret_objective]
                 altair_flagship_planet = None
                 if (player.civ_name == "Altair Divide" and player.flagship_active
@@ -1427,7 +1630,7 @@ class ParsecSim:
 
             # --- AIIJI MASTER PASSIVES ---
             if player.civ_name == "The Aiiji":
-                cost_infl = 6 + (player.aiiji_synthesis_count * 3)
+                cost_infl = 4 + (player.aiiji_synthesis_count * 2) # Buff: 4+2x (was 6+3x)
                 if not scored_public and player.resources[Resource.INFLUENCE] >= cost_infl:
                     active_publics = self.public_objectives[:self.revealed_public_count]
                     for obj_id in active_publics:
